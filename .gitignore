@@ -4,3 +4,5 @@ step1/dist
 step1/node_modules
 step2/dist
 step2/node_modules
+*/node_modules
+*/dist
