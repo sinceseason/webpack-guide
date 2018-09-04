@@ -1,5 +1,5 @@
 function printMe() {
-    console.log('I get error from pring.js line 3');
+    console.log('Updating pring.js ...');
 }
 
 export default printMe;
