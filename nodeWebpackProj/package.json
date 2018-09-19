@@ -1,0 +1,37 @@
+{
+  "name": "nodewebpackproj",
+  "version": "1.0.0",
+  "description": "node(koa2) + webpack + others",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development ENV=dev nodemon ./node/bin/www.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "src",
+      "package.json",
+      "package-lock.json"
+    ],
+    "delay": "1000",
+    "ext": "js,html"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "log4js": "^3.0.5",
+    "nodemon": "^1.18.4"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.2",
+    "handlebars": "^4.0.12",
+    "koa": "^2.5.2",
+    "koa-bodyparser": "^4.2.1",
+    "koa-json": "^2.0.2",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "koa-views": "^6.1.4",
+    "nunjucks": "^3.1.3"
+  }
+}
