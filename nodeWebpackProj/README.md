@@ -43,3 +43,15 @@ app.listen(3000, () => {
 5. **handlebars** 模板引擎
 6. **Nunjucks** 模板引擎
 > `Environment` 类用来管理模板，使用他可以加载模板，模板之间可以继承和包含
+
+7. http请求
+> **bluebird.promise**(异步处理) + **requset**(发送请求)
+> cookie 操作 ctx.headers.cookie
+
+## webpack 打包工具
+1. **entry** 多个入口
+2. **output** 出口
+3. **module** 模块
+> `html-loader`
+> `file-loader`
+> `url-loader`

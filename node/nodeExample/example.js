@@ -5,6 +5,10 @@ console.log(__filename);    // d:\custom\node\nodeExample\example.js
 
 path.resolve(__dirname, 'src');     // "d:\custom\node\nodeExample\src"
 path.resolve(__dirname, '/src');    // "d:\src"
+path.resolve(__dirname, '..', 'src');    // "d:\custom\node\src"
+path.resolve(__dirname, '../..', 'src');    // "d:\custom\src"
+path.resolve(__dirname, '../../src');   // "d:\custom\src"
+path.resolve(__dirname, '../src');   // "d:\custom\node\src"
 path.resolve('/foo/bar', './baz');  // 返回: "d:\foo\bar\baz"
 path.resolve('/foo/bar', '../baz');  // 返回: "d:\foo\baz"
 path.resolve('/foo/bar', '/tmp/file/');     // 返回: 'd:/tmp/file'

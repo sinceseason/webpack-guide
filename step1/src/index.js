@@ -1,6 +1,6 @@
 import _ from 'lodash';
-import './style.css';
-import R8 from './r8.jpg';
+import './style/style.css';
+import R8 from './img/r8.jpg';
 import Data from './data.xml';
 
 function component() {

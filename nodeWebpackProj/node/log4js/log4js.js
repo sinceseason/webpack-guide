@@ -29,6 +29,10 @@ module.exports = {
             appenders: ['console', 'appLogs', 'error'],
             level: 'debug'
         },
+        interceptor: {
+            appenders: ['console'],
+            level: 'debug'
+        },
         // 默认输出
         default: {
             appenders: ['out', 'error'],

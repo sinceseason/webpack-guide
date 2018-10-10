@@ -11,6 +11,7 @@ const koaStatic = require('koa-static');
 // ERROE: node 无法使用 import
 // import nunjucksService from './node/services/nunjucksService';
 const nunjucksService = require('./node/services/nunjucksService');
+const interceptor = require('./node/util/interceptor');
 
 // 引入routes
 // ERROE: node 无法使用 import
@@ -43,7 +44,7 @@ const env = nunjucksService.createEnvironment(path.join(__dirname, './src/views'
     autoescape: true
 });
 nunjucksService.setFilter(env);
-app.use(nunjucksService.createMiddleware(env, path.join(__dirname, './src/views'), '.njk'));
+app.use(nunjucksService.createMiddleware(env, path.join(__dirname, './src/views'), '.html'));
 
 // handle error request use handlebars
 app.use(async (ctx, next) => {
@@ -66,6 +67,13 @@ app.use(async (ctx, next) => {
 // 定义变量
 app.use(async (ctx, next) => {
     ctx.state.tdk = {title: 'custom', keywords: 'money', description: 'much money'};
+    await next();
+})
+
+// 全局拦截器
+app.use(async (ctx, next) => {
+    // 登录拦截器
+    // await interceptor.validateLoginState(ctx);
     await next();
 })
 

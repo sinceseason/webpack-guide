@@ -7,7 +7,13 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "启动程序",
+            "name": "nodeWebpackProj/app",
+            "program": "${workspaceFolder}/nodeWebpackProj/app.js",
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "nodeExample",
             "program": "${workspaceFolder}/node\\nodeExample\\example.js"
         }
     ]

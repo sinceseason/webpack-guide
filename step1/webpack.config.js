@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
     entry: './src/index.js',
     output: {
-        filename: 'bundle.js',
+        filename: 'js/bundle.js',
         path: path.resolve(__dirname, 'dist')
     },
     module: {
@@ -21,14 +21,20 @@ module.exports = {
                     options: {
                         limit: 1000,
                         fallback: 'file-loader',
+                        name: '[name].[hash:7].[ext]',
+                        outputPath: 'image/'
                     }
                 }]
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/,
-                use: [
-                    'file-loader'
-                ]
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: 'fonts/'
+                    }
+                }]
             },
             {
                 test: /\.xml$/,
