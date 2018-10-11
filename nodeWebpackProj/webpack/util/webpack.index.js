@@ -7,8 +7,8 @@ module.exports = {
         assetsPublicPath: process.env.NODE_ENV == 'development' ? '/' : '/static.cfniu.com',
         // 字体 图片 路径
         asstesStaticPath: process.env.NODE_ENV == 'development' ? '/' : '/static.cfniu.com/',
-        // clean dirs
-        cleanDirs: ['../../public/js', '../../public/images', '../../public/fonts'],
+        // clean dirs 移到Clean-webpack-plugin root选项中
+        cleanDirs: ['public/js', 'public/images', 'public/fonts', 'src/views/layout', 'views/m/layout'],
     },
     // webpack entrys
     mulitpleEntry: {

@@ -3,6 +3,7 @@ const config = require('../util/webpack.index');
 const util = require('../util/webpack.util');
 
 module.exports = {
+    mode: process.env.NODE_ENV,
     entry: () => {
         let entry = util.mergeEntry(config.mulitpleEntry);
         entry['common'] = path.resolve(__dirname, '../../src/js/lib/common.js');
@@ -11,7 +12,7 @@ module.exports = {
     output: {
         path: config.build.assetsRoot,
         publicPath: config.build.assetsPublicPath,
-        filename: 'js/[name].bundle.js',
+        filename: 'js/[name].js',
     },
     module: {
         rules: [

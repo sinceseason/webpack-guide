@@ -1,10 +1,10 @@
 const app = require('../../app');
 
 const hostname = process.env.hostname || '127.0.0.1';
-const port = normalizePort(process.env.PORT || '3000');
+const port = normalizePort(process.env.PORT || '3100');
 
 app.listen(port, hostname, () => {
-    console.log(`server is running on ${hostname}:${port}`)
+    console.log(`node server is running on ${hostname}:${port}`)
 });
 
 app.on('error', (error) => {

@@ -4,8 +4,9 @@
   "description": "node(koa2) + webpack + others",
   "main": "index.js",
   "scripts": {
-    "server": "cross-env NODE_ENV=development ENV=dev webpack-dev-server --progress --config webpack/build/webpack.dev.conf.js",
-    "start": "cross-env NODE_ENV=development ENV=dev webpack-dev-server --progress --config webpack/build/webpack.dev.conf.js nodemon ./node/bin/www.js",
+    "start": "run-p server dev:node",
+    "server": "cross-env NODE_ENV=development ENV=dev webpack-dev-server --inline --process --config webpack/build/webpack.dev.conf.js",
+    "dev:node": "cross-env NODE_ENV=development ENV=dev nodemon ./node/bin/www.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "nodemonConfig": {
@@ -28,6 +29,7 @@
     "html-webpack-plugin": "^3.2.0",
     "log4js": "^3.0.5",
     "nodemon": "^1.18.4",
+    "npm-run-all": "^4.1.3",
     "url-loader": "^1.1.1",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2",

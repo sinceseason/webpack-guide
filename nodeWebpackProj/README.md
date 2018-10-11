@@ -55,3 +55,16 @@ app.listen(3000, () => {
 > `html-loader`
 > `file-loader`
 > `url-loader`
+4. **plugin** 插件
+> `clean-webpack-plugin`: clean-webpack-plugin: D:\public\js is outside of the project root. Skipping...
+  此时需加上 root 配置
+> `html-webpack-harddisk-plugin` + `html-webpack-plugin` 可以将文件写入disk
+  `````
+  new HtmlWebpackPlugin({
+		alwaysWriteToDisk: true
+	}),
+  new HtmlWebpackHarddiskPlugin()
+  `````
+
+## npm 
+1. **npm-run-all**  run-p run-s

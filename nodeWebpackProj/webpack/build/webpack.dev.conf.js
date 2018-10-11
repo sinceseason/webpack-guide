@@ -11,11 +11,9 @@ const util = require('../util/webpack.util');
 module.exports = merge(baseWebpackConfig, {
     devtool: 'inline-source-map',
     plugins: [
-        new CleanWebpackPlugin(config.build.cleanDirs),
-        new HtmlWebpackPlugin({
-            alwaysWriteToDisk: true
-        }),
-        new HtmlWebpackHarddiskPlugin()
+        new CleanWebpackPlugin(config.build.cleanDirs, {
+            root: path.resolve(__dirname, '../../')
+        })
     ].concat(util.createHtml({
         favicon: path.resolve(__dirname, '../../src/img/favicon.ico'),
         multipleEntry: config.mulitpleEntry.base,
@@ -23,12 +21,18 @@ module.exports = merge(baseWebpackConfig, {
         filepath: path.resolve(__dirname, '../../src/views/layout'),
         chunks: ['common']
     })).concat(util.createHtml({
+        favicon: path.resolve(__dirname, '../../src/img/favicon.ico'),
         splitWord: path.join('controller', 'm'),
         multipleEntry: config.mulitpleEntry.m,
         template: path.resolve(__dirname, '../../src/views/template/mlayout.html'),
         filepath: path.resolve(__dirname, '../../src/views/m/layout'),
-    })),
+    })).concat([
+        new HtmlWebpackHarddiskPlugin()
+    ]),
     devServer: {
         port: 8001,
+        proxy: {
+            '/': 'http://localhost:3100'
+        }
     }
 })

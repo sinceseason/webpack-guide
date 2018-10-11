@@ -1,1 +1,1 @@
-console.log('this is login js');
+console.log('this is register js');

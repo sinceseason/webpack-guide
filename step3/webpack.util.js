@@ -17,9 +17,9 @@ module.exports = {
      * options.ext 文件后缀
      */
     createHtml: (options = {}) => {
-        return Object.keys(options.multipleEntry).map((entry) => {
+        return Object.keys(options.multipleEntry).map(entry => {
             let entryPath = options.multipleEntry[entry];
-            // ../../src/js/controller/user/login.js
+            // xxx/src/js/login.js
             let splitWord = options.splitWord || 'controller';
             let defaultSplitWord = 'src\\js';
             let ext = options.ext || '.html';
@@ -29,9 +29,8 @@ module.exports = {
             } else {
                 entryDir = entryPath.split(defaultSplitWord)[1];
             }
-            entryDir = './' + entryDir.replace('.js', ext);
+            entryDir = './' + entryDir.replace('.js', ext); // ./login.html
             return new HtmlWebpackPlugin({
-                favicon: options.favicon,
                 template: options.template,
                 filename: path.join(options.filepath, entryDir),
                 chunks: (options.chunks || []).concat([entry]),
