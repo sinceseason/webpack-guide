@@ -1,4 +1,6 @@
 const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+
 const config = require('../util/webpack.index');
 const util = require('../util/webpack.util');
 
@@ -14,17 +16,34 @@ module.exports = {
         publicPath: config.build.assetsPublicPath,
         filename: 'js/[name].js',
     },
+    resolve: {
+        // modules: [path.resolve(__dirname, './node_modules')],
+        // extensions: ['js']
+    },
     module: {
         rules: [
             {
-                test: /.html$/,
+                test: /\.html$/,
                 loader: 'html-loader'
+            },{
+                test: /\.js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader?cacheDirectory',
+                    options: {
+                        presets: [
+                            ["@babel/preset-env", {
+                                "useBuiltIns": "usage",
+                            }]
+                        ],
+                    }
+                },
             },{
                 test: /\.(woff|woff2|eot|ttf|otf)\??.*$/,
                 use: {
                     loader: 'file-loader',
                     options: {
-                        // publicPath: config.build.asstesStaticPath,
+                        publicPath: config.build.asstesStaticPath,
                         name: '[name].[ext]',
                         outputPath: 'fonts/',
                     }
@@ -35,11 +54,27 @@ module.exports = {
                     loader: 'url-loader',
                     options: {
                         limit: 1024 * 1,
-                        name: '[name].[ext]',
+                        context: path.resolve(__dirname, '..', 'src'),
+                        name: '[path][name].[ext]',
                         fallback: 'file-loader',
-                        outputPath: 'images/'
                     }
                 }]
+            },{
+                test: /\.css$/,
+                use: process.env.NODE_ENV === 'production'
+                ? ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: [ 'css-loader' ],
+                }) 
+                : [ 'style-loader', 'css-loader' ]
+            },{
+                test: /\.scss$/,
+                use: process.env.NODE_ENV === 'production'
+                    ? ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: [ 'css-loader', 'sass-loader' ],
+                })
+                : [ 'style-loader', 'css-loader', 'sass-loader' ]
             }
         ]
     }

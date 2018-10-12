@@ -52,9 +52,11 @@ app.listen(3000, () => {
 1. **entry** 多个入口
 2. **output** 出口
 3. **module** 模块
-> `html-loader`
+> `html-loader` 复用html模板 *坑* 无法处理 html 标签 中引入的图片资源
 > `file-loader`
-> `url-loader`
+> `url-loader` 文件大小低于指定值的图片，转为base64字符串
+> `babel-loader` babel-preset-env babel-polyfill
+> `style-loader` `css-loader`
 4. **plugin** 插件
 > `clean-webpack-plugin`: clean-webpack-plugin: D:\public\js is outside of the project root. Skipping...
   此时需加上 root 配置
@@ -65,6 +67,8 @@ app.listen(3000, () => {
 	}),
   new HtmlWebpackHarddiskPlugin()
   `````
+> **CopyWebpackPlugin** *坑* 处理 html 中引入的图片资源
+> **ExtractTextPlugin** 分离文件 需安装最新版
 
 ## npm 
 1. **npm-run-all**  run-p run-s

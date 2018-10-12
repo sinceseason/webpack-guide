@@ -10,6 +10,10 @@ router.get('/login', async (ctx, next) => {
     await ctx.render('user/login', ctx.state);
 })
 
+router.get('/register', async (ctx, next) => {
+    await ctx.render('user/register', ctx.state);
+})
+
 router.get('/async', async (ctx, next) => {
     const sleep = async (ms) => {
         return new Promise(resolve => {
