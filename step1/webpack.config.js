@@ -39,6 +39,10 @@ module.exports = {
             {
                 test: /\.xml$/,
                 use: ['xml-loader']
+            },
+            {
+                test: /\.md$/,
+                use: ['markdown-loader']
             }
         ]
     }
