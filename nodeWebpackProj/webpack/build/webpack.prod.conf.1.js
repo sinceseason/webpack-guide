@@ -4,9 +4,8 @@ const merge = require('webpack-merge');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const HappyPack = require('happypack');
 const happyThreadPool = HappyPack.ThreadPool({ size: 5 });
 
@@ -16,9 +15,31 @@ const util = require('../util/webpack.util');
 
 module.exports = merge(baseWebpackConfig, {
     plugins: [
-        new webpack.DefinePlugin(config.systemEnv()),
         new CleanWebpackPlugin(config.build.cleanDirs, {
             root: path.resolve(__dirname, '../../')
+        }),
+        new HappyPack({
+            id: 'css',
+            threadPool: happyThreadPool,
+            loaders: [{
+                loader: 'css-loader',
+                options: {
+                    minimize: true
+                }
+            }]
+        }),
+        new HappyPack({
+            id: 'scss',
+            threadPool: happyThreadPool,
+            loaders: [
+                'css-loader',
+            {
+                loader: 'sass-loader',
+                options: {
+                    sourceMap: true,
+                    outputStyle: 'compressed'
+                }
+            }]
         }),
         new HappyPack({
             id: 'babel',
@@ -35,10 +56,7 @@ module.exports = merge(baseWebpackConfig, {
                 }
             }]
         }),
-        new MiniCssExtractPlugin({
-            filename: 'minstyle/[name].css',
-            chunkFilename: 'minstyle/[id].[hash].css'
-        }),
+        new ExtractTextPlugin('style/[name].css'),
         new ParallelUglifyPlugin({
             cache: true,
             uglifyJS: {
@@ -92,6 +110,5 @@ module.exports = merge(baseWebpackConfig, {
                 // }
 			}
         },
-        minimizer: [new OptimizeCSSAssetsPlugin()]
     }
 })

@@ -1,5 +1,5 @@
 import '../../../style/login.css';
-import utilService from '../../service/utilService';
+import utilService from 'Service/utilService';
 
 console.log('this is login js');
 

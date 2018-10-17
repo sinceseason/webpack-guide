@@ -8,13 +8,13 @@
 |--- xxx.html, xxx.js, xxx.jpg
 ******************************
 demo12.js
-```
+``` javascript
 const Koa = require('koa')
 const path = require('path')
 const static = require('koa-static')
 const app = new Koa()
 
-//设置静态资源的路径 
+// 设置静态资源的路径 
 const staticPath = './demo12'
 
 app.use(static(
@@ -28,10 +28,11 @@ app.use( async ( ctx ) => {
 app.listen(3000, () => {
   console.log('server is starting at port 3000')
 })
+``` 
 
-打开http://localhost:3000/ 会默认显示index.html中的内容，效果同http://localhost:3000/index.html
+打开[http://localhost:3000/] 会默认显示index.html中的内容，效果同[http://localhost:3000/index.html]
 
-打开http://localhost:3000/demo.js 或http://localhost:3000/koa.jpg (后面是静态资源的文件名)，会在网页中显示静态资源的文件内容。
+打开[http://localhost:3000/demo.js] 或[http://localhost:3000/koa.jpg] (后面是静态资源的文件名)，会在网页中显示静态资源的文件内容。
 
 输入其他url会显示helloworld。
 ```
@@ -61,14 +62,16 @@ app.listen(3000, () => {
 > `clean-webpack-plugin`: clean-webpack-plugin: D:\public\js is outside of the project root. Skipping...
   此时需加上 root 配置
 > `html-webpack-harddisk-plugin` + `html-webpack-plugin` 可以将文件写入disk
-  `````
+  ``` javascript
   new HtmlWebpackPlugin({
 		alwaysWriteToDisk: true
 	}),
   new HtmlWebpackHarddiskPlugin()
-  `````
+  ```
 > **CopyWebpackPlugin** *坑* 处理 html 中引入的图片资源
 > **ExtractTextPlugin** 分离文件 需安装最新版
+> **config.optimization.splitChunks** 拆分代码
+> **HashedModuleIdsPlugin** 该插件会根据模块的相对路径生成一个四位数的hash作为模块id, 建议用于生产环境
 
 ## npm 
 1. **npm-run-all**  run-p run-s

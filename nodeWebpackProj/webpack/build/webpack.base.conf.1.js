@@ -1,5 +1,5 @@
 const path = require('path');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const config = require('../util/webpack.index');
 const util = require('../util/webpack.util');
@@ -21,6 +21,7 @@ module.exports = {
             Service: path.resolve(__dirname, '../../src/js/service') 
         },
         modules:[path.resolve(__dirname, '../../src',), 'node_modules'],
+        // extensions: ['js']
     },
     module: {
         rules: [
@@ -63,15 +64,39 @@ module.exports = {
                         fallback: 'file-loader',
                     }
                 }]
-            },{
+            },
+            // {
+            //     test: /\.css$/,
+            //     use: process.env.NODE_ENV === 'production'
+            //     ? ExtractTextPlugin.extract({
+            //         fallback: 'style-loader',
+            //         use: [ 'css-loader' ],
+            //     }) 
+            //     : [ 'style-loader', 'css-loader' ]
+            // },
+            {
                 test: /\.css$/,
                 use: process.env.NODE_ENV === 'production'
-                ? [MiniCssExtractPlugin.loader, 'fast-css-loader']
+                ? ExtractTextPlugin.extract({
+                    use: 'happypack/loader?id=css'
+                }) 
                 : 'happypack/loader?id=css'
-            },{
+            },
+            // {
+            //     test: /\.scss$/,
+            //     use: process.env.NODE_ENV === 'production'
+            //         ? ExtractTextPlugin.extract({
+            //         fallback: 'style-loader',
+            //         use: [ 'css-loader', 'sass-loader' ],
+            //     })
+            //     : [ 'style-loader', 'css-loader', 'sass-loader' ]
+            // },
+            {
                 test: /\.scss$/,
                 use: process.env.NODE_ENV === 'production'
-                ? [MiniCssExtractPlugin.loader, 'fast-css-loader', 'fast-sass-loader']
+                    ? ExtractTextPlugin.extract({
+                    use: 'happypack/loader?id=scss',
+                })
                 : 'happypack/loader?id=scss'
             }
         ]
