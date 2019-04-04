@@ -1,0 +1,9 @@
+[submodule "webpack-github/html-webpack-plugin\\"]
+	path = webpack-github/html-webpack-plugin\\
+	url = https://github.com/jantimon/html-webpack-plugin.git
+[submodule "webpack-github/webpack"]
+	path = webpack-github/webpack
+	url = https://github.com/webpack/webpack.git
+[submodule "webpack-github/webpack-library-example\\"]
+	path = webpack-github/webpack-library-example\\
+	url = https://github.com/kalcifer/webpack-library-example.git
