@@ -1,0 +1,9 @@
+@import "./../components/_common.scss";
+.addbank-prompt {
+    background: $prompt-bg-color;
+    border: 1px solid $prompt-border-color;
+    color: $prompt-woed-color;
+    text-align: center;
+    padding: 10px;
+    line-height: $line-height-default;
+}

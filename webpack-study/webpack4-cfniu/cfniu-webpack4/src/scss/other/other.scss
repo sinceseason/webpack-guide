@@ -1,0 +1,230 @@
+@import "../components/_common.scss";
+.other-wrap {
+    margin: 0 auto;
+    width: 1180px;
+    background: $bg-light-color;
+}
+
+.other-content {
+    float: right;
+    width: 1000px;
+    background: $white;
+    padding: 40px;
+    box-sizing: border-box;
+    border: 1px solid $border-default-color;
+    min-height: 500px;
+    line-height: $line-height-default;
+}
+
+.other-title1 {
+    color: $gray-dark;
+    font-weight: $font-weight-default;
+    padding-bottom: 15px;
+}
+
+.other-title2 {
+    font-weight: $font-weight-default;
+    padding-bottom: 10px;
+}
+
+.other-cont1 {
+    color: $gray-dark;
+    border-bottom: 1px solid $border-default-color;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+.other-cont2 {
+    margin-bottom: 20px;
+}
+
+.contact-cont {
+    border-top: 1px solid $border-default-color;
+    padding-top: 20px;
+}
+
+.img-wx {
+    width: 88px;
+    height: 88px;
+    margin-bottom: 5px;
+}
+
+.safe-title {
+    color: $gray-dark;
+    font-size: 24px;
+    font-weight: $font-weight-default;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.safe-list {
+    padding-bottom: 20px;
+    border-bottom: 1px solid $border-default-color;
+    line-height: $line-height-prompt;
+    text-align: center;
+    .safe-list-col1 {
+        width: 640px;
+        margin: 0 auto;
+        text-align: left;
+        .col1-img {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+            background: url("../../images/other/safe-img.jpg") no-repeat;
+            margin-bottom: 20px;
+        }
+    }
+    .safe-list-col2 {
+        @include block-list(48px,
+        435px,
+        auto,
+        0);
+        text-align: left;
+        .col2-img {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+            background: url("../../images/other/safe-imglist1.jpg") no-repeat;
+        }
+        .col2-img.img1 {
+            background-position: 0 0;
+        }
+        .col2-img.img2 {
+            background-position: -100px 0;
+        }
+        .col2-img.img3 {
+            background-position: -200px 0;
+        }
+        .col2-img.img4 {
+            background-position: -300px 0;
+        }
+    }
+    .safe-list-col4 {
+        @include block-list(48px,
+        192px,
+        auto,
+        0);
+        text-align: left;
+        .col4-img {
+            width: 65px;
+            height: 64px;
+            margin: 0 auto;
+            background: url("../../images/other/safe-imglist2.jpg") no-repeat;
+        }
+        .col4-img.img1 {
+            background-position: 0 0;
+        }
+        .col4-img.img2 {
+            background-position: -65px 0;
+        }
+        .col4-img.img3 {
+            background-position: -130px 0;
+        }
+        .col4-img.img4 {
+            background-position: -195px 0;
+        }
+    }
+    .col-title {
+        font-size: 18px;
+        font-weight: $font-weight-default;
+        padding: 15px 0;
+        text-align: center;
+    }
+}
+
+.safe-list.last {
+    border-bottom: 0;
+}
+
+.media-main {
+    padding-top: 40px;
+    border-top: 1px solid $border-default-color;
+    .media-list {
+        position: relative;
+        font-size: 14px;
+        .media-time {
+            float: left;
+            color: $gray-more-light;
+            border-right: 1px solid $border-default-color;
+            height: 105px;
+            line-height: 100px;
+            width: 130px;
+            padding-bottom: 40px;
+        }
+        .icon-circle {
+            background: url("../../images/other/about-no.png") no-repeat;
+            width: 15px;
+            height: 16px;
+            display: inline-block;
+            position: absolute;
+            z-index: 10;
+            left: 123px;
+            top: 43px;
+        }
+        .media-img {
+            float: left;
+            padding-left: 50px;
+            img {
+                border: 1px solid $gray-more-light;
+                margin-right: 20px;
+                width: 102px;
+                height: 102px;
+            }
+        }
+        .media-data {
+            font-size: 14px;
+            a {
+                color: $gray-dark;
+                font-weight: $font-weight-default;
+            }
+            dt {
+                margin: 5px 0 15px 0;
+            }
+            dd {
+                color: $gray-light;
+                line-height: $line-height-default;
+            }
+        }
+    }
+    .media-list:last-child .media-time {
+        padding-bottom: 0;
+    }
+    .media-list:hover {
+        .media-time {
+            color: $gray-light;
+        }
+        .icon-circle {
+            background: url("../../images/other/about-choose.png") no-repeat;
+        }
+    }
+}
+
+.article-title {
+    text-align: center;
+    padding: 10px 0 40px 0;
+    color: $gray-dark;
+    font-size: 24px;
+}
+
+.date-source {
+    border-bottom: 1px solid $gray-more-light;
+    font-size: 12px;
+    color: $gray-light;
+    padding-bottom: 10px;
+}
+
+.article-cont {
+    padding-top: 40px;
+    font-size: 14px;
+    color: $gray-base;
+    line-height: $line-height-prompt;
+    min-height: 480px;
+    p {
+        text-indent: 2em;
+        margin-bottom: 20px;
+    }
+    img {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}

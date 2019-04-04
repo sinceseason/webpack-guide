@@ -1,0 +1,206 @@
+//- 弹框样式
+.modal-size-normal {
+    width: $modal-size-default;
+}
+
+.modal-size-middle {
+    width: 500px;
+}
+
+.modal-size-big {
+    width: $modal-size-big;
+}
+
+.modal-wrap {
+    background: $white;
+    margin: 30px auto;
+    box-shadow: 0 0 10px $gray-more-light;
+}
+
+.modal-title {
+    width: 100%;
+    height: 52px;
+    line-height: 52px;
+    background: $modal-title-bg;
+    border-bottom: 1px solid $modal-border-bottom;
+    box-sizing: border-box;
+    padding: 0 20px;
+    font-size: 14px;
+    .head-title-left {
+        float: left;
+        color: $gray-dark;
+        font-weight: $font-weight-default;
+    }
+    .head-title-center {
+        width: 340px;
+        float: left;
+        text-align: center;
+        display: block;
+        color: $gray-dark;
+        font-weight: $font-weight-default;
+    }
+    .head-close {
+        float: right;
+        width: 12px;
+        height: 11px;
+        background: url("../../../images/common/icon-close.png") no-repeat;
+        cursor: pointer;
+        margin-top: 5px;
+        margin-top: 20px;
+    }
+}
+
+.modal-content {
+    padding: 20px;
+    position: relative;
+}
+
+.modal-content-height-middel {
+    min-height: 500px;
+}
+
+.modal-content-scroll {
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+.modal-operate {
+    padding: 0 20px 20px 20px;
+}
+
+.modal-tips {
+    text-align: center;
+    margin: 20px 0;
+    color: $gray-dark;
+}
+
+.modal-list {
+    li {
+        margin-bottom: 20px;
+        position: relative;
+    }
+}
+
+.modal-list.have-topline {
+    border-top: 1px solid $border-light-color;
+    padding-top: 20px;
+}
+
+.modal-code {
+    border-top: 1px solid $border-light-color;
+    padding: 15px 0;
+    text-align: center;
+    img {
+        width: 160px;
+        height: 160px;
+    }
+}
+
+.remind-code {
+    text-align: center;
+    img {
+        width: 240px;
+        height: 240px;
+    }
+}
+
+.send-link {
+    width: 100%;
+    height: 90px;
+    border: 1px solid $border-default-color;
+    padding: 10px;
+    box-sizing: border-box;
+    color: $gray-base;
+}
+
+.copy-link {
+    width: 100%;
+    height: 60px;
+    box-sizing: border-box;
+    color: $gray-base;
+}
+
+.offline-img {
+    height: 400px;
+    overflow-y: auto;
+    img {
+        width: 100%;
+    }
+}
+
+//优惠券弹层
+.modal-coupon-wrap {
+    position: absolute;
+    right: 0;
+    top: 20px;
+    width: 800px;
+    background: $white;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 20;
+    cursor: default;
+    box-shadow: 0 0 8px $gray-light;
+}
+
+.modal-coupon-operate {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.risk-tip-cont {
+    height: 200px;
+    overflow-y: auto;
+    line-height: $line-height-default;
+}
+
+.today-limit-cont {
+    height: 200px;
+    overflow-y: auto;
+    margin-right: -18px;
+    .limit-list {
+        float: left;
+        width: 170px;
+        font-size: 14px;
+        margin-bottom: 20px;
+        line-height: 1;
+        .stock-name {
+            width: 75px;
+            text-align: right;
+            color: $gray-dark;
+            font-weight: $font-weight-default;
+            display: inline-block;
+            @include text-overflow();
+        }
+    }
+}
+
+.tips-have-botline {
+    border-bottom: 1px solid $border-default-color;
+    padding-bottom: 18px;
+    margin-bottom: 18px;
+    text-align: center;
+    color: $gray-dark;
+}
+
+.flow-list-info {
+    padding-bottom: 5px;
+}
+
+// 免费体验
+.modal-free {
+    font-size: 14px;
+    li {
+        border-bottom: 1px dotted $border-default-color;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+        .free-title {
+            float: left;
+            color: $gray-base;
+        }
+        .free-value {
+            float: right;
+            color: $gray-dark;
+            font-weight: $font-weight-default;
+        }
+    }
+}

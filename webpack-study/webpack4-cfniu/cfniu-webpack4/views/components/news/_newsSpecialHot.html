@@ -1,0 +1,15 @@
+<!-- 右侧边栏 -->
+{% if hotSpecials.length > 0 %}
+<div class="news-sidebar-title">热门专题</div>
+<ul class="news-col3-list clearfix">
+    {% for item in hotSpecials %}
+    <li>
+        {% if item.channelName.length > 6 %}
+        <a href="/news/special{{item.channelId}}">{{item.channelName.substring(0, 6) + '...'}}</a>
+        {% else %}
+        <a href="/news/special{{item.channelId}}">{{item.channelName}}</a>
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}

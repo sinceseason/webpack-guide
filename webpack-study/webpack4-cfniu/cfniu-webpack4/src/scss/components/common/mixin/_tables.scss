@@ -1,0 +1,10 @@
+//-table
+@mixin table-row($table-bg, $table-align, $table-height, $table-color, $table-padhorizontal, $table-size, $table-weight) {
+    background: $table-bg;
+    text-align: $table-align;
+    height: $table-height;
+    color: $table-color;
+    padding: 0 $table-padhorizontal;
+    font-size: $table-size;
+    font-weight: $table-weight;
+}

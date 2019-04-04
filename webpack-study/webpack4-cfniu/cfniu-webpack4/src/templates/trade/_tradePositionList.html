@@ -1,0 +1,27 @@
+{@if list.length == 0}
+<tr>
+    <td colspan="8">暂无数据</td>
+</tr>
+{@else} {@each list as item}
+<tr>
+    <td>
+        <span class="gray-dark fb">${item.stockName}</span>
+        <span class="gray-base">（${item.stockCode}）</span>
+    </td>
+    <td>${item.qty}</td>
+    <td>${item.availableQty}</td>
+    <td>${item.costValue|money}</td>
+    <td>
+        <span class="${item.lossRatio<0?'color-green':'color-red'} fb">${item.price|money}</span>
+    </td>
+    <td>
+        <span class="fb">${item.stockBalance|money}</span>
+        <span class="${item.lossRatio<0?'color-green':'color-red'}">（${(item.stockBalance/account.assets*100)|round,2}%）</span>
+    </td>
+    <td>${item.loss|money}</td>
+    <td>
+        <a href="/tradeclient?tradeId=${tradeId}&type=B&stockCode=${item.stockCode}" class="btn-fixed-55 btn-red">买</a>
+        <a href="/tradeclient?tradeId=${tradeId}&type=S&stockCode=${item.stockCode}" class="btn-fixed-55 btn-green">卖</a>
+    </td>
+</tr>
+{@/each} {@/if}

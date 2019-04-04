@@ -1,0 +1,125 @@
+@import "../components/_common.scss";
+.current-trade-list {
+    >li {
+        border: 1px solid $border-default-color;
+        margin-bottom: 20px;
+        padding: 20px;
+    }
+}
+
+.mytrade-left {
+    float: left;
+    width: 47%;
+    .mytrade-assets {
+        width: 30%;
+        float: left;
+        background: $white;
+        border-bottom-left-radius: 8px;
+        border-top-left-radius: 8px;
+        li {
+            background: $gray-light;
+            height: 60px;
+            color: $white;
+            text-align: center;
+            box-sizing: border-box;
+            border-bottom: 1px solid $white;
+            font-size: 14px;
+            border-right: 1px solid $white;
+            line-height: 1.6;
+            padding-top: 9px;
+            cursor: pointer;
+            span {
+                display: block;
+            }
+            &.assets-line1.selected-red,
+            &.assets-line1 {
+                line-height: 40px;
+            }
+            &.selected-red {
+                background: $mytrade-list-redbg;
+                border-right: 1px solid $mytrade-list-redbg;
+                font-size: 16px;
+                line-height: 1.4;
+                padding-left: 30px;
+                text-align: left;
+            }
+            &.selected-orange {
+                background: $mytrade-list-orangebg;
+                border-right: 1px solid $mytrade-list-orangebg;
+                font-size: 16px;
+                line-height: 1.4;
+                padding-left: 30px;
+                text-align: left;
+            }
+            &.selected-green {
+                background: $mytrade-list-greenbg;
+                border-right: 1px solid $mytrade-list-greenbg;
+                font-size: 16px;
+                line-height: 1.4;
+                padding-left: 30px;
+                text-align: left;
+            }
+            &:first-child {
+                border-top-left-radius: $border-radius-default;
+            }
+            &:last-child {
+                border-bottom-left-radius: $border-radius-default;
+                border-bottom: none;
+            }
+        }
+    }
+    .mytrade-total {
+        float: right;
+        width: 70%;
+        height: 180px;
+        border-top-right-radius: $border-radius-default;
+        border-bottom-right-radius: $border-radius-default;
+        padding: 20px;
+        color: $white;
+        box-sizing: border-box;
+        .yujing-value {
+            font-size: 48px;
+            padding-bottom: 30px;
+            line-height: 1;
+            font-weight: 600;
+        }
+    }
+    .mytrade-total.red {
+        background: $mytrade-list-redbg;
+    }
+    .mytrade-total.orange {
+        background: $mytrade-list-orangebg;
+    }
+    .mytrade-total.green {
+        background: $mytrade-list-greenbg;
+    }
+}
+
+.mytrade-right {
+    float: right;
+    width: 50%;
+    position: relative;
+    padding-left: 30px;
+    box-sizing: border-box;
+    &:before {
+        position: absolute;
+        width: 1px;
+        height: 160px;
+        border-left: 1px solid $border-default-color;
+        content: " ";
+        left: 0;
+        top: 12px;
+    }
+}
+
+.mytrade-databtn {
+    padding-top: 20px;
+    border-top: 1px dashed $border-default-color;
+    a {
+        margin-right: 10px;
+        margin-right: 8px\9;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

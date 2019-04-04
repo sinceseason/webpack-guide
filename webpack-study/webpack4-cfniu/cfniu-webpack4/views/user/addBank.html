@@ -1,0 +1,77 @@
+{% extends 'layout/user/addBank.html' %} {% block content %}
+<div class="ui-view-container">
+    <!-- header -->
+    {% include '../components/common/_header.html' %}
+    <!-- main -->
+    <div class="main-content">
+        <div class="wrap">
+            <ul class="level2-tab clearfix">
+                <li class="selected">
+                    <a>绑定银行卡</a>
+                </li>
+            </ul>
+            <div class="addbank-prompt">
+                （因第三方支付政策要求）请选择常用的银行卡，绑定成功后，充值提现只能在该银行卡上进行！
+            </div>
+            <ul class="addbank-list JS-addBank-form">
+                <li>
+                    <div class="addbank-title fb">开户人</div>
+                    <div class="addbank-content">
+                        {% if member.realName %}
+                        <span class="size16 fb gray-dark">{{member.realName}}</span>
+                        {% else %}
+                        <a href="/user/assets" class="link-blue">请先实名认证</a>
+                        {% endif %}
+                    </div>
+                </li>
+                <li>
+                    <div class="addbank-title fb">开户银行</div>
+                    <div class="addbank-content">
+                        <select class="input-normal" name="bankName">
+                            <option value=''>请选择开户银行</option>
+                            {% for item in banks %}
+                            {% if item.recommended %}
+                                <option value="{{item.id}}">{{item.bankName}}(推荐)</option>
+                            {% else %}
+                                <option value="{{item.id}}">{{item.bankName}}</option>
+                            {% endif %}
+                            {% endfor %}
+                        </select>
+                    </div>
+                </li>
+                <li>
+                    <div class="addbank-title fb">开户行信息</div>
+                    <div class="addbank-content">
+                        <select name="proName" class="input-normal JS-select-pro">
+                            <option value=''>请选择省</option>
+                            {% for item in citys %}
+                                <option value="{{item.nodeName}}" data-id="{{item.id}}">{{item.nodeName}}</option>
+                            {% endfor %}
+                        </select>
+                        <select name="cityName" class="input-normal JuicerAnchor-city">
+                            <option value=''>请选择市</option>
+                        </select>
+                        <input class="input-normal" name="outletsName" type="text" placeholder="例：上海银行东方支行（非必填）">
+                    </div>
+                </li>
+                <li>
+                    <div class="addbank-title fb">银行卡号</div>
+                    <div class="addbank-content">
+                        <input class="input-normal" name="cardNo" type="text" placeholder="请输入银行卡号">
+                    </div>
+                </li>
+                <li>
+                    <div class="addbank-title fb">手机号码</div>
+                    <div class="addbank-content">
+                        <input class="input-normal" name="phone" type="text" placeholder="请输入银行预留的手机号码">
+                    </div>
+                </li>
+                <li class="operate-btn">
+                    <button class="btn-fixed-250 btn-red JS-confirm-btn">确认提交</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- footer -->
+    {% include '../components/common/_footer.html' %}
+</div>{% endblock %}

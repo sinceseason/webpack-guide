@@ -1,0 +1,100 @@
+<li class="clearfix">
+    <div class="trade-list-title">操盘资金</div>
+    <div class="trade-list-content">
+        <span class="fb">${trade.wfPercent|money}</span> 元
+        <span class="size12 gray-light">（申请资金 + 投资本金）</span>
+    </div>
+</li>
+<li class="clearfix">
+    <div class="trade-list-title">单票持仓</div>
+    <div class="trade-list-content">
+        {@if(trade.pzType!='900005')}
+        <!--  -->
+        {@if(trade.wfPercent>=200000)} 主板 60%，创业板 30%
+        <!--  -->
+        {@else} 主板单票100%，创业板总仓位100%
+        <!--  -->
+        {@/if}
+        <!--  -->
+        {@else} {@if(trade.wfPercent>=200000)}主板单票60%，创业板总仓位0%{@else}主板单票100%，创业板总仓位0%{@/if} {@/if}
+    </div>
+</li>
+<li class="clearfix have-line">
+    <div class="trade-list-title">持仓时间</div>
+    <div class="trade-list-content">
+        {@if(trade.product.autoExtension==0)} {@if(trade.product.cycleType==0 || pzType == '12')} 自动延期，最长
+        <span class="fb">${trade.product.maxCycle|integer}</span>个交易日
+        <!--  -->
+        {@else if (trade.product.cycleType==1 || pzType == '6')} 自动延期，最长
+        <span class="fb">${trade.product.maxCycle|integer}</span>个月
+        <!--  -->
+        {@else} 自动延期，最长
+        <span class="fb">${trade.product.maxCycle|integer}</span>周 {@/if}
+        <!--  -->
+        {@else} {@if(trade.product.cycleType==0 || pzType == '12')}
+
+        <span class='fb'>${trade.product.maxCycle|integer}</span>&nbsp;个交易日
+        <!--  -->
+        {@else if (trade.product.cycleType==1 || pzType == '6')}
+        <span class='fb'>${trade.product.maxCycle|integer}</span>&nbsp;个月 {@else}
+        <span class='fb'>${trade.product.maxCycle|integer}</span>&nbsp;周 {@/if}
+        <!--  -->
+        {@/if}
+    </div>
+</li>
+<li class="clearfix">
+    <div class="trade-list-title">警戒线</div>
+    <div class="trade-list-content">
+        <span class="fb color-orange">${trade.wfAlertPercent|money}</span> 元
+        <span class="gray-light size12">（冻结买入）</span>
+    </div>
+</li>
+<li class="clearfix">
+    <div class="trade-list-title">止损线</div>
+    <div class="trade-list-content">
+        <span class="fb color-green">${trade.wfOpenLine|money}</span> 元
+    </div>
+</li>
+<li class="clearfix">
+    <div class="trade-list-title">投资本金</div>
+    <div class="trade-list-content">
+        <span class="fb gray-dark">${trade.capitalAmount|money}</span> 元
+    </div>
+</li>
+<li class="clearfix">
+    <div class="trade-list-title">管理费</div>
+    <div class="trade-list-content">
+        <span class="fb gray-dark">${trade.accountMgAmt|money}</span> 元/${trade.cycleType|cycleType}
+    </div>
+</li>
+<li class="clearfix have-line">
+    <div class="trade-list-title">盈利分配</div>
+    <div class="trade-list-content">
+        <span class="fb color-red">${trade.profitRate|integer}%</span>
+    </div>
+</li>
+<li class="clearfix">
+    <div class="trade-list-title">抵用券</div>
+    <div class="trade-list-content">
+        <div class="relative JuicerAnchor-tradeCoupon">
+        </div>
+    </div>
+</li>
+<li class="clearfix">
+    <div class="trade-list-title fb gray-dark">共计支付</div>
+    <div class="trade-list-content clearfix">
+        <div class="trade-list-item">
+            <span class="fb color-red JS-totalAmount">${trade.capitalAmount + (trade.accountMgAmt*trade.wfDuration)|money}</span>
+        </div>
+        {@if(trade.product.cycleType==0 || pzType == '12')}
+        <div class="trade-list-item size12 gray-light">准备资金 = 投资本金 + 日管理费 x 天数</div>
+        {@else if (trade.product.cycleType==1 || pzType== '6')}
+        <div class="trade-list-item size12 gray-light">准备资金 = 投资本金 + 日管理费 x 月数</div>
+        {@else}
+        <div class="trade-list-item size12 gray-light">准备资金 = 投资本金 + 日管理费 x 周数</div>
+        {@/if}
+        <div class="trade-list-item">您预期还将获得
+            <span class="fb gray-dark JS-score">0</span> 积分
+        </div>
+    </div>
+</li>

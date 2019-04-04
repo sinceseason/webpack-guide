@@ -1,0 +1,40 @@
+<div class="wrap-table">
+    <table class="common-table" width="100%" cellpadding="0" cellspacing="0">
+        <thead>
+            <tr>
+                <th width="20%">银行卡</th>
+                <th width="20%">流水单号</th>
+                <th width="20%">发生金额</th>
+                <th width="20%">处理状态</th>
+                <th width="20%">流水时间</th>
+            </tr>
+        </thead>
+        <tbody>
+            {@if (!list || list.length == 0)}
+            <tr>
+                <td colspan="5">
+                    <div class="nodata">没有数据</div>
+                </td>
+            </tr>
+            {@else}
+            {@each list as item, index}
+            <tr>
+                <td>
+                    <span class="fb">${item.drawBankCard | isCardNo}</span>
+                </td>
+                <td>${item.id}</td>
+                <td>
+                    <span class="fb color-red">${item.drawAmount | money}</span>
+                </td>
+                <td>
+                    <span class="mr10">${item.status|drawingStatusCn}</span>
+                    <a class="${!item.status ? 'JS-cancle link-red' : ''}" data-id="${item.id}">${!item.status ? '申请撤回' : ''}</a>
+                </td>
+                <td>${item.drawTime}</td>
+            </tr>
+            {@/each}
+        </tbody>
+    </table>
+</div>
+<div class="turn-page JS-page-draw-list"></div>
+{@/if}

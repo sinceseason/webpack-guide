@@ -1,0 +1,18 @@
+{% extends 'layout/error.html' %} {% block content %}
+<div class="ui-view-container">
+    <!-- header -->
+    {% include '../components/common/_header.html' %}
+    <div class="main-content">
+        <div class="wrap clearfix">
+            <div class="error-left"> </div>
+            <div class="error-right">
+                <div class="title">出错啦！</div>404
+                <br/>访问的资源不存在 ...
+                <div class="cont">您可以通过以下方式继续访问</div>
+                <a href="/" class="btn-fixed-140 btn-red">返回首页</a>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    {% include '../components/common/_footer.html' %}
+</div>{% endblock %}

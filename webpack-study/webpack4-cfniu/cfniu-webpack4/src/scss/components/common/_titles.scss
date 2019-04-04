@@ -1,0 +1,8 @@
+@include common-title(type1, 1px, 10px, 20px, 15px, 1.5);
+@include common-title(type2, 1px, 0, 20px, 15px, 1);
+@include common-title(type3, 0, 20px, 10px, 15px, 1);
+@include common-title(news, 1px, 20px, 10px, 15px, 1);
+.common-title {
+    margin-top: 15px;
+    font-weight: $font-weight-default;
+}

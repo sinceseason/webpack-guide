@@ -1,0 +1,113 @@
+{% extends 'layout/agent/agentIndex.html' %}
+<!-- content -->
+{% block content %}
+<div class="ui-view-container">
+    <div class="agent-bg1">
+        <div class="wrap clearfix">
+            <div class="left-logo">
+                <a href="/agent" class="fl">
+                    <div class="logo-main"></div>
+                </a>
+                <div class="logo-second">居间商</div>
+            </div>
+            {% if isAgentLogin %}
+            <!--已登录-->
+            <div class="right-user">
+                <span>您好，</span>
+                <a href='/agent/myPartner' class="user-name">{{agent.partnerName}}</a>
+                <span class="uesr-level">LV {{agent.level}}</span>
+                <a class="link-white JS-agentOut">退出</a>
+            </div>
+            {% else %}
+            <!--未登录-->
+            <div class="right-user">
+                <a class="agent-btn-login JS-register">注册</a>
+                <a class="agent-btn-login JS-login">登录</a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    <div class="agent-bg2">
+        <div class="wrap">
+            <div class="agent-top">
+                <div class="agent-main">{{NIU_CN}}居间合作</div>
+                <div class="agent-intro">诚邀证券经纪人、银行理财顾问、保险经纪人及网络推广工作室加盟{{NIU_CN}}居间商轻松赚佣金</div>
+                <a class="agent-btn-add JS-register">快速加盟</a>
+            </div>
+        </div>
+    </div>
+    <div class="wrap">
+        <div class="agent-title">{{NIU_CN}}优势</div>
+        <ul class="agent-about clearfix">
+            <li>
+                <div class="icon icon1"></div>
+                <div class="title1">门槛低</div>
+                <div class="title2">0基础&nbsp;0成本</div>
+                <div class="title2">无风险</div>
+            </li>
+            <li>
+                <div class="icon icon2"></div>
+                <div class="title1">返佣高</div>
+                <div class="title2">行业较高返佣水平</div>
+                <div class="title2">每天结算随时提取</div>
+            </li>
+            <li>
+                <div class="icon icon3"></div>
+                <div class="title1">技术优</div>
+                <div class="title2">独立的统计后台</div>
+                <div class="title2">精准的数据反馈</div>
+            </li>
+            <li>
+                <div class="icon icon4"></div>
+                <div class="title1">品牌强</div>
+                <div class="title2">丰富的营销活动</div>
+                <div class="title2">老品牌值得信赖</div>
+            </li>
+        </ul>
+        <div class="agent-title">业务咨询</div>
+        <div class="agent-contact clearfix">
+            <ul class="contact-left">
+                <li class="clearfix">
+                    <span class="icon icon2"></span>
+                    <span class="contact-title">居间商经理</span>
+                    <span class="contact-value">13788951707</span>
+                </li>
+            </ul>
+            <div class="contact-right"></div>
+        </div>
+        {% if not isSecondDomain %}
+        <div class="agent-news clearfix">
+            <div class="agent-news-title">新闻动态</div>
+            {% for contentItem in contentItems %}
+            <div class="agent-news-cont">
+                <div class="type2-title clearfix">
+                    <div class="title-name fb size16 gray-dark">{{contentItem.channelName}}</div>
+                    <div class="title-date">
+                        <a href="/agentNews/c{{contentItem.channelId}}" class="link-blue-noline">更多&gt;&gt;</a>
+                    </div>
+                </div>
+                <ul class="havedate-tight-list">
+                    {% for jcContentDto in jcContentDtos %} {% if jcContentDto.channelId === contentItem.channelId %}
+                    <li>
+                        <div class="list-title">
+                            <a class="link-gray-dark" href="/agentNews/d{{jcContentDto.contentId}}.html">{{jcContentDto.title}}</a>
+                        </div>
+                        <div class="list-date">{{(jcContentDto.releaseDate|timeUnixFormat).split(' ')[0]}}</div>
+                    </li>
+                    {% endif %} {% endfor %}
+
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</div>
+<!-- 登录弹框 -->
+{% include '../components/dialog/agent/_agentLogin.html' %}
+<!-- 注册弹框 -->
+{% include '../components/dialog/agent/_agentReg.html' %}
+<!-- footer -->
+{% include '../components/common/_footer.html' %}
+<!-- content end -->
+{% endblock %}

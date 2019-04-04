@@ -1,0 +1,42 @@
+@import "../../components/_mcommon.scss";
+.about-head {
+    height: 150px;
+    background: url("../../../images/m/logo.png") no-repeat center center $white;
+    background-size: 64px 96px;
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 1rem;
+}
+
+.about-list {
+    background: $white;
+    border-bottom: 1px solid #e5e5e5;
+    padding-left: 1.3rem;
+    font-size: 1.4rem;
+    li {
+        border-bottom: 1px solid #eee;
+        padding: 1rem 1.3rem 1rem 0;
+        &:last-child {
+            border-bottom: none;
+        }
+        .about-icon {
+            float: left;
+            margin-right: 1rem;
+            font-size: 1.8rem;
+            color: #ff5e69;
+        }
+        .about-title {
+            float: left;
+        }
+        .about-value {
+            float: right;
+            position: relative;
+            padding-right: 1.2rem;
+            .right-arrow {
+                position: absolute;
+                right: -.5rem;
+                top: 0.15rem;
+                color: #ddd;
+            }
+        }
+    }
+}

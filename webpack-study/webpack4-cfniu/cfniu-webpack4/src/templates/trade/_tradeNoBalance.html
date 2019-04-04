@@ -1,0 +1,37 @@
+<li class="clearfix">
+    <div class="col2-list-title">账户余额：</div>
+    <div class="col2-list-content">
+        <span class="fb color-red">${balance|money}</span>
+        <span class="fb gray-dark">元</span>
+    </div>
+</li>
+<li class="clearfix">
+    <div class="col2-list-title">投资本金：</div>
+    <div class="col2-list-content">
+        <span class="fb gray-dark">${investAmount|money}</span>
+        <span class="fb gray-dark">元</span>
+    </div>
+</li>
+<li class="clearfix">
+    <div class="col2-list-title">预存管理费：</div>
+    <div class="col2-list-content">
+        <span class="fb gray-dark">${mgtAmount|money}</span>
+        <span class="fb gray-dark">元</span>
+    </div>
+</li>
+<li class="clearfix">
+    <div class="col2-list-title">共计应支付：</div>
+    <div class="col2-list-content">
+        <span class="fb gray-dark">${investAmount+mgtAmount|money}</span>
+        <span class="fb gray-dark">元</span>
+    </div>
+</li>
+<li class="clearfix have-topline">
+    <div class="col2-list-title">支付还差：</div>
+    <div class="col2-list-content">
+        <div class="item-inner">
+            <span class="fb color-red">${investAmount+mgtAmount-balance|money} </span>
+            <span class="fb gray-dark">元</span>
+        </div>
+    </div>
+</li>

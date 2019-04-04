@@ -1,0 +1,11 @@
+<!-- 右侧边栏 -->
+{% if recentNews.jcContentDtos.length > 0 %}
+<div class="news-sidebar-title">最新资讯</div>
+<ul class="nodate-news-list">
+    {% for news in recentNews.jcContentDtos %}
+    <li>
+        <a href="/news/d{{news.contentId}}.html">{{news.title}}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}

@@ -1,0 +1,31 @@
+@import "../components/_common.scss";
+.wxbind-wrap {
+    margin: 30px auto;
+    width: 400px;
+}
+
+.wxbind-cont {
+    padding: 20px 20px 36px 20px;
+    position: relative;
+    li {
+        margin-bottom: 15px;
+        position: relative;
+    }
+}
+
+.wxbind-title {
+    font-size: 16px;
+    color: $gray-dark;
+    padding: 15px 0;
+    border-bottom: 1px solid $border-default-color;
+}
+
+.wxbind-info {
+    text-align: center;
+    color: $gray-light;
+    margin-top: 20px;
+}
+
+.wxbind-submit {
+    margin: 0 20px;
+}

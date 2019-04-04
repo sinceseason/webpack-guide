@@ -1,0 +1,62 @@
+{@if tradeCoupon }
+<a class="link-blue-noline JS-coupon-switch">
+    <span class="JS-noChoose">${tradeCoupon.totalCanUse} 张抵用券可用</span>
+    <span class="JS-choose none">减免&nbsp;
+        <span class="fb JS-mgt color-red"></span>&nbsp;元管理费；
+        <span class="fb JS-cash color-red"></span>&nbsp;元本金
+    </span>
+    <i class="icon-moreunfold"></i>
+</a>
+{@/if}
+<div class="modal-coupon-wrap JS-couponList none">
+    <ul class="level3-tab clearfix JS-couponType">
+        <li class="JS-tab-tradeCoupon" data-nav="0">
+            <a>管理费抵用券</a>
+        </li>
+        <li class="JS-tab-tradeCoupon" data-nav="1">
+            <a>本金抵用券</a>
+        </li>
+    </ul>
+    <ul class="modal-coupon-list JS-content-tradeCoupon JS-coupon-manage clearfix none" data-content="0" data-type='310001'>
+        <!-- type-capital-selected type-fail-standard -->
+        {@each tradeCoupon.mgAgtCoupons as item,index}
+        <li data-originAmount="${item.originAmount}" data-couponCode="${item.couponCode}" data-couponTypeCode='${item.couponTypeCode}'
+            class="JS-coupon-item ${item.couponCode!=mgAgtCoupon.couponCode&&item.canUse?'type-manage':''} ${!item.canUse?'type-fail-standard':''}">
+            <div class="card-type">${item.couponTypeName}</div>
+            <div class="card-desc">{@if item.useLimits.length > 0} ${item.useLimits[0].description|wordLimit} {@else}全场通用 {@/if}</div>
+            <div class="card-money">
+                <span class="size18">￥</span>
+                <span class="size32 fb">${item.originAmount}</span>
+            </div>
+            <div class="card-term">有效期：
+                <span class="fb">${item.expireDate|timeFormat} </span>到期</div>
+            <div class="card-integral">
+
+            </div>
+        </li>
+        {@/each} {@if tradeCoupon.mgAgtCoupons.length==0 }
+        <div class="nodata">暂无数据</div>
+        {@/if}
+    </ul>
+    <ul class="modal-coupon-list JS-content-tradeCoupon JS-coupon-capital clearfix none" data-content="1" data-type='310002'>
+        {@each tradeCoupon.cashCoupons as item,index}
+        <li data-originAmount="${item.originAmount}" data-couponCode="${item.couponCode}" data-couponTypeCode='${item.couponTypeCode}'
+            class="JS-coupon-item ${item.couponCode!=mgAgtCoupon.couponCode&&item.canUse?'type-capital':''} ${!item.canUse?'type-fail-standard':''}">
+            <div class="card-type">${item.couponTypeName}</div>
+            <div class="card-desc">{@if item.useLimits.length > 0} ${item.useLimits[0].description|wordLimit} {@else}全场通用 {@/if}</div>
+            <div class="card-money">
+                <span class="size18">￥</span>
+                <span class="size32 fb">${item.originAmount}</span>
+            </div>
+            <div class="card-term">有效期：
+                <span class="fb">${item.expireDate|timeFormat} </span>到期</div>
+            <div class="card-integral"></div>
+        </li>
+        {@/each} {@if tradeCoupon.cashCoupons.length==0 }
+        <div class="nodata">暂无数据</div>
+        {@/if}
+    </ul>
+    <div class="modal-coupon-operate">
+        <button class="btn-fixed-250 btn-red JS-couponConfirm">确认</button>
+    </div>
+</div>

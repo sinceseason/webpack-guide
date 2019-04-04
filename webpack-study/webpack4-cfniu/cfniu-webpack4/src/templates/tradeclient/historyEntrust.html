@@ -1,0 +1,53 @@
+<table width="100%" cellpadding="0" cellspacing="0" class="common-table">
+    <thead>
+        <tr>
+            <th width="18%">股票名称</th>
+            <th width="12%">买卖方向</th>
+            <th width="12%">委托股数</th>
+            <th width="12%">委托价格</th>
+            <th width="12%">成交价格</th>
+            <th width="12%">成交状态</th>
+            <th width="22%">委托时间</th>
+        </tr>
+    </thead>
+    <tbody>
+        {@each list as item,index}
+        <tr>
+            <td>
+                <span class="fb">${item.stockName}</span>
+                <span class="gray-base">（${item.stockCode}）</span>
+            </td>
+            {@if(item.OrderSide=='BUY')}
+            <td>
+                <span class="color-red">买入</span>
+            </td>
+            <td>${item.entrustQty}</td>
+            <td>
+                <span class="fb color-red">${item.entrustPrice|money}</span>
+            </td>
+            <td>
+                <span class="fb color-red">${item.price|money}</span>
+            </td>
+            {@else}
+            <td>
+                <span class="color-green">卖出</span>
+            </td>
+            <td>${item.entrustQty}</td>
+            <td>
+                <span class="fb color-green">${item.entrustPrice|money}</span>
+            </td>
+            <td>
+                <span class="fb color-green">${item.price|money}</span>
+            </td>
+            {@/if}
+            <td>${item.entrustStateNm}</td>
+            <td>${item.entrustTime}</td>
+        </tr>
+        {@/each}
+    </tbody>
+</table>
+{@if(!list||list.length==0)}
+<div class="nodata">
+    <div class="word">没有相关数据！</div>
+</div>
+{@else} {@/if}

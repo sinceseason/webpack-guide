@@ -1,0 +1,140 @@
+<div class="modal-wrap modal-size-normal none" id="JS-agentRegisterDialog">
+    <ul class="agent-reg-tab JS-tabs clearfix">
+        <li class="JS-tab" data-nav="0">
+            <a>机构</a>
+        </li>
+        <li class="JS-tab" data-nav="1">
+            <a>经纪人</a>
+        </li>
+        <li class="JS-tab" data-nav="2">
+            <a>个人</a>
+        </li>
+    </ul>
+    <div class="agent-reg-content">
+        <div class="agent-cont-reg">
+            <ul class="JS-regAgent JS-content" data-content="0">
+                <li class="input-login">
+                    <i class="icon-yonghu"></i>
+                    <input type="text" name='partnerName' placeholder="请输入您的用户名" />
+                </li>
+                <li class="input-login">
+                    <i class="icon-mima11"></i>
+                    <input type="password" name='pwd' placeholder="请输入6-16位数字和字母的密码" />
+                </li>
+                <li class="input-login">
+                    <i class="icon-mima11"></i>
+                    <input type="password" name='pwd2' placeholder="请再次输入您的密码" />
+                </li>
+                <li class="input-login">
+                    <i class="icon-zixun"></i>
+                    <input type="text" name='corporationName' placeholder="公司名称" />
+                </li>
+                <li class="input-login">
+                    <i class="icon-about"></i>
+                    <input type="text" name='address' placeholder="公司详细地址" />
+                </li>
+                <li class="input-login">
+                    <i class="icon-join"></i>
+                    <input type="text" name='corporationCode' placeholder="公司组织机构代码" />
+                </li>
+                <li class="input-login">
+                    <i class="icon-yonghu"></i>
+                    <input type="text" name='companyContacts' placeholder="联系人姓名" />
+                </li>
+                <li class="input-login">
+                    <i class="icon-dianhua"></i>
+                    <input type="text" name='telephone' placeholder="联系电话" />
+                </li>
+                <li class="input-login">
+                    <button class="right-btn">上传营业执照</button>
+                    <i class="icon-mingxi"></i>
+                    <input type="text" class="license-upload-name" name="bissnessLicensePath" />
+                    <form class="license-upload-form" id="upload-form" method="post">
+                        <input type="file" name="picFile" placeholder="上传营业执照" class="license-upload" />
+                    </form>
+                </li>
+                <li class="input-login">
+                    <img src='/verifyCode.api' onclick="this.src='/verifyCode.api?' + new Date().getTime()" class="right-yzm" />
+                    <i class="icon-yanzhengmazhuanhuan"></i>
+                    <input type="text" name='verifyCode' placeholder="图形验证码" />
+                </li>
+            </ul>
+            <ul class="JS-regAgent JS-content" data-content="1">
+                <li class="input-login">
+                    <i class="icon-yonghu"></i>
+                    <input type="text" name='partnerName' placeholder="请输入您的用户名" />
+                </li>
+                <li class="input-login">
+                    <i class="icon-mima11"></i>
+                    <input type="password" name='pwd' placeholder="请输入6-16位数字和字母的密码" />
+                </li>
+                <li class="input-login">
+                    <i class="icon-mima11"></i>
+                    <input type="password" name='pwd2' placeholder="请再次输入您的密码" />
+                </li>
+                <li class="input-login">
+                    <i class="icon-zixun"></i>
+                    <input name='corporationCode1' type="text" placeholder="职业证书编号" />
+                </li>
+                <li class="input-login">
+                    <i class="icon-about"></i>
+                    <input name='corporationName' type="text" placeholder="所在公司" />
+                </li>
+                <li class="input-login">
+                    <i class="icon-join"></i>
+                    <input name='companyContacts' type="text" placeholder="姓名" />
+                </li>
+                <li class="input-login">
+                    <i class="icon-yonghu"></i>
+                    <input name='telephone' type="text" placeholder="联系电话" />
+                </li>
+                <li class="input-login">
+                    <img src='/verifyCode.api' onclick="this.src='/verifyCode.api?' + new Date().getTime()" class="right-yzm" />
+                    <i class="icon-yanzhengmazhuanhuan"></i>
+                    <input type="text" name='verifyCode' placeholder="图形验证码" />
+                </li>
+            </ul>
+            <ul class="JS-regAgent JS-content" data-content="2">
+                <li class="input-login">
+                    <i class="icon-yonghu"></i>
+                    <input type="text" name="partnerName" placeholder="请输入您的用户名" />
+                </li>
+                <li class="input-login">
+                    <i class="icon-mima11"></i>
+                    <input name="pwd" type="password" placeholder="请输入6-16位数字和字母的密码" />
+                </li>
+                <li class="input-login">
+                    <i class="icon-mima11"></i>
+                    <input name="pwd2" type="password" placeholder="请再次输入您的密码" />
+                </li>
+                <li class="input-login">
+                    <i class="icon-zixun"></i>
+                    <input name="companyContacts" type="text" placeholder="姓名" />
+                </li>
+                <li class="input-login">
+                    <i class="icon-about"></i>
+                    <input name="telephone" type="text" placeholder="联系电话" />
+                </li>
+                <li class="input-login">
+                    <i class="icon-join"></i>
+                    <input name="idCard" type="text" placeholder="身份证" />
+                </li>
+                <li class="input-login">
+                    <img src='/verifyCode.api' onclick="this.src='/verifyCode.api?' + new Date().getTime()" class="right-yzm" />
+                    <i class="icon-yanzhengmazhuanhuan"></i>
+                    <input type="text" name='verifyCode' placeholder="图形验证码" />
+                </li>
+                <li class="input-login">
+                    <textarea id="remark" rows="3" placeholder="渠道资源介绍。如QQ群主、YY语音房主、论坛版主、站长....." class="person-intro"></textarea>
+                </li>
+            </ul>
+            <div class="errortip-default none JS-errorWrap">
+                <i class="icon-tishi"></i>
+                <span class="JS-errorMsg">密码错误</span>
+            </div>
+        </div>
+        <div class="agent-reg-btn">
+            <button class="btn-full btn-red JS-confirm">下一步</button>
+        </div>
+    </div>
+</div>

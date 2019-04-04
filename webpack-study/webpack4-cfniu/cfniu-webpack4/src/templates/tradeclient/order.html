@@ -1,0 +1,56 @@
+<div class="modal-title clearfix">
+    {@if(order.orderSide=='B')}
+    <span class="head-title-left">买入确认</span>
+    {@else}
+    <span class="head-title-left">卖出确认</span>
+    {@/if}
+    <span class="head-close title-close"></span>
+</div>
+<div class="modal-content">
+    <ul class="modal-col2-list">
+        <li class="clearfix">
+            <div class="col2-list-title">股票名称：</div>
+            <div class="col2-list-content">
+                <span class="fb gray-dark">${order.stockName}</span>
+                <span class="fb gray-dark">（${order.stockCode}）</span>
+            </div>
+        </li>
+        <li class="clearfix">
+            <div class="col2-list-title">买卖方向：</div>
+            <div class="col2-list-content">
+                {@if(order.orderSide=='B')}
+                <span class="fb color-red">买入</span>
+                {@else}
+                <span class="fb color-green">卖出</span>
+                {@/if}
+            </div>
+        </li>
+        <li class="clearfix">
+            <div class="col2-list-title">委托价格：</div>
+            <div class="col2-list-content">
+                <span class="fb gray-dark">${order.price|money}</span>
+            </div>
+        </li>
+        <li class="clearfix">
+            <div class="col2-list-title">委托数量：</div>
+            <div class="col2-list-content">
+                <span class="fb gray-dark">${order.qty}</span>
+                <span class="fb gray-dark">股</span>
+            </div>
+        </li>
+        {@if(order.orderSide=='B')}
+        <li class="clearfix">
+            <div class="col2-list-title">冻结资金：</div>
+            <div class="col2-list-content">
+                <span class="fb gray-dark">${(order.qty*order.price)|money}</span>
+            </div>
+        </li>{@else}{@/if}
+    </ul>
+</div>
+<div class="modal-operate">
+    {@if(order.orderSide=='B')}
+    <a class="JS-submit btn-full btn-red">确 认</a>
+    {@else}
+    <a class="JS-submit btn-full btn-green">确 认</a>
+    {@/if}
+</div>

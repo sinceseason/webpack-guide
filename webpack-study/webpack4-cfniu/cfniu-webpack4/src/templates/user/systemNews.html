@@ -1,0 +1,23 @@
+{@if (!list || list.length == 0)}
+<div class="nodata">
+    <div>没有相关数据！</div>
+</div>
+{@else} {@each list as item, index}
+<li class="message-list JS-msg-detail">
+    <div class="clearfix">
+        <div class="message-title system">${item.title}</div>
+        <div class="fr gray-light">${item.postTime}</div>
+    </div>
+    {@if (index == 0)}
+    <a href="${item.href}">
+        <div class="message-detail">$${item.content}</div>
+    </a>
+    {@else}
+    <a href="${item.href}">
+        <div class="message-detail none">$${item.content}</div>
+    </a>
+    {@/if}
+</li>
+{@/each}
+<div class="turn-page JS-page-system-list"></div>
+{@/if}

@@ -1,0 +1,124 @@
+{% extends 'layout/user/assets.html' %} {% block content %}
+<div class="ui-view-container">
+    <!-- header -->
+    {% include '../components/common/_header.html' %}
+    <!-- main -->
+    <div class="main-content">
+        <div class="user-wrap clearfix">
+            <!-- 用户中心，左侧菜单 -->
+            {% include '../components/user/_leftSideMenu.html' %}
+            <div class="user-content">
+                <!-- 用户中心，header -->
+                {% include '../components/user/_userHead.html' %}
+                <div class="clearfix">
+                    <div class="user-asset">
+                        <div class="asset-left">
+                            <div class="size14">我的资产</div>
+                            <div class="fb size24">{{(accountrpt.rpt.stockAsset + accountrpt.rpt.investAsset_sum + member.account.balance) | money}}</div>
+                        </div>
+                        <div class="asset-right">
+                            <span class="item-value">积分 ： {{integral.balance}}</span>
+                            <span class="item-value">卡券 ： {{coupons.length}} 张</span>
+                        </div>
+                    </div>
+                    <div class="user-fund">
+                        <div class="fund-element">
+                            <div class="size14">可用资金</div>
+                            <div class="fb size16">{{member.account.balance | money}}</div>
+                        </div>
+                        <div class="fund-element">
+                            <div class="size14">冻结资金</div>
+                            <div class="fb size16">{{member.account.djAmount | money}}</div>
+                        </div>
+                        <div class="fund-element">
+                            <div class="size14">推广总收益</div>
+                            <div class="fb size16">{{extendinfo.trackIncome | money}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="user-chart clearfix">
+                    <div class="chart-list">
+                        <div id="stockAsset" class="img-chart" 
+                            data-stock='{{accountrpt.rpt.stockAsset}}' 
+                            data-finance="{{accountrpt.rpt.investAsset_sum}}"
+                            data-cash="{{member.account.balance}}"></div>
+                        <div class="size14">证券净值</div>
+                        <div class="fb size16 color-red">{{accountrpt.rpt.stockAsset | money}}</div>
+                    </div>
+                    <div class="chart-list">
+                        <div id="balance" class="img-chart"></div>
+                        <div class="size14">现金资产</div>
+                        <div class="fb size16 color-light-blue">{{member.account.balance | money}}</div>
+                    </div>
+                </div>
+                <ul class="set-list">
+                    <li class="clearfix">
+                        <div class="set-title">实名认证：</div>
+                        {% if member.realName %}
+                        <div class="set-content fb gray-dark">{{member.realName}}</div>
+                        {% else %}
+                        <div class="set-content fb gray-dark">未认证</div>
+                        <div class="set-operate">
+                            <a class="link-blue JS-realName">认证</a>
+                        </div>
+                        {% endif %}
+                    </li>
+                    <li class="clearfix">
+                        <div class="set-title">绑定银行：</div>
+                        {% if mybank.length > 0 %}
+                        <div class="set-content fb gray-dark">{{mybank[0].bankName}} ( {{(mybank[0].cardNo) | convertCardNo}} )</div>
+                        {% else %}
+                        <div class="set-content fb gray-dark">未绑定</div>
+                        <div class="set-operate">
+                            <a class="link-blue JS-bind-bank" data-realname='{{member.realName}}'>绑定</a>
+                        </div>
+                        {% endif %}
+                    </li>
+                    <li class="clearfix">
+                        <div class="set-title">手机绑定：</div>
+                        <div class="set-content fb gray-dark">{{member.telephone | isTelephone}}</div>
+                        <div class="set-operate">
+                            <a class="link-blue JS-modify-tel">修改</a>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="set-title">登录密码：</div>
+                        <div class="set-content fb gray-dark">已设置</div>
+                        <div class="set-operate">
+                            <a class="link-blue JS-modify-pwd">修改</a>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="set-title">提现密码：</div>
+                        {% if member.drawPwd %}
+                        <div class="set-content fb gray-dark">已设置</div>
+                        <div class="set-operate">
+                            <a class="link-blue JS-modify-draw-pwd">修改</a>
+                        </div>
+                        {% else %}
+                        <div class="set-content fb gray-dark">未设置</div>
+                        <div class="set-operate">
+                            <a class="link-blue JS-set-draw-pwd">设置</a>
+                        </div>
+                        {% endif %}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    {% include '../components/common/_footer.html' %}
+    {# 认证 #}
+    {% include '../components/dialog/user/_realName.html' %}
+    {# 修改手机 #}
+    {% include '../components/dialog/user/_modifyTel.html' %}
+    {# 修改手机下一步 #}
+    {% include '../components/dialog/user/_modifyTelNext.html' %}
+    {# 修改登录密码 #}
+    {% include '../components/dialog/user/_modifyPwd.html' %}
+    {# 设置提现密码 #}
+    {% include '../components/dialog/user/_forgetDrawPwd.html' %}
+    {# 修改提现密码 #}
+    {% include '../components/dialog/user/_modifyDrawPwd.html' %}
+</div>
+<script src="/static/echart.all.js"></script>{% endblock %}

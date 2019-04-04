@@ -1,0 +1,23 @@
+.input-login {
+    @include input-box(100%, 42px, 40px, $border-default-color, 14px, left);
+    i {
+        @include input-icon();
+    }
+    input {
+        @include input-hidden();
+    }
+}
+
+.input-normal {
+    @include input-box(100%, 42px, 40px, $border-default-color, 14px, left);
+    padding: 0 10px;
+    input {
+        @include input-hidden();
+    }
+}
+
+//-多行文本域
+.multiline-text {
+    @include input-box(100%, 120px, 25px, $border-default-color, 14px, left);
+    padding: 10px;
+}

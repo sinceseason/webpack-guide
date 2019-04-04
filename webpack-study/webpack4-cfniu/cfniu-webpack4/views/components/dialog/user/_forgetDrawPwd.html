@@ -1,0 +1,32 @@
+<div class="modal-wrap modal-size-normal none" id="JS-forget-draw-pwd-Dialog">
+    <div class="modal-title clearfix">
+        <span class="head-title-left">忘记提现密码</span>
+        <span class="head-close title-close"></span>
+    </div>
+    <div class="modal-content">
+        <ul class="modal-list">
+            <li>注册手机：
+                <span class="gray-dark fb">{{member.telephone | isTelephone}}</span>
+                <input name="telephone" value="{{member.telephone}}" type="text" class="none"></input>   
+            </li>
+            <li class="focus-err input-login">
+                <img src='/verifyCode.api' onclick="this.src='/verifyCode.api?' + new Date().getTime()" class="right-yzm" />
+                <input name="ivc" type="text" placeholder="图片验证码" />
+            </li>
+            <li class="input-login">
+                <button class="right-btn JS-countDown">发送验证码</button>
+                <input name="verifyCode" type="text" placeholder="短信验证码" />
+            </li>
+            <li>
+                <input name="pwd" type="password" placeholder="请设置密码（6-16位数字和字母）" class="input-normal" />
+            </li>
+        </ul>
+        <div class="errortip-default JS-errorWrap none">
+            <i class="icon-tishi"></i>
+            <span class="JS-errorMsg">这里是提示内容</span>
+        </div>
+    </div>
+    <div class="modal-operate">
+        <a class="btn-full btn-red JS-forget-draw-pwd-btn">确 认</a>
+    </div>
+</div>

@@ -1,0 +1,135 @@
+@import "../components/_common.scss";
+.trade-content {
+    padding-top: 20px;
+    .trade-left {
+        float: left;
+        width: 620px;
+        min-height: 620px;
+        padding-right: 40px;
+        border-right: 1px solid $border-default-color;
+        position: relative;
+        .icon-arrow {
+            position: absolute;
+            top: 45%;
+            right: -15px;
+            width: 15px;
+            height: 32px;
+            background: url("../../images/trade/trade-arrow.png") no-repeat center center;
+        }
+        >li {
+            border-bottom: 1px dashed $border-default-color;
+            padding-bottom: 20px;
+            margin-bottom: 15px;
+            &.invest-fund {
+                padding-bottom: 0;
+                margin-bottom: -20px;
+                border-bottom: none;
+            }
+        }
+    }
+    .trade-right {
+        float: right;
+        width: 485px;
+        min-height: 620px;
+    }
+}
+
+.trade-title {
+    font-weight: $font-weight-default;
+    margin-right: 20px;
+}
+
+.trade-btn-group {
+    padding-top: 10px;
+    font-size: 0;
+    margin-right: -20px;
+    line-height: 1;
+}
+
+.btn-trade-item1 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 18px;
+    font-size: 16px;
+    font-weight: $font-weight-default;
+}
+
+.btn-trade-item2 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 39px;
+    font-size: 14px;
+    color: $gray-base;
+}
+
+.btn-trade-item3 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 55px;
+    font-size: 16px;
+    font-weight: $font-weight-default;
+}
+
+.trade-data-list {
+    >li {
+        @include fixed-col3-list(12px,
+        trade-list,
+        60px,
+        right,
+        250px,
+        20px);
+        &.have-line {
+            border-bottom: 1px dashed $border-default-color;
+            padding-bottom: 15px;
+        }
+        .trade-list-item {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.trade-protocol {
+    margin-top: 161px;
+    color: $gray-light;
+}
+
+.trade-operate {
+    margin-top: 15px;
+}
+
+.up-down-prompt {
+    margin-top: 40px;
+    border-top: 1px solid $border-default-color;
+}
+
+//-限时抢购
+.trade-robbuy {
+    padding-bottom: 20px;
+    border-bottom: 1px solid $border-default-color;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: $gray-dark;
+    i {
+        color: $red-light;
+        margin-right: 10px;
+    }
+    .robbuy-time {
+        font-weight: $font-weight-default;
+        margin-left: 10px;
+        margin-right: 50px;
+    }
+    .time-red {
+        margin: 0 10px;
+        color: $red;
+    }
+}
+
+.trade-coupon-result {
+    position: absolute;
+    right: 0;
+    top: 0;
+    white-space: nowrap;
+}

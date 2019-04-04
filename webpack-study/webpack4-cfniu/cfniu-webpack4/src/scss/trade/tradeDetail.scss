@@ -1,0 +1,46 @@
+@import "../components/_common.scss";
+.detail-btn-group {
+    font-size: 0;
+    padding-top: 20px;
+    clear: both;
+    button,
+    a {
+        margin-right: 20px;
+    }
+}
+
+.detail-ratio-line {
+    position: relative;
+    font-size: 0;
+    margin-top: 20px;
+    .arrow-ratio {
+        position: absolute;
+        left: 0;
+        top: -20px;
+        width: 16px;
+        height: 16px;
+        background: url("../../images/trade/arrow-icon.jpg") no-repeat;
+    }
+    span {
+        display: inline-block;
+        height: 2px;
+    }
+    .line-blue {
+        width: 392px;
+        background: $line-blue;
+        margin-right: 2px;
+    }
+    .line-green {
+        width: 392px;
+        background: $line-green;
+        margin-right: 2px;
+    }
+    .line-red {
+        width: 392px;
+        background: $line-red;
+    }
+}
+
+.trade-detail-info {
+    border-bottom: 1px solid $border-default-color;
+}

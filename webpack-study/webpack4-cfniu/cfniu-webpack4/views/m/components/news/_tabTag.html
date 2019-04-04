@@ -1,0 +1,7 @@
+<div class="news-foot-tab clearfix">
+    {% for item in content.contentTags %}
+    <a class="tab-item" href="{{MOBILE_PROXY_URL}}/news/tag{{item.tagId}}">
+        <span>{{item.tagName}}</span>
+    </a>
+    {% endfor %}
+</div>

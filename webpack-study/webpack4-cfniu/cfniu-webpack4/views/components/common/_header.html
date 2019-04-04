@@ -1,0 +1,119 @@
+<div class="wrap-header">
+    <div class="top-header">
+        <div class="wrap clearfix">
+            <div class="left-server">
+                <i class="icon-dianhua gray-light"></i>客服电话：{{TEL_NUM}}</div>
+            <ul class="right-nav">
+                <li>
+                    <span>欢迎来到{{NIU_CN}}</span>
+                </li>
+                {% if isLogin %}
+                <li>您好，
+                    <a>{{member.userName | isTelephone}}</a>
+                </li>
+                {% else %}
+                <li>您好，
+                    <a href="/user/login">请登录</a>
+                </li>
+                <li>
+                    <a class="link-red" href="/user/register">注册领红包</a>
+                </li>
+                {% endif %}
+                <li class="hand drow-down">
+                    手机APP
+                    <i class="icon-moreunfold"></i>
+                    <div class="popup-code">
+                        <span class="sys">扫一扫</span>
+                        <img src="../images/img-downapp.png" class="img-code" />
+                        <span class="downapp">下载财富牛APP</span>
+                    </div>
+                </li>
+                <li class="hand drow-down">
+                    微信公众号
+                    <i class="icon-moreunfold"></i>
+                    <div class="popup-code">
+                        <span class="sys">扫一扫</span>
+                        <img src="../images/img-wx.png" class="img-code" />
+                        <span class="downapp">关注财富牛公众号</span>
+                    </div>
+                </li>
+                <li>
+                    <a href="/agent">居间加盟</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="main-header">
+        <div class="wrap clearfix">
+            <a class="main-logo" href="/">
+                <h1>
+                    <img src="../images/cfniu/logo.jpg" alt="财富牛股票配资" />
+                </h1>
+            </a>
+            <div class="right-myuser">
+                <i class="icon-wo color-red fb"></i>
+                我的账户
+                <i class="icon-more1"></i>
+                <ul class="dropdown-menu">
+                    <div class="menu-arrow">
+                        <span class="arrow-img"></span>
+                    </div>
+                    <li>
+                        <a href="/user/assets">
+                            <i class="icon-yonghuyilan"></i>账户一览
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/trade/list">
+                            <i class="icon-wodecaopan"></i>我的交易
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/user/extend">
+                            <i class="icon-wodecaopan"></i>分享赚钱
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/user/coupon">
+                            <i class="icon-jifen"></i>积分卡券
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/user/flowing">
+                            <i class="icon-zijinmingxi"></i>资金明细
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/user/message">
+                            <i class="icon-xinxi1"></i>消息中心
+                        </a>
+                    </li>
+                    {% if isLogin %}
+                    <li class="JS-login-out">
+                        <a>
+                            <i class="icon-yonghu"></i>退出
+                        </a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a href="/user/login">
+                            <i class="icon-yonghu"></i>登录
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+            <ul class="main-nav">
+                <li class="JS-tab" data-nav="0">
+                    <a href="/">首页</a>
+                </li>
+                <li class="JS-tab" data-nav="1">
+                    <a href="/trade/0">股票操盘</a>
+                </li>
+                <li class="JS-tab" data-nav="2">
+                    <a href="/activity">体验活动</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

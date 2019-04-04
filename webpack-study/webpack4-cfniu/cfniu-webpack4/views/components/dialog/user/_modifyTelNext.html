@@ -1,0 +1,28 @@
+<div class="modal-wrap modal-size-normal none" id="JS-modify-tel-next-dialog">
+    <div class="modal-title clearfix">
+        <span class="head-title-left">修改绑定手机</span>
+        <span class="head-close title-close"></span>
+    </div>
+    <div class="modal-content JS-modify-tel-next-form">
+        <ul class="modal-list">
+            <li class="input-login">
+                <input type="text" placeholder="输入11位手机号码" name="telephone"/>
+            </li>
+            <li class="focus-err input-login">
+                <img src='/verifyCode.api' onclick="this.src='/verifyCode.api?' + new Date().getTime()" class="right-yzm" />
+                <input type="text" placeholder="图片验证码" name="ivc" />
+            </li>
+            <li class="input-login">
+                <button class="right-btn JS-next-getverifyCode">发送验证码</button>
+                <input type="text" placeholder="短信验证码" name="verifyCode"/>
+            </li>
+        </ul>
+        <div class="errortip-default JS-errorWrap none">
+            <i class="icon-tishi"></i>
+            <span class="JS-errorMsg">这里是提示内容</span>
+        </div>
+    </div>
+    <div class="modal-operate">
+        <a class="btn-full btn-red JS-confirm-tel-btn">确 认</a>
+    </div>
+</div>

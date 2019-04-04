@@ -1,0 +1,139 @@
+<div class="fivegear-title">买卖五档</div>
+<div class="fl">
+    <ul class="fivegear-list">
+        <li class="clearfix">
+            <div class="fivegear-item">卖五</div>
+            {@if stockPrice.sellPrice5
+            < stockPrice.lastClosePrice} <div class="fivegear-item color-green">${stockPrice.sellPrice5|money}</div>
+{@else if stockPrice.sellPrice5 == stockPrice.lastClosePrice}
+<div class="fivegear-item">${stockPrice.sellPrice5|money}</div>
+{@else}
+<div class="fivegear-item color-red">${stockPrice.sellPrice5|money}</div>
+{@/if}
+<div class="fivegear-item grey-dark">${stockPrice.sellQty5|round,0}</div>
+</li>
+<li class="clearfix">
+    <div class="fivegear-item">卖四</div>
+    {@if stockPrice.sellPrice4
+    < stockPrice.lastClosePrice} <div class="fivegear-item color-green">${stockPrice.sellPrice4|money}</div>
+        {@else if stockPrice.sellPrice4 == stockPrice.lastClosePrice}
+        <div class="fivegear-item">${stockPrice.sellPrice4|money}</div>
+        {@else}
+        <div class="fivegear-item color-red">${stockPrice.sellPrice4|money}</div>
+        {@/if}
+        <div class="fivegear-item grey-dark">${stockPrice.sellQty4|round,0}</div>
+</li>
+<li class="clearfix">
+    <div class="fivegear-item">卖三</div>
+    {@if stockPrice.sellPrice3
+    < stockPrice.lastClosePrice} <div class="fivegear-item color-green">${stockPrice.sellPrice3|money}</div>
+        {@else if stockPrice.sellPrice3 == stockPrice.lastClosePrice}
+        <div class="fivegear-item">${stockPrice.sellPrice3|money}</div>
+        {@else}
+        <div class="fivegear-item color-red">${stockPrice.sellPrice3|money}</div>
+        {@/if}
+        <div class="fivegear-item grey-dark">${stockPrice.sellQty3|round,0}</div>
+</li>
+<li class="clearfix">
+    <div class="fivegear-item">卖二</div>
+    {@if stockPrice.sellPrice2
+    < stockPrice.lastClosePrice} <div class="fivegear-item color-green">${stockPrice.sellPrice2|money}</div>
+        {@else if stockPrice.sellPrice2 == stockPrice.lastClosePrice}
+        <div class="fivegear-item">${stockPrice.sellPrice2|money}</div>
+        {@else}
+        <div class="fivegear-item color-red">${stockPrice.sellPrice2|money}</div>
+        {@/if}
+        <div class="fivegear-item grey-dark">${stockPrice.sellQty2|round,0}</div>
+</li>
+<li class="clearfix">
+    <div class="fivegear-item">卖一</div>
+    {@if stockPrice.sellPrice1
+    < stockPrice.lastClosePrice} <div class="fivegear-item color-green">${stockPrice.sellPrice1|money}</div>
+        {@else if stockPrice.sellPrice1 == stockPrice.lastClosePrice}
+        <div class="fivegear-item">${stockPrice.sellPrice1|money}</div>
+        {@else}
+        <div class="fivegear-item color-red">${stockPrice.sellPrice1|money}</div>
+        {@/if}
+        <div class="fivegear-item grey-dark">${stockPrice.sellQty1|round,0}</div>
+</li>
+</ul>
+<div class="fivegear-prize clearfix">
+    <div class="prize-title">现价</div>
+    <div class="prize-value">${stockPrice.lastPrice|money}</div>
+</div>
+<div class="fivegear-prize clearfix">
+    <div class="prize-title">涨幅</div>
+    {@if stockPrice.gains>=0}
+    <div class="prize-value">${stockPrice.gains|round}%</div>
+    {@else}
+    <div class="prize-value">${stockPrice.gains|round}%</div>{@/if}
+</div>
+</div>
+
+<div class="fr">
+    <ul class="fivegear-list">
+        <li class="clearfix">
+            <div class="fivegear-item">买一</div>
+            {@if stockPrice.buyPrice1
+            < stockPrice.lastClosePrice} <div class="fivegear-item color-green">${stockPrice.buyPrice1|money}</div>
+{@else if stockPrice.buyPrice1 == stockPrice.lastClosePrice}
+<div class="fivegear-item">${stockPrice.buyPrice1|money}</div>
+{@else}
+<div class="fivegear-item color-red">${stockPrice.buyPrice1|money}</div>
+{@/if}
+<div class="fivegear-item grey-dark">${stockPrice.buyQty1|round,0}</div>
+</li>
+<li class="clearfix">
+    <div class="fivegear-item">买二</div>
+    {@if stockPrice.buyPrice2
+    < stockPrice.lastClosePrice} <div class="fivegear-item color-green">${stockPrice.buyPrice2|money}</div>
+        {@else if stockPrice.buyPrice2 == stockPrice.lastClosePrice}
+        <div class="fivegear-item">${stockPrice.buyPrice2|money}</div>
+        {@else}
+        <div class="fivegear-item color-red">${stockPrice.buyPrice2|money}</div>
+        {@/if}
+        <div class="fivegear-item grey-dark">${stockPrice.buyQty2|round,0}</div>
+</li>
+<li class="clearfix">
+    <div class="fivegear-item">买三</div>
+    {@if stockPrice.buyPrice3
+    < stockPrice.lastClosePrice} <div class="fivegear-item color-green">${stockPrice.buyPrice3|money}</div>
+        {@else if stockPrice.buyPrice3 == stockPrice.lastClosePrice}
+        <div class="fivegear-item">${stockPrice.buyPrice3|money}</div>
+        {@else}
+        <div class="fivegear-item color-red">${stockPrice.buyPrice3|money}</div>
+        {@/if}
+        <div class="fivegear-item grey-dark">${stockPrice.buyQty3|round,0}</div>
+</li>
+<li class="clearfix">
+    <div class="fivegear-item">买四</div>
+    {@if stockPrice.buyPrice4
+    < stockPrice.lastClosePrice} <div class="fivegear-item color-green">${stockPrice.buyPrice4|money}</div>
+        {@else if stockPrice.buyPrice4 == stockPrice.lastClosePrice}
+        <div class="fivegear-item">${stockPrice.buyPrice4|money}</div>
+        {@else}
+        <div class="fivegear-item color-red">${stockPrice.buyPrice4|money}</div>
+        {@/if}
+        <div class="fivegear-item grey-dark">${stockPrice.buyQty4|round,0}</div>
+</li>
+<li class="clearfix">
+    <div class="fivegear-item">买五</div>
+    {@if stockPrice.buyPrice5
+    < stockPrice.lastClosePrice} <div class="fivegear-item color-green">${stockPrice.buyPrice5|money}</div>
+        {@else if stockPrice.buyPrice5 == stockPrice.lastClosePrice}
+        <div class="fivegear-item">${stockPrice.buyPrice5|money}</div>
+        {@else}
+        <div class="fivegear-item color-red">${stockPrice.buyPrice5|money}</div>
+        {@/if}
+        <div class="fivegear-item grey-dark">${stockPrice.buyQty5|round,0}</div>
+</li>
+</ul>
+<div class="fivegear-prize clearfix">
+    <div class="prize-title">涨停</div>
+    <div class="prize-value">${stockPrice.upperLimitPrice|money}</div>
+</div>
+<div class="fivegear-prize clearfix">
+    <div class="prize-title">跌停</div>
+    <div class="prize-value">${stockPrice.lowerLimitPrice|money}</div>
+</div>
+</div>

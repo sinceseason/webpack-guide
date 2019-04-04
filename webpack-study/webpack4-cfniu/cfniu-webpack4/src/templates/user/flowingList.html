@@ -1,0 +1,41 @@
+<div class="wrap-table">
+    <table class="common-table" width="100%" cellpadding="0" cellspacing="0">
+        <thead>
+            <tr>
+                <th width="20%">流水类型</th>
+                <th width="20%">流水单号</th>
+                <th width="20%">发生金额</th>
+                <th width="20%">账户余额</th>
+                <th width="20%">流水时间</th>
+            </tr>
+        </thead>
+        <tbody>
+            {@if (!list || list.length == 0)}
+            <tr>
+                <td colspan="5">
+                    <div class="nodata">没有数据</div>
+                </td>
+            </tr>
+            {@else}
+            {@each list as item, index}
+            <tr>
+                <td>${item.ioType.refDictName}</td>
+                <td>${item.CashFlowSourceID}</td>
+                {@if(item.amount > 0)}
+                <td>
+                    <span class="fb color-red">${item.amount | money}</span>
+                </td>
+                {@else}
+                <td>
+                    <span class="fb color-green">${item.amount | money}</span>
+                </td>
+                {@/if}
+                <td class="fb">${item.balance}</td>
+                <td>${item.recordTime}</td>
+            </tr>
+            {@/each}
+        </tbody>
+    </table>
+</div>
+<div class="turn-page JS-page-flowing-list"></div>
+{@/if}

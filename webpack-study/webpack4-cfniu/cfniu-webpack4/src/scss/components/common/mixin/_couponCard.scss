@@ -1,0 +1,45 @@
+@mixin coupon-card($margin-vertical, $margin-horizontal, $type-name, $position-left, $main-word-color, $other-word-color) {
+    float: left;
+    margin: $margin-vertical $margin-horizontal;
+    width: 252px;
+    height: 124px;
+    background: url("../../../../images/user/coupon-bg.png") no-repeat;
+    box-sizing: border-box;
+    position: relative;
+    &.type-#{$type-name} {
+        background-position: $position-left 0;
+        .card-type {
+            position: absolute;
+            left: 25px;
+            top: 25px;
+            color: $main-word-color;
+        }
+        .card-desc {
+            position: absolute;
+            top: 50px;
+            left: 24px;
+            color: $main-word-color;
+        }
+        .card-money {
+            position: absolute;
+            right: 25px;
+            top: 20px;
+            color: $main-word-color;
+        }
+        .card-term {
+            position: absolute;
+            left: 22px;
+            bottom: 25px;
+            color: $other-word-color;
+        }
+        .card-integral {
+            position: absolute;
+            right: 22px;
+            bottom: 25px;
+            color: $other-word-color;
+            .item-value {
+                color: $main-word-color;
+            }
+        }
+    }
+}

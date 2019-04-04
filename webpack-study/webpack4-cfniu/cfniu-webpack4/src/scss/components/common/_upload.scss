@@ -1,0 +1,55 @@
+//头像上传
+.upload {
+    position: absolute;
+    display: block;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    font-size: 0;
+    background-color: transparent;
+    cursor: pointer;
+    input[type="file"] {
+        line-height: normal;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        display: inline-block;
+        opacity: 0;
+        cursor: pointer;
+    }
+}
+
+//文件上传
+.fileupload-form {
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    .fileupload {
+        background-color: transparent;
+        position: absolute;
+        top: 10px;
+        opacity: 0;
+        width: 110px;
+        height: 30px;
+        font-size: 0;
+        cursor: pointer;
+    }
+}
+
+//居间商上传营业执照
+.license-upload-form {
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    .license-upload {
+        background-color: transparent;
+        position: absolute;
+        top: -42px;
+        right: 0;
+        opacity: 0;
+        width: 110px;
+        height: 42px;
+        font-size: 0;
+        cursor: pointer;
+    }
+}

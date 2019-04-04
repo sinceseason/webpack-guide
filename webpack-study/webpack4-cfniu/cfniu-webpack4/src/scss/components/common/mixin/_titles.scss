@@ -1,0 +1,21 @@
+@mixin common-title($title-name, $border-size, $padding-top, $padding-bottom, $info-padleft, $info-height) {
+    .#{$title-name}-title {
+        border-bottom: $border-size solid $border-default-color;
+        padding-top: $padding-top;
+        padding-bottom: $padding-bottom;
+        line-height: 1;
+        .title-name {
+            float: left;
+        }
+        .title-info {
+            float: left;
+            padding-left: $info-padleft;
+            line-height: $info-height;
+        }
+        .title-date {
+            float: right;
+            color: $gray-light;
+            line-height: $info-height;
+        }
+    }
+}

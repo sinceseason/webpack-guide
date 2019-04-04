@@ -1,0 +1,10 @@
+.gradient-red {
+    background: $gradient-left;
+    background: -moz-linear-gradient(left, $gradient-left 0%, $gradient-right 100%);
+    background: -webkit-gradient(linear, top left, bottom left, color-stop(0%, $gradient-left), color-stop(100%, $gradient-right));
+    background: -webkit-linear-gradient(left, $gradient-left 0%, $gradient-right 100%);
+    background: -o-linear-gradient(left, $gradient-left 0%, $gradient-right 100%);
+    background: -ms-linear-gradient(left, $gradient-left 0%, $gradient-right 100%);
+    background: linear-gradient(to right, $gradient-left 0%, $gradient-right 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$gradient-left', endColorstr='$gradient-right', GradientType=1);
+}

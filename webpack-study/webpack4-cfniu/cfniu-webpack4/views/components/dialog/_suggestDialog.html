@@ -1,0 +1,33 @@
+<div class="modal-wrap modal-size-normal none" id="JS-suggest-Dialog">
+    <div class="modal-title clearfix">
+        <span class="head-title-left">意见反馈</span>
+        <span class="head-close title-close"></span>
+    </div>
+    <div class="modal-content">
+        <ul class="modal-list">
+            <li>
+                <select name="msgType" class="input-normal JS-select-suggest">
+                    <option value="">请选择留言类型</option>
+                    <option value="账号充值及提款问题">账号充值及提款问题</option>
+                    <option value="交易问题">交易问题</option>
+                    <option value="我要投诉">我要投诉</option>
+                    <option value="意见反馈">意见反馈</option>
+                    <option value="其他问题">其他问题</option>
+                </select>
+            </li>
+            <li class="input-normal">
+                <input type="text" name="phone" placeholder="请输入联系方式（手机、邮箱）" />
+            </li>
+            <li>
+                <textarea name="content" class="multiline-text" placeholder="请输入留言内容，我们会尽快给您反馈"></textarea>
+            </li>
+        </ul>
+        <div class="errortip-default JS-errorWrap none">
+            <i class="icon-tishi"></i>
+            <span class="JS-errorMsg">这里是提示内容</span>
+        </div>
+    </div>
+    <div class="modal-operate">
+        <a class="btn-full btn-red JS-submit">确 认</a>
+    </div>
+</div>

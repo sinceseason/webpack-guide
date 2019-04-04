@@ -1,0 +1,61 @@
+{% extends 'layout/user/register.html' %} {% block content %}
+<div class="ui-view-container">
+    <!-- header -->
+    {% include '../components/common/_header.html' %}
+    <!-- main -->
+    <div class="login-content">
+        <div class="wrap clearfix">
+            <div class="login-left">
+                <img src="../../images/user/login-img.jpg" />
+            </div>
+            <div class="login-right">
+                <div class="login-title">立即注册</div>
+                <div class="login-cont JS-register-form">
+                    <ul>
+                        <li class="input-login">
+                            <i class="icon-yonghu1"></i>
+                            <input type="text" name='key' placeholder="请输入11位手机号码" />
+                        </li>
+                        <li class="input-login">
+                            <img src='/verifyCode.api' onclick="this.src='/verifyCode.api?' + new Date().getTime()"
+                                class="right-yzm" />
+                            <i class="icon-yanzhengmazhuanhuan"></i>
+                            <input type="text" name='ivc' placeholder="图形验证码" />
+                        </li>
+                        <li class="input-login focus-err">
+                            <button class="right-btn JS-verify-code">发送验证码</button>
+                            <i class="icon-duanxin"></i>
+                            <input type="text" name="verifyCode" placeholder="短信验证码" />
+                        </li>
+                        <li class="input-login focus">
+                            <i class="icon-mima11"></i>
+                            <input type="password" name='pwd' placeholder="请设置密码（6-16位数字和字母）" />
+                        </li>
+                    </ul>
+                    <div class="errortip-default JS-errorWrap none">
+                        <i class="icon-tishi"></i>
+                        <span class="JS-errorMsg">密码错误</span>
+                    </div>
+                </div>
+                <div class="reg-submit">
+                    <button class="btn-full btn-red JS-register">注 册</button>
+                </div>
+                <div class="reg-protocol">注册即代表
+                    <br />我同意
+                    <a href="/protocol/register" class="link-blue" target="_blank">《注册协议》</a>、
+                    <a href="/protocol/invest" class="link-blue" target="_blank">《合格投资人申明》</a>
+                    <!-- <a href="/protocol/risk" class="link-blue" target="_blank">《风险揭示书》</a> -->
+                </div>
+                <div class="reg-other">
+                    <a href="/wx" class="left-wx">微信</a>
+                    <a href="/user/login" class="right-reg">
+                        <i class="icon-qianwang"></i>
+                        <span>&nbsp;立即登录</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    {% include '../components/common/_footer.html' %}
+</div>{% endblock %}

@@ -1,0 +1,50 @@
+<table class="common-table" width="100%" cellpadding="0" cellspacing="0">
+    <thead>
+        <tr>
+            <th width="3%" class="head-col"></th>
+            <th width="19%">推广用户</th>
+            <th width="20%">用户状态</th>
+            <th width="20%">注册时间</th>
+            <th width="19%">操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        {@if (!list || list.length == 0)}
+        <tr>
+            <td colspan="5">
+                <div class="nodata">没有数据</div>
+            </td>
+        </tr>
+        {@else} {@each list as item, index}
+        <tr>
+            {@if item.wxHeadImg == null}
+            <td>
+                <img class="head30" src="/images/user/login_after.fw.png" />
+            </td>
+            {@else}
+            <td>
+                <img class="head30" src="http://192.168.1.65:91/${item.wxHeadImg}" />
+            </td>
+            {@/if}
+            <td>
+                <span class="fb">${item.userName}</span>
+            </td>
+            {@if item.tradeStatus == '当前未操盘'}
+            <td style="color: #FF8000">${item.tradeStatus}</td>
+            {@else}
+            <td>${item.tradeStatus}</td>
+            {@/if}
+            <td>${item.regDate}</td>
+            {@if item.tradeStatus == '当前未操盘'}
+            <td class="link-blue JS-remind">
+                <a class="link-blue">去提醒</a>
+            </td>
+            {@else}
+            <td></td>
+            {@/if}
+        </tr>
+        {@/each}
+    </tbody>
+</table>
+<div class="turn-page JS-page-track-user-list"></div>
+{@/if}

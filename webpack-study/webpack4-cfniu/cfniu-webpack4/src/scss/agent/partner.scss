@@ -1,0 +1,55 @@
+@import "../components/_common.scss";
+.user-share {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.partner-title {
+    border-bottom: 1px solid $border-default-color;
+    .left-title {
+        font-size: 16px;
+        color: $gray-dark;
+        font-weight: $font-weight-default;
+        float: left;
+        padding: 15px 35px;
+        border-bottom: 2px solid $red;
+    }
+    .right-titlebox {
+        float: right;
+        line-height: 44px;
+        .mid-info {
+            float: left;
+            color: $gray-light;
+            font-size: 14px;
+            padding-right: 20px;
+        }
+    }
+}
+
+.share-title {
+    float: left;
+    color: $gray-light;
+    line-height: 44px;
+    font-size: 14px;
+}
+
+.share-input {
+    @include input-box(332px, 42px, 42px, $border-default-color, 14px, left);
+    float: left;
+    background: $bg-default-color;
+    padding: 0 10px;
+    color: $gray-dark;
+}
+
+.partner-select {
+    padding-top: 20px;
+    line-height: 42px;
+    .item-box {
+        float: left;
+        width: 200px;
+    }
+}
+
+.input-normal.modify-name {
+    width: 250px;
+}

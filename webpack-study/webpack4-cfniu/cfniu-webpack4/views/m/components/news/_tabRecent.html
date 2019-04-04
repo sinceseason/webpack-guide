@@ -1,0 +1,8 @@
+<div class="news-title-name">最新资讯</div>
+<div class="news-foot-tab clearfix">
+    {% for news in recentNews.jcContentDtos %}
+    <a href="{{MOBILE_PROXY_URL}}/news/d{{news.contentId}}.html" class="tab-item">
+        <span>{{news.title}}</span>
+    </a>
+    {% endfor %}
+</div>

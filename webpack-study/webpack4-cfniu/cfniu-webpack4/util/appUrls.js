@@ -1,0 +1,67 @@
+module.exports = [{
+    page: 'extend',
+    uri: '/#/user/extend?hide=1',
+    desc: '赚外快',
+    source: 'h5',
+    SLD: 'm'
+}, {
+    page: 'extendRule',
+    uri: '/#/user/extend/rule?hide=1',
+    desc: '赚外快-规则',
+    source: 'h5',
+    SLD: 'm'
+}, {
+    page: 'about',
+    uri: '/app/about',
+    desc: '关于',
+    source: 'pc',
+    SLD: 'app'
+}, {
+    page: 'company',
+    uri: '/app/about/company',
+    desc: '关于-公司简介',
+    source: 'pc',
+    SLD: 'app'
+}, {
+    page: 'safe',
+    uri: '/app/about/safe',
+    desc: '关于-安全保障',
+    source: 'pc',
+    SLD: 'app'
+}, {
+    page: 'protocolTrade',
+    uri: '/app/protocol/trade',
+    desc: '协议-操盘',
+    source: 'pc',
+    SLD: 'app'
+}, {
+    page: 'protocolRist',
+    uri: '/app/protocol/risk',
+    desc: '协议-风险',
+    source: 'pc',
+    SLD: 'app'
+}, {
+    page: 'protocolRegister',
+    uri: '/app/protocol/register',
+    desc: '协议-注册',
+    source: 'pc',
+    SLD: 'app'
+}, {
+    page: 'protocolInvest',
+    uri: '/app/protocol/invest',
+    desc: '协议-投资',
+    source: 'pc',
+    SLD: 'app'
+}, {
+    page: 'question',
+    uri: '/app/help/question',
+    desc: '相关问题',
+    source: 'pc',
+    SLD: 'app'
+}, {
+    page: 'media',
+    uri: '/#/user/about/media?hide=1',
+    desc: '媒体报道',
+    source: 'h5',
+    SLD: 'm'
+}]

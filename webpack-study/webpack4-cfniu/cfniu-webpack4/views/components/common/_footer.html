@@ -1,0 +1,69 @@
+<div class="wrap-footer">
+    <div class="wrap clearfix">
+        <div class="footer-left">
+            <ul class="footer-nav clearfix">
+                <li>
+                    <a class="link-white" href="/other/aboutus">关于我们</a>
+                </li>
+                <li>
+                    <a class="link-white" href="/other/contactus">联系我们</a>
+                </li>
+                <li>
+                    <a class="link-white" href="/other/joinus">加入我们</a>
+                </li>
+                <li>
+                    <a class="link-white" href="/other/safe">安全保障</a>
+                </li>
+                <li>
+                    <a class="link-white" href="/other/media">媒体报道</a>
+                </li>
+                {% if not isSecondDomain %}
+                <li>
+                    <a class="link-white" href="/news">资讯中心</a>
+                </li>
+                {% endif %}
+                <li>
+                    <a class="link-white" href="/agent">居间加盟</a>
+                </li>
+                {% if not isSecondDomain %}
+                <li>
+                    <a class="link-white" href="/news/special175">资讯专题</a>
+                </li>
+                {% endif %}
+            </ul>
+            <div class="risk-cont">
+                <div class="fb">风险提示</div>
+                <p>保护投资者利益是中国证监会工作的重中之重。</p>
+                <p>我们提醒您： 股市有风险，投资需谨慎！市场风险莫测，务请谨慎行事！</p>
+                <p>{{NIU_CN}}您值得加入的安全放心的网上股票配资平台</p>
+            </div>
+            {% if not isSecondDomain %}
+                {% if isFooter or isNews %}
+                <div class="friend-link">
+                    <span>热门专题：</span>
+                    {% for item in specialList %}
+                    <a href="/news/special{{item.channelId}}" target="_blank">{{item.channelName}}</a>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% if isFooter %}
+                <div class="friend-link">
+                    <span>友情链接：</span>
+                    {% for fl in friendLinks %}
+                    <a href="{{fl.domain}}" target="_blank">{{fl.siteName}}</a>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            {% endif %}
+        </div>
+        <div class="footer-right">
+            <div class="service-title">客服热线</div>
+            <div class="service-phone">{{TEL_NUM}}</div>
+            <div class="service-time">工作日：8:30-17:30</div>
+            <div class="copy-right">版权所有 © {{NIU_CN}}
+                <a href="http://www.beianbeian.com/" target="_blank">闽ICP备16013365号-1</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% include './_service.html' %}

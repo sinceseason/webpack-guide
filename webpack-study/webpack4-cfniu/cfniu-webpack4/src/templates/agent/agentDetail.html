@@ -1,0 +1,41 @@
+<div class="detail-cont">
+    <span class="title-cont">下线用户：
+        <span class='detail-name'>${userName}</span>
+    </span>
+    <span class="title-cont">操盘笔数：
+        <span class='detail-number'>${rpt.quantity}</span>笔</span>
+    <span class="title-cont">借款总金额：
+        <span class='detail-money'>${rpt.amount|money}</span>元</span>
+    <span class="title-cont">总奖励：
+        <span class='detail-count'>${rpt.profit|money}</span>元</span>
+</div>
+<div class="partner-cont table-min-hegiht">
+    <table width="100%" cellpadding="0" cellspacing="0" class="agent-table">
+        <thead>
+            <tr>
+                <th width="20%">借款金额（元）</th>
+                <th width="20%">操盘类型</th>
+                <th width="20%">操盘开始时间</th>
+                <th width="20%">操盘结束时间</th>
+                <th width="20%">借奖励（元）</th>
+            </tr>
+        </thead>
+        <tbody>
+            {@each list as item}
+            <tr>
+                <td>${item.tradeAmount}</td>
+                <td>${item.trade.product.productName}</td>
+                <td>${item.tradeSDate}</td>
+                <td>${item.tradeEDate}</td>
+                <td>${item.amount}</td>
+            </tr>
+            {@/each}
+        </tbody>
+    </table>
+    {@if(!list||list.length==0)}
+    <div class="nodata">
+        <div class="word">没有相关数据！</div>
+    </div>
+    {@else} {@/if}
+    <div class='turn-page JS-page'></div>
+</div>

@@ -1,0 +1,29 @@
+@mixin input-box($width, $height, $line-height, $input-border, $word-size, $word-align) {
+    width: $width;
+    height: $height;
+    line-height: $line-height;
+    border: 1px solid $input-border;
+    font-size: $word-size;
+    text-align: $word-align;
+    box-sizing: border-box;
+}
+
+//-left icon
+@mixin input-icon() {
+    width: 40px;
+    height: 40px;
+    background: $bg-default-color;
+    border-right: 1px solid $border-default-color;
+    display: inline-block;
+    color: $gray-more-light;
+    text-align: center;
+    font-size: 18px;
+}
+
+@mixin input-hidden() {
+    width: 285px;
+    height: 25px;
+    padding-left: 15px;
+    border: 0;
+    font-size: 14px;
+}

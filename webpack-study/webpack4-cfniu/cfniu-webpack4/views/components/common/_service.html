@@ -1,0 +1,29 @@
+<ul class="wrap-service JS-float-menu">
+    <li class="JS-suggest">
+        <a class="liuyan">
+            <i class="icon-jianyi"></i>
+            <span>意见反馈</span>
+        </a>
+    </li>
+    <li class="JS-kf">
+        <a>
+            <i class="icon-kefu"></i>
+            <span>在线客服</span>
+        </a>
+    </li>
+    {% if userLevel != 2 %}
+    <li class="JS-menu-icon">
+        <a>
+            <i class="icon-join"></i>
+            <span>居间加盟</span>
+            <img class="agent-code JS-menu-animate-wrap" src="../../images/service/agent-code.jpg" />
+        </a>
+    </li>
+    {% endif %}
+    <li>
+        <a class="backtop JS-back-to-top">
+            <i class="icon-less"></i>
+        </a>
+    </li>
+</ul>
+{% include '../dialog/_suggestDialog.html' %}

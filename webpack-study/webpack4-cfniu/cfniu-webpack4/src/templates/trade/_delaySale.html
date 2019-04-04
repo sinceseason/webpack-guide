@@ -1,0 +1,35 @@
+<div class="tips-have-botline">延期后，利益分配维持不变；合约最长可延期 ${optionCycle.length} 个交易日</div>
+<ul class="modal-col2-list">
+    <li class="clearfix">
+        <div class="col2-list-title">延期期限：</div>
+        <div class="col2-list-content">
+            <select>
+                {@each optionCycle as item,index} {@if(index==chooseCycle)}
+                <option value=${item} selected>${item} 个交易日</option>
+                {@else}
+                <option value=${item}>${item} 个交易日</option>
+                {@/if} {@/each}
+            </select>
+        </div>
+    </li>
+    <li class="clearfix">
+        <div class="col2-list-title">延期费用：</div>
+        <div class="col2-list-content">
+            <span class="fb gray-dark">${cost} </span>
+            <span class="fb gray-dark">元</span>
+        </div>
+    </li>
+    <li class="clearfix have-topline">
+        <div class="col2-list-title">共计应支付：</div>
+        <div class="col2-list-content">
+            <div class="item-inner">
+                <span class="fb color-red">${cost} </span>
+                <span class="fb gray-dark">元</span>
+            </div>
+            <div class="item-inner">
+                预期还将获得
+                <span class="color-red">${cost|round,0}</span> 积分
+            </div>
+        </div>
+    </li>
+</ul>

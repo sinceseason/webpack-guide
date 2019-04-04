@@ -1,0 +1,29 @@
+{% extends '../layout/news/special.html' %} {% block content %}
+<div class="m-ui-container container-bottom">
+    <!-- main -->
+    {% include '../components/common/_header.html' %}
+    <!-- menu -->
+    {% include '../components/news/_menu.html' %}
+    <!-- 正文 -->
+    <div class="news-content-wrap">
+        <!-- 标题 -->
+        <div class="title">{{content.title}}</div>
+        <div class="clearfix">
+            <div class="author">作者：{{content.author}}</div>
+            <div class="date">{{content.releaseDate|timeUnixFormat}}</div>
+        </div>
+        <!-- 内容 -->
+        <div class="content">
+            <p>{{content.txt|safe}}</p>
+        </div>
+    </div>
+    <!-- 最热专题 -->
+    {% include '../components/news/_tabSpecial.html' %}
+    <!-- 列表 -->
+    {% include '../components/news/_specialTagList.html' %}
+    <script>
+        var tagId = '{{content.contentTags[0].tagId}}'
+    </script>
+</div>
+<!-- 底部 -->
+{% include '../components/common/_footer.html' %} {% endblock %}

@@ -1,0 +1,264 @@
+{% extends 'layout/tradeclient/index.html' %} {% block content %}
+<div class="ui-view-container">
+    <!-- header -->
+    {% include '../components/common/_header.html' %}
+    <!-- main -->
+    <div class="main-content">
+        <div class="wrap">
+            <!-- 一级tab -->
+            {% include '../components/trade/_tabLevel1.html' %}
+            <!-- 二级tab -->
+            {% include '../components/tradeclient/_tabTradeClient.html' %}
+            <!-- 持仓 -->
+            <div class="client-position JS-tradeclient-content none" data-content="0">
+                <div class="type3-title clearfix">
+                    <div class="title-name fb">合约持仓</div>
+                </div>
+                <div class="wrap-table JuicerAnchor-position"></div>
+                <div class="turn-page JS-page-position"></div>
+            </div>
+            <!--买卖交易-->
+            <div class="client-buy JS-tradeclient-content JS-orderForm none" data-content="1">
+                <div class="client-main clearfix">
+                    <ul class="client-left-list">
+                        <li class="clearfix have-dotline">
+                            <div class="client-list-title">可用现金</div>
+                            <div class="client-list-content">
+                                <span class="color-red fb size16 JS-account-available">0.00</span>&nbsp;元
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="client-list-title have-inputbox">股票代码</div>
+                            <div class="client-list-content">
+                                <input class="input-stock-code JS-stockCode" placeholder="股票代码" type="text" name="stockCode" maxlength="6" />
+                                <span class="JS-stock-name stock-name"></span>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="client-list-title">委托类型</div>
+                            <div class="client-list-content">
+                                <span class="size16 gray-dark">限价委托</span>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="client-list-title have-inputbox">委托价格</div>
+                            <div class="client-list-content client-input">
+                                <span class="JS-operator-price JS-minus operate-left operate-normal">-</span>
+                                <input class="input-normal operate-input JS-price" name="price" type="text" />
+                                <span class="JS-operator-price JS-plus operate-right operate-normal">+</span>
+                                <div class="fl trade-intro">
+                                    <span>涨停：</span>
+                                    <span class="fb color-red JS-upperLimitPrice">0.00</span>
+                                </div>
+                                <div class="fr trade-intro">
+                                    <span>跌停：</span>
+                                    <span class="fb color-green JS-lowerLimitPrice">0.00</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <div class="client-list-title have-inputbox">委托股数</div>
+                            <div class="client-list-content client-input">
+                                <span class="JS-operator-qty JS-minus operate-left operate-normal">-</span>
+                                <input class="input-normal operate-input JS-qty" name="qty" type="text" value="0" />
+                                <span class="JS-operator-qty JS-plus operate-right operate-normal">+</span>
+                                <div class="trade-intro">最高可买
+                                    <span class="fb color-red JS-maxNum">0</span> 股</div>
+                                <label class="ship-space JS-storage">
+                                    <input type="radio" name="client" value="1" />全仓
+                                </label>
+                                <label class="ship-space">
+                                    <input type="radio" name="client" value="2" />1/2
+                                </label>
+                                <label class="ship-space">
+                                    <input type="radio" name="client" value="3" />1/3
+                                </label>
+                            </div>
+                        </li>
+                        <li class="clearfix JS-dj">
+                            <div class="client-list-title">冻结现金</div>
+                            <div class="client-list-content">
+                                <span class="size16 gray-dark fb JS-frozenPrice">0.00</span> 元
+                            </div>
+                        </li>
+                        <li class="line-operate">
+                            <button class="btn-fixed-260 btn-red JS-order-submit">提交指令</button>
+                            <div class="trade-time">交易时间段为
+                                <span class="fb"> 9:30 - 15:00</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="client-right-fivegear clearfix JuicerAnchor-StockPrice">
+                        <div class="fivegear-title">买卖五档</div>
+                        <div class="fl">
+                            <ul class="fivegear-list">
+                                <li class="clearfix">
+                                    <div class="fivegear-item">卖五</div>
+                                    <div class="fivegear-item color-green">0</div>
+                                    <div class="fivegear-item gray-dark">0</div>
+                                </li>
+                                <li class="clearfix">
+                                    <div class="fivegear-item">卖四</div>
+                                    <div class="fivegear-item color-green">0</div>
+                                    <div class="fivegear-item gray-dark">0</div>
+                                </li>
+                                <li class="clearfix">
+                                    <div class="fivegear-item">卖三</div>
+                                    <div class="fivegear-item color-green">0</div>
+                                    <div class="fivegear-item gray-dark">0</div>
+                                </li>
+                                <li class="clearfix">
+                                    <div class="fivegear-item">卖二</div>
+                                    <div class="fivegear-item color-green">0</div>
+                                    <div class="fivegear-item gray-dark">0</div>
+                                </li>
+                                <li class="clearfix">
+                                    <div class="fivegear-item">卖一</div>
+                                    <div class="fivegear-item color-green">0</div>
+                                    <div class="fivegear-item gray-dark">0</div>
+                                </li>
+                            </ul>
+                            <div class="fivegear-prize clearfix">
+                                <div class="prize-title">现价</div>
+                                <div class="prize-value">0.00</div>
+                            </div>
+                            <div class="fivegear-prize clearfix">
+                                <div class="prize-title">涨幅</div>
+                                <div class="prize-value">0.00%</div>
+                            </div>
+                        </div>
+                        <div class="fr">
+                            <ul class="fivegear-list">
+                                <li class="clearfix">
+                                    <div class="fivegear-item">买一</div>
+                                    <div class="fivegear-item color-red">0</div>
+                                    <div class="fivegear-item gray-dark">0</div>
+                                </li>
+                                <li class="clearfix">
+                                    <div class="fivegear-item">买二</div>
+                                    <div class="fivegear-item color-red">0</div>
+                                    <div class="fivegear-item gray-dark">0</div>
+                                </li>
+                                <li class="clearfix">
+                                    <div class="fivegear-item">买三</div>
+                                    <div class="fivegear-item color-red">0</div>
+                                    <div class="fivegear-item gray-dark">0</div>
+                                </li>
+                                <li class="clearfix">
+                                    <div class="fivegear-item">买四</div>
+                                    <div class="fivegear-item color-red">0</div>
+                                    <div class="fivegear-item gray-dark">0</div>
+                                </li>
+                                <li class="clearfix">
+                                    <div class="fivegear-item">卖五</div>
+                                    <div class="fivegear-item color-red">0</div>
+                                    <div class="fivegear-item gray-dark">0</div>
+                                </li>
+                            </ul>
+                            <div class="fivegear-prize clearfix">
+                                <div class="prize-title">涨停</div>
+                                <div class="prize-value">0.00</div>
+                            </div>
+                            <div class="fivegear-prize clearfix">
+                                <div class="prize-title">跌停</div>
+                                <div class="prize-value">0.00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="type3-title clearfix">
+                    <div class="title-name fb">合约持仓</div>
+                </div>
+                <div class="wrap-table JuicerAnchor-order-position">
+                    <!-- <table class="common-table" width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <th width="19%">股票名称</th>
+                            <th width="13%">持有股数</th>
+                            <th width="13%">可卖股数</th>
+                            <th width="13%">成本价</th>
+                            <th width="13%">当前价</th>
+                            <th width="16%">当前市值（占比）</th>
+                            <th width="13%">浮动收益</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="fb">铜陵有色</span>
+                                <span class="gray-base">（000630）</span>
+                            </td>
+                            <td>100</td>
+                            <td>100</td>
+                            <td>2.8</td>
+                            <td>
+                                <span class="fb color-red">2.98</span>
+                            </td>
+                            <td>
+                                <span class="fb">1095.00</span>
+                                <span class="color-red">（0.45%）</span>
+                            </td>
+                            <td>
+                                <span class="fb color-red">5.00</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="fb">铜陵有色</span>
+                                <span class="gray-base">（000630）</span>
+                            </td>
+                            <td>100</td>
+                            <td>100</td>
+                            <td>2.8</td>
+                            <td>
+                                <span class="fb color-green">2.98</span>
+                            </td>
+                            <td>
+                                <span class="fb">1095.00</span>
+                                <span class="color-green">（0.45%）</span>
+                            </td>
+                            <td>
+                                <span class="fb color-green">-5.00</span>
+                            </td>
+                        </tr>
+                    </table> -->
+                </div>
+                <div class="turn-page JS-page-order-position"></div>
+            </div>
+            <!-- 撤单 -->
+            <div class="client-cancel JS-tradeclient-content none" data-content="3">
+                <div class="type3-title clearfix">
+                    <div class="title-name fb">合约撤单</div>
+                </div>
+                <div class="wrap-table JuicerAnchor-noneExecution"></div>
+                <div class="turn-page JS-page-cancel"></div>
+            </div>
+            <!-- 查询 -->
+            <div class="client-query JS-tradeclient-content none" data-content="4">
+                {% include '../components/tradeclient/_tabQuery.html' %}
+                <!-- 当日委托 -->
+                <div class="wrap-table JS-query-content none JuicerAnchor-entrust" data-content="0">
+                </div>
+                <!-- 历史委托 -->
+                <div class="wrap-table JS-query-content none JuicerAnchor-historyEntrust" data-content="1">
+                </div>
+                <!-- 当日成交 -->
+                <div class="wrap-table JS-query-content none JuicerAnchor-execution" data-content="2">
+                </div>
+                <!-- 历史成交 -->
+                <div class="wrap-table JS-query-content none JuicerAnchor-historyExecution" data-content="3">
+                </div>
+                <!-- 当日资金流水 -->
+                <div class="wrap-table JS-query-content none JuicerAnchor-capitalFlow" data-content="4">
+                </div>
+                <!-- 历史资金流水 -->
+                <div class="wrap-table JS-query-content none JuicerAnchor-historyCapitalFlow" data-content="5">
+                </div>
+                <div class="turn-page JS-page-query"></div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    {% include '../components/common/_footer.html' %}
+    <!-- 买卖 -->
+    {% include '../components/dialog/tradeclient/orderDialog.html' %}
+    <!-- 限买 -->
+    {% include '../components/dialog/trade/_todayLimit.html' %}
+</div>{% endblock %}

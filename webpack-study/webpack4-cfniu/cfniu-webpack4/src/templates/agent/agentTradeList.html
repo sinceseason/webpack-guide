@@ -1,0 +1,11 @@
+ {@each list as item,index}
+<tr>
+    <td>${++index}</td>
+    <td>
+        <a class='link-blue' href='/agent/detail?id=${item.accountId}' target="_blank">${item.member.userName}</a>
+    </td>
+    <td>${item.firstTradeDate}</td>
+    <td>${item.product.productName}</td>
+    <td>${item.wfPercent-item.capitalAmount}</td>
+</tr>
+{@/each}

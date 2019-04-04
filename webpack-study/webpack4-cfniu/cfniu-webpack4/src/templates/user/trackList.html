@@ -1,0 +1,42 @@
+<table class="common-table" width="100%" cellpadding="0" cellspacing="0">
+    <thead>
+        <tr>
+            <th width="3%" class="head-col"></th>
+            <th width="24%">推广用户</th>
+            <th width="24%">流水类型</th>
+            <th width="24%">发生金额</th>
+            <th width="25%">流水时间</th>
+        </tr>
+    </thead>
+    <tbody>
+        {@if (!list || list.length == 0)}
+        <tr>
+            <td colspan="5">
+                <div class="nodata">没有数据</div>
+            </td>
+        </tr>
+        {@else} {@each list as item, index}
+        <tr>
+            {@if item.wxHeadImg == null}
+            <td>
+                <img class="head30" src="/images/user/login_after.fw.png" />
+            </td>
+            {@else}
+            <td>
+                <img class="head30" src="http://192.168.1.65:91/${item.wxHeadImg}" />
+            </td>
+            {@/if}
+            <td>
+                <span class="fb">${item.wxNickName}</span>
+            </td>
+            <td>${item.incomeType}</td>
+            <td>
+                <span class="fb color-red">${item.amount}</span>
+            </td>
+            <td>${item.recordTime}</td>
+        </tr>
+        {@/each}
+    </tbody>
+</table>
+<div class="turn-page JS-page-track-list"></div>
+{@/if}

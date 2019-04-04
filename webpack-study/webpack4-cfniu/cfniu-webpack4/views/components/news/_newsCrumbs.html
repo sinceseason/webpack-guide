@@ -1,0 +1,6 @@
+<!-- 面包屑 -->
+<div class="bread-crumb">
+    {% for item in crumbs %} {% if not item.isLeaf %}
+    <a class="link-gray-dark" href="{{item.href}}">{{item.text}}</a> &nbsp;&gt;&nbsp; {% else %}
+    <span>{{item.text}}</span> {% endif %} {% endfor %}
+</div>

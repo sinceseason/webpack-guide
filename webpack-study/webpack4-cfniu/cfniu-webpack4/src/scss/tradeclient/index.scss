@@ -1,0 +1,152 @@
+@import "../components/_common.scss";
+.client-main {
+    padding: 15px 0 30px 0;
+    border-bottom: 1px solid $border-default-color;
+}
+
+.client-left-list {
+    float: left;
+    width: 620px;
+    li {
+        @include fixed-col3-list(10px, client-list, 70px, left, 540px, 10px);
+        line-height: 30px;
+        .have-inputbox {
+            line-height: 44px;
+        }
+        &.have-dotline {
+            border-bottom: 1px dashed $border-default-color;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        &.line-operate {
+            padding: 20px 0 0 80px;
+            width: 260px;
+            text-align: center;
+            color: $gray-light;
+            .trade-time {
+                padding-top: 10px;
+            }
+        }
+        .trade-intro {
+            font-size: 12px;
+            color: $gray-light;
+        }
+        .ship-space {
+            width: 33%;
+            float: left;
+            font-size: 16px;
+            color: $gray-dark;
+        }
+    }
+}
+
+.client-list-content {
+    position: relative;
+    .stock-name {
+        position: absolute;
+        top: 6px;
+        right: 15px;
+        color: $gray-dark;
+    }
+}
+
+.input-stock-code {
+    @include input-box(100%, 42px, 40px, $border-default-color, 16px, center);
+    color: $gray-dark;
+    font-weight: $font-weight-default;
+}
+
+.client-input {
+    position: relative;
+    .operate-input {
+        float: left;
+        width: 374px;
+        border-left: none;
+        border-right: none;
+        text-align: center;
+        font-size: 16px;
+        font-weight: $font-weight-default;
+        color: $gray-dark;
+    }
+    .operate {
+        display: block;
+        width: 81px;
+        height: 40px;
+        font-size: 48px;
+        text-align: center;
+    }
+    .operate-left {
+        @extend .operate;
+        float: left;
+        border-right: none;
+        border-top-left-radius: $border-radius-default;
+        border-bottom-left-radius: $border-radius-default;
+    }
+    .operate-right {
+        @extend .operate;
+        float: right;
+        border-left: none;
+        border-top-right-radius: $border-radius-default;
+        border-bottom-right-radius: $border-radius-default;
+    }
+    .operate-normal {
+        @include button-variant($blue, $white, $border-default-color, $blue);
+        cursor: pointer;
+    }
+    .operate-disabled {
+        @include button-variant($white, $bg-default-color, $bg-default-color, $white);
+        cursor: default;
+    }
+}
+
+.client-right-fivegear {
+    float: right;
+    width: 475px;
+    height: 385px;
+    background: $bg-default-color;
+    padding: 20px;
+    box-sizing: border-box;
+    .fivegear-title {
+        padding-bottom: 10px;
+    }
+}
+
+.fivegear-list {
+    background: $white;
+    box-sizing: border-box;
+    padding: 15px 15px 5px 15px;
+    width: 210px;
+    margin-bottom: 5px;
+    li {
+        margin-bottom: 10px;
+        .fivegear-item {
+            float: left;
+            width: 33.3%;
+            @include text-overflow();
+        }
+    }
+}
+
+.fivegear-prize {
+    padding-top: 10px;
+    .prize-title {
+        float: left;
+        width: 48px;
+    }
+    .prize-value {
+        float: left;
+        color: $gray-dark;
+        font-weight: $font-weight-default;
+    }
+}
+
+.client-query-tab {
+    padding-bottom: 20px;
+    li {
+        float: left;
+        margin-right: 20px;
+        .selected {
+            @include selected-tab($white, $red, 1px, $white);
+        }
+    }
+}

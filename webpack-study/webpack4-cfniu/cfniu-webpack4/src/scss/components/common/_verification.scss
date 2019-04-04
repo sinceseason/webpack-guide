@@ -1,0 +1,21 @@
+//-输入框图片验证码、短信验证码
+.right-btn,
+.right-yzm {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 110px;
+    height: 40px;
+    display: block;
+    text-align: center;
+}
+
+.right-btn {
+    border-left: 1px solid $border-default-color;
+    background: $white;
+    color: $gray-dark;
+    &:disabled {
+        color: $disabled-word-color;
+        cursor: default;
+    }
+}

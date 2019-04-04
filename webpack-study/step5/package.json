@@ -1,0 +1,23 @@
+{
+  "name": "custom",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "sideEffects": false,
+  "dependencies": {
+    "webpack": "^4.17.1",
+    "webpack-cli": "^3.1.0"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "html-webpack-plugin": "^3.2.0",
+    "webpack-dev-server": "^3.1.9",
+    "webpack-merge": "^4.1.4"
+  }
+}

@@ -1,0 +1,14 @@
+<div class="jcarousel-wrapper JS-banner-wrap">
+    <div class="jcarousel JS-banner-jcarousel">
+        <ul>
+            {% for item in banners %}
+            {% if item.userLevel == userLevel or (item.userLevel == 'ALL' and userLevel != 2) %}
+            <li class="bannerhref JS-banner-index" data-href="{{item.target}}" data-adname="{{item.attrAdName}}">
+                <img src="{{item.attrValue}}" alt="{{item.title}}" width="100%"/>
+            </li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="jcarousel-pagination JS-banner-pagination"></div>
+</div>

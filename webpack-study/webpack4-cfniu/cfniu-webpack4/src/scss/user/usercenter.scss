@@ -1,0 +1,73 @@
+.user-wrap {
+    margin: 0 auto;
+    width: 1180px;
+    background: $bg-light-color;
+}
+
+.user-nav {
+    float: left;
+    width: 180px;
+    box-sizing: border-box;
+    li {
+        a {
+            display: block;
+            width: 180px;
+            height: 54px;
+            line-height: 54px;
+            position: relative;
+            font-size: 14px;
+            border-bottom: 1px solid $white;
+            color: $gray-dark;
+            text-align: center;
+            box-sizing: border-box;
+            padding-top: 1px;
+        }
+        &.selected a,
+        &:hover a {
+            padding-top: 0;
+            color: $red;
+            background: $white;
+            border-left: 4px solid $red;
+            border-top: 1px solid $border-default-color;
+            border-bottom: 1px solid $border-default-color;
+            width: 181px;
+            padding-right: 5px;
+        }
+    }
+}
+
+.user-content {
+    float: right;
+    width: 1000px;
+    background: $white;
+    padding: 40px;
+    box-sizing: border-box;
+    border: 1px solid $border-default-color;
+    min-height: 500px;
+}
+
+.user-head {
+    padding-bottom: 20px;
+    .user-info {
+        float: left;
+        padding-left: 20px;
+        .user-phone {
+            color: $gray-dark;
+            font-weight: $font-weight-default;
+            font-size: 24px;
+            padding: 5px 0;
+        }
+        .user-level {
+            width: 92px;
+            height: 24px;
+        }
+    }
+    .user-recharge {
+        float: right;
+        padding-top: 15px;
+        a,
+        button {
+            margin-left: 20px;
+        }
+    }
+}

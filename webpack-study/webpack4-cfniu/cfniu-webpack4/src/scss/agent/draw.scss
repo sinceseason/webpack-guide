@@ -1,0 +1,110 @@
+@import "../components/_common.scss";
+.agent-draw {
+    margin-top: 20px;
+    background: #fff5d8;
+    padding: 30px 20px 25px 20px;
+    .draw-list {
+        display: inline-block;
+        width: 360px;
+        color: $gray-dark;
+    }
+}
+
+.agent-line {
+    height: 5px;
+    margin-bottom: 20px;
+    .line-blue,
+    .line-orange,
+    .line-red {
+        width: 392px;
+        height: 5px;
+        float: left;
+    }
+    .line-blue {
+        background: $agent-blue;
+        margin-right: 2px;
+    }
+    .line-orange {
+        background: #fcae52;
+        margin-right: 2px;
+    }
+    .line-red {
+        background: #ff5256;
+    }
+}
+
+.agent-drawing {
+    .addbank-list li {
+        .right-btn {
+            left: 156px;
+            top: 2px;
+        }
+    }
+    .reminder {
+        border-top: 1px dashed $gray-more-light;
+        font-size: 14px;
+        color: $gray-base;
+        padding: 15px 0;
+    }
+    .draw-arrive {
+        border-top: 1px solid $gray-more-light;
+        background: #F3F4F9;
+        .arrive-list {
+            float: left;
+            width: 352px;
+            padding: 20px;
+            font-size: 14px;
+            color: $gray-light;
+            text-align: center;
+            line-height: $line-height-default;
+            .info-title {
+                margin-bottom: 10px;
+                color: $gray-base;
+                font-weight: $font-weight-default;
+            }
+        }
+    }
+    .add-bankcard {
+        margin-top: 25px;
+        color: $gray-base;
+        font-size: 16px;
+    }
+    .agent-banklist {
+        border-top: 1px dashed $gray-more-light;
+        padding-top: 15px;
+    }
+    .bankcard-detail {
+        margin-top: 10px;
+        border: 1px solid $gray-more-light;
+        width: 440px;
+        padding: 15px;
+        box-sizing: border-box;
+        .bank-img {
+            float: left;
+            width: 33px;
+            height: 33px;
+        }
+        .bank-name {
+            float: left;
+            font-size: 16px;
+            color: $gray-dark;
+            margin-top: 6px;
+            margin-left: 10px;
+            width: 108px;
+        }
+        .bank-number {
+            float: left;
+            font-size: 16px;
+            color: $gray-dark;
+            font-weight: $font-weight-default;
+            margin-top: 6px;
+        }
+        .bank-close {
+            float: right;
+            width: 31px;
+            height: 32px;
+            background: url("../../images/agent/clearimg.png") no-repeat;
+            cursor: pointer;
+        }
+    }
+}

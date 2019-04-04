@@ -1,0 +1,142 @@
+.btn {
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
+}
+
+//width 100%
+.btn-full {
+    @extend .btn;
+    @include button-size(100%, 42px, 16px, 40px, $border-radius-default);
+}
+
+.btn-auto {
+    @extend .btn;
+    @include button-size(auto, 22px, 14px, 22px, 3px);
+    padding: 0 5px;
+}
+
+.btn-fixed-260 {
+    @extend .btn;
+    @include button-size(260px, 58px, 18px, 58px, $border-radius-default);
+}
+
+.btn-fixed-250 {
+    @extend .btn;
+    @include button-size(250px, 42px, 16px, 40px, $border-radius-default);
+}
+
+.btn-fixed-150 {
+    @extend .btn;
+    @include button-size(150px, 42px, 14px, 40px, $border-radius-default);
+    font-weight: $font-weight-default;
+}
+
+.btn-fixed-140 {
+    @extend .btn;
+    @include button-size(140px, 42px, 16px, 42px, $border-radius-default);
+}
+
+.btn-fixed-120 {
+    @extend .btn;
+    @include button-size(120px, 42px, 14px, 42px, $border-radius-default);
+    font-weight: $font-weight-default;
+}
+
+.btn-fixed-100 {
+    @extend .btn;
+    @include button-size(100px, 32px, 14px, 32px, $border-radius-default);
+}
+
+.btn-fixed-55 {
+    @extend .btn;
+    @include button-size(55px, 22px, 14px, 22px, $border-radius-default);
+}
+
+//-操盘btn
+.btn-trade-normal {
+    @extend .btn;
+    @include button-size(140px, auto, 16px, 1, $border-radius-default);
+    @include button-variant($btn-gray-border-color, $btn-gray-border-bg, $btn-gray-border, $red);
+    padding: 13px 0;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    &.selected {
+        border: 2px solid $red;
+        padding: 12px 0;
+        background: url("../../../images/trade/trade-btn-selected.png") no-repeat right bottom;
+        color: $red;
+    }
+}
+
+.btn-trade-big {
+    @extend .btn-trade-normal;
+    height: 93px;
+    position: relative;
+    &:hover {
+        .btn-trade-item2 {
+            color: $red;
+        }
+    }
+}
+
+.btn-trade-disabled {
+    @extend .btn;
+    @include button-size(140px,
+    auto,
+    16px,
+    1,
+    $border-radius-default);
+    @include button-variant($btn-disabled-color,
+    $btn-disabled-bg,
+    $btn-disabled-border,
+    $btn-gray-border-color);
+    padding: 13px 0;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    cursor: default;
+    &:hover {
+        color: $btn-disabled-color;
+    }
+}
+
+//color
+.btn-red {
+    @include button-variant($btn-red-color,
+    $btn-red-bg,
+    $btn-red-border,
+    $btn-red-color);
+}
+
+.btn-green {
+    @include button-variant($btn-green-color,
+    $btn-green-bg,
+    $btn-green-border,
+    $btn-green-color);
+}
+
+.btn-blue {
+    @include button-variant($btn-blue-color,
+    $btn-blue-bg,
+    $btn-blue-border,
+    $btn-blue-color);
+}
+
+.btn-gray-border {
+    @include button-variant($btn-gray-border-color,
+    $btn-gray-border-bg,
+    $btn-gray-border,
+    $btn-gray-border-color);
+}
+
+.btn-disabled {
+    @include button-variant($btn-disabled-color,
+    $btn-disabled-bg,
+    $btn-disabled-border,
+    $btn-gray-border-color);
+}

@@ -1,0 +1,136 @@
+{% extends 'layout/agent/agentPartner.html' %}
+<!-- content -->
+{% block content %}
+<div class="ui-view-container">
+    <!-- header -->
+    {% include "../components/agent/_agentHead.html" %}
+    <!-- main -->
+    <div class="agent-wrap">
+        <div class="partner-title clearfix">
+            <div class="left-title">总体运营情况</div>
+            <div class="right-titlebox">
+                <div class="mid-info">当日数据及现金奖励将在
+                    <span class="color-orange fb">24:00</span>结算</div>
+                <a href="/agent/draw" class="btn-fixed-120 btn-red">提取奖励</a>
+            </div>
+        </div>
+        <div class="partner-cont">
+            <table width="100%" cellpadding="0" cellspacing="0" class="agent-table">
+                <tr>
+                    <th width="17%">总现金奖励</th>
+                    <th width="17%">总线下用户</th>
+                    <th width="17%">总操盘资金</th>
+                    <th width="17%">总操盘笔数</th>
+                    <th width="17%">访问量</th>
+                    <th width="17%">独立访问用户</th>
+                </tr>
+                <tr>
+                    <td class="fb">{{partner.amount|money}}</td>
+                    <td class="fb">{{partner.mc}}</td>
+                    <td class="fb">{{partner.tt.amount|money}}</td>
+                    <td class="fb">{{partner.tt.quantity}}</td>
+                    {% if partner.rpt %}
+                    <td class="fb">{{partner.rpt.viewCount}}</td>
+                    <td class="fb">{{partner.rpt.uniqueipCount}}</td>
+                    {% else %}
+                    <td class="fb">0</td>
+                    <td class="fb">0</td>
+                    {% endif %}
+                </tr>
+                </tr>
+            </table>
+        </div>
+        <div class="partner-cont clearfix">
+            <span class="share-title">您的推广链接：</span>
+            {% if partner.track.domain %}
+            <input type="text" value='http://{{partner.track.domain}}.cfniu.com' readonly="readonly" class="share-input JS-copy" /> {% else %}
+            <input type="text" value='' readonly="readonly" class="share-input mr10 JS-copy" /> {% endif %}
+            <button class="btn-fixed-120 btn-red mr10 JS-copybtn">复制</button>
+            <button class="btn-fixed-120 btn-gray-border JS-modifyDomain">修改个性化域名</button>
+            <div class="user-share">
+                <div url="{{AGENT_SHARE_URL}}?trackId={{partner.track.trackId}}" title="{{NIU_CN}}福利：送你100元炒股红包，点击即可领取！" summary="{{NIU_CN}}网致力于为广大股民提供方便、快捷、安全的互联网信息服务，已成为行业内极具影响力的品牌。"
+                    class="bshare-custom icon-medium-plus">
+                    <div class="bsPromo bsPromo2"></div>
+                </div>
+            </div>
+        </div>
+        <div class="partner-cont">
+            <ul class="agent-user-tab clearfix">
+                <li class="JS-tab" data-nav="0">
+                    <a>注册用户</a>
+                </li>
+                <li class="JS-tab" data-nav="1">
+                    <a>操盘用户</a>
+                </li>
+            </ul>
+            <!--注册用户-->
+            <div data-content="0" class="none JS-content reguser-box">
+                <div class="partner-select clearfix">
+                    <span class="gray-light fl">注册时间：</span>
+                    <div class="item-box">
+                        <input type="text" class="JS-date input-normal reg-time1" />
+                    </div>
+                    <span class="gray-light fl">&nbsp;-&nbsp;</span>
+                    <div class="item-box mr10">
+                        <input type="text" class="JS-date input-normal reg-time2" />
+                    </div>
+                    <button class="btn-fixed-120 btn-gray-border fl JS-queryByDate">查询</button>
+                </div>
+                <div class="partner-cont table-min-hegiht">
+                    <table width="100%" cellpadding="0" cellspacing="0" class="agent-table">
+                        <thead>
+                            <tr>
+                                <th width="20%">编号</th>
+                                <th width="20%">用户名</th>
+                                <th width="20%">注册时间</th>
+                                <th width="20%">操盘笔数</th>
+                                <th width="20%">借款总金额</th>
+                            </tr>
+                        </thead>
+                        <tbody class="JuicerAnchor-registerList">
+
+                        </tbody>
+                    </table>
+                    <div class="turn-page JS-registerPage"></div>
+                </div>
+            </div>
+            <!--操盘用户-->
+            <div data-content="1" class="none JS-content reguser-box">
+                <div class="partner-select clearfix">
+                    <span class="gray-light fl">合约开始时间：</span>
+                    <div class="item-box">
+                        <input type="text" class="JS-date input-normal trade-time1" />
+                    </div>
+                    <span class="gray-light fl">&nbsp;-&nbsp;</span>
+                    <div class="item-box mr10">
+                        <input type="text" class="JS-date input-normal trade-time2" />
+                    </div>
+                    <button class="btn-fixed-120 btn-gray-border fl JS-queryByDate">查询</button>
+                </div>
+                <div class="partner-cont table-min-hegiht">
+                    <table width="100%" cellpadding="0" cellspacing="0" class="agent-table">
+                        <thead>
+                            <tr>
+                                <th width="20%">编号</th>
+                                <th width="20%">用户名</th>
+                                <th width="20%">合约开始时间</th>
+                                <th width="20%">产品名称</th>
+                                <th width="20%">借款总金额</th>
+                            </tr>
+                        </thead>
+                        <tbody class="JuicerAnchor-tradeList">
+
+                        </tbody>
+                    </table>
+                    <div class="turn-page JS-tradePage"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 修改域名 -->
+{% include "../components/dialog/agent/_agentModifyName.html" %}
+<!-- footer -->
+{% include '../components/common/_footer.html' %}
+<!-- content end -->
+{% endblock %}

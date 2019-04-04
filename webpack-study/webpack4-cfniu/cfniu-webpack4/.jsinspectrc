@@ -1,0 +1,10 @@
+{
+  "threshold":     30,// 指定规则命中的节点数量
+  "identifiers":   true,// variables, methods, properties, etc
+  "literals":      true,// strings, numbers, etc.
+  "color":         true,
+  "minInstances":  2,// 最小匹配数量
+  "ignore":        "test|spec|node_modules",
+  "reporter":      "default",// 报告格式，还有pmd、json
+  "truncate":      10// 截取行数
+}

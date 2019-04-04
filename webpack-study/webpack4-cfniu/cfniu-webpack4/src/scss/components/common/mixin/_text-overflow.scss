@@ -1,0 +1,6 @@
+//-溢出处理
+@mixin text-overflow() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

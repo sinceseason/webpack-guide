@@ -1,0 +1,63 @@
+.wrap-footer {
+    background: $footer-bg;
+    padding-bottom: 40px;
+    color: $footer-color;
+    .footer-left {
+        float: left;
+        width: 900px;
+    }
+    .footer-right {
+        float: right;
+        width: 230px;
+        color: $white;
+    }
+    .footer-nav {
+        border-bottom: 1px solid $footer-line;
+        padding: 20px 0;
+        li {
+            float: left;
+            margin-right: 55px;
+        }
+    }
+}
+
+.risk-cont {
+    padding-top: 10px;
+    line-height: $line-height-prompt;
+}
+
+.friend-link {
+    padding-top: 10px;
+    a {
+        color: $footer-color;
+        position: relative;
+        margin-right: 20px;
+        white-space: nowrap;
+        &:after {
+            content: "";
+            position: absolute;
+            right: -12px;
+            top: 5px;
+            height: 10px;
+            width: 1px;
+            background: $footer-color;
+        }
+    }
+}
+
+.service-title {
+    padding-top: 20px;
+}
+
+.service-phone {
+    font-size: 34px;
+    padding-top: 10px;
+}
+
+.copy-right {
+    margin-top: 40px;
+    font-size: 12px;
+    a {
+        color: $white;
+    }
+}

@@ -1,0 +1,65 @@
+@import "./../components/_common.scss";
+@import "usercenter.scss";
+.user-asset {
+    float: left;
+    width: 458px;
+    height: 86px;
+    background: $red-light;
+    color: $white;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    .asset-left {
+        float: left;
+        width: 180px;
+        line-height: 32px;
+    }
+    .asset-right {
+        float: right;
+        font-size: 14px;
+        padding-top: 40px;
+        .item-value {
+            margin-left: 20px;
+        }
+    }
+}
+
+.user-fund {
+    float: right;
+    width: 460px;
+    height: 86px;
+    background: $bg-default-color;
+    box-sizing: border-box;
+    color: $gray-base;
+    .fund-element {
+        float: left;
+        width: 33.3%;
+        line-height: 32px;
+        padding: 12px 0 12px 20px;
+        border-right: 1px solid $white;
+        box-sizing: border-box;
+        &:last-child {
+            border-right: 0;
+        }
+    }
+}
+
+.user-chart {
+    padding: 40px 0 20px 0;
+    border-bottom: 1px solid $border-default-color;
+    .chart-list {
+        @include left-marginal(img-chart, 0, 0, 60px, 60px, 20px);
+        float: left;
+        width: 378px;
+        height: 60px;
+        line-height: 30px;
+    }
+}
+
+.set-list {
+    width: 410px;
+    font-size: 14px;
+    margin-top: 25px;
+    li {
+        @include fixed-col3-list(15px, set, 75px, left, 280px, 0);
+    }
+}

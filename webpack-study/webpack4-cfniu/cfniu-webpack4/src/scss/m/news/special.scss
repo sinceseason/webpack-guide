@@ -1,0 +1,95 @@
+@import "../../components/_mcommon.scss";
+
+html {
+    background: $white;
+    padding-bottom: 57px;
+}
+
+.news-content-wrap {
+    margin-top: 78px;
+    padding: 15px;
+
+    .title {
+        font-weight: 600;
+        padding-bottom: 5px;
+        font-size: 16px;
+    }
+
+    .author {
+        float: left;
+    }
+
+    .date {
+        float: right;
+    }
+
+    .author,
+    .date {
+        font-size: 12px;
+        color: $gray-light;
+    }
+
+    .content {
+        margin-top: 10px;
+        border-top: 1px solid #E5E5E5;
+        font-size: 14px;
+        color: $gray-base;
+        line-height: 1.8;
+        padding: 10px 0;
+    }
+
+    .news-page-link {
+        font-size: 14px;
+        padding-top: 10px;
+    }
+}
+
+.news-title-name {
+    border-bottom: 1px solid #E5E5E5;
+    padding: 15px;
+    font-size: 14px;
+}
+
+.news-foot-tab {
+    padding: 15px;
+
+    .tab-item {
+        display: inline-block;
+        margin-right: 10px;
+        border: 1px solid #CCC;
+        font-size: 12px;
+        color: $red;
+        height: 25px;
+        line-height: 25px;
+        padding: 0 8px;
+        margin-bottom: 7px;
+    }
+}
+
+.news-title-name {
+    border-bottom: 1px solid #E5E5E5;
+    padding: 15px;
+    font-size: 14px;
+}
+
+.news-list-wrap {
+    padding-left: 15px;
+    color: $gray-base;
+    background: $white;
+    border-bottom: 1px solid #e5e5e5;
+
+    li {
+        border-bottom: 1px solid #eee;
+        padding: 15px 15px 15px 0;
+        text-align: left;
+        font-size: 14px;
+
+        a {
+            color: $gray-dark;
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+}

@@ -1,0 +1,13 @@
+
+files: "src/js/**/*.js"
+output: "jscpd-report.xml"
+reporter: xml
+languages:
+  - javascript
+languages-exts:
+  language: js
+verbose: true
+# 匹配行数
+min-lines: 3
+# 匹配关键词
+min-tokens: 70

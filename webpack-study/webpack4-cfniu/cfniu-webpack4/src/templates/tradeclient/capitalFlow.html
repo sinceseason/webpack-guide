@@ -1,0 +1,28 @@
+<table width="100%" cellpadding="0" cellspacing="0" class="common-table">
+    <thead>
+        <tr>
+            <th width="25%">流水类型</th>
+            <th width="25%">发生金额</th>
+            <th width="25%">现金余额</th>
+            <th width="25%">流水时间</th>
+        </tr>
+    </thead>
+    <tbody>
+        {@each list as item,index}
+        <tr>
+            <td>${item.capFlwTypINm}</td>
+            <td>
+                <span class="fb color-red">${item.flwAmt|money}</span>
+            </td>
+            <td>
+                <span class="fb">${item.avalBalAmt|money}</span>
+            </td>
+            <td>${item.flwTm}</td>
+        </tr>
+        {@/each}
+    </tbody>
+</table>{@if(!list||list.length==0)}
+<div class="nodata">
+    <div class="word">没有相关数据！</div>
+</div>
+{@else} {@/if}

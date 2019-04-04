@@ -1,0 +1,24 @@
+{@if (!list || list.length == 0)}
+<div class="nodata">
+    <div>没有相关数据！</div>
+</div>
+{@else} 
+{@each list as item,index}
+<li class="message-list JS-msg-detail">
+    <div class="clearfix">
+        <div class="message-title activity">${item.title}</div>
+        <div class="fr gray-light">${item.postTime}</div>
+    </div>
+    {@if (index == 0)}
+    <div class="message-detail">
+        <p>$${item.content}</p>
+    </div>
+    {@else}
+    <div class="message-detail none">
+        <p>$${item.content}</p>
+    </div>
+    {@/if}
+</li>
+{@/each}
+<div class="turn-page JS-page-promotion-list"></div>
+{@/if}

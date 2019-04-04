@@ -1,0 +1,11 @@
+<!-- 右侧边栏 最热资讯 -->
+{% if hotNews.jcContentDtos.length > 0 %}
+<div class="news-sidebar-title">最热资讯</div>
+<ul class="nodate-news-list">
+    {% for news in hotNews.jcContentDtos %}
+    <li>
+        <a href="d{{news.contentId}}.html">{{news.title}}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}

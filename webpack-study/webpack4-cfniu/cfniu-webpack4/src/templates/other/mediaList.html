@@ -1,0 +1,18 @@
+{@each list as item}
+<div class="media-list clearfix">
+    <div class="media-time">${item.postTime | timeFormat}</div>
+    <span class="icon-circle"></span>
+    <div class="media-img">
+        <img src="${item.linkImg}" width="100px"/>
+    </div>
+    <div class="media-data">
+        <dt>
+            <a href="/other/mediaDetail?id=${item.id}">${item.title}</a>
+        </dt>
+        <dd>
+            ${item.digest}
+        </dd>
+    </div>
+</div>
+{@/each}
+<div class="turn-page JS-page"></div>

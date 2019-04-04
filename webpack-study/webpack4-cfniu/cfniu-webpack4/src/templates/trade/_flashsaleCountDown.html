@@ -1,0 +1,24 @@
+<i class="icon-xianshiqianggou1 size20"></i>
+{@if detail.status=="UnderWay"}
+<span>本轮活动剩余时间：</span>
+{@else}
+<span>下轮活动开始倒计时：</span>
+{@/if}
+<span>下轮活动开始倒计时：</span>
+<span id="sale-countdown" class="robbuy-time">
+    <span class="time-red">00</span>
+    <span class="fb">天</span>
+    <span class="time-red">00</span>
+    <span class="fb">时</span>
+    <span class="time-red">00</span>
+    <span class="fb">分</span>
+    <span class="time-red">00</span>
+    <span class="fb">秒</span>
+</span>
+{@if detail.status=="UnderWay"}
+<span class="sale-wait-text">还剩：</span>
+{@else}
+<span class="sale-wait-text">待抢：</span>
+{@/if}
+<span class="time-red fb">${detail.waitSaleCount}</span>
+<span class="fb">份</span>

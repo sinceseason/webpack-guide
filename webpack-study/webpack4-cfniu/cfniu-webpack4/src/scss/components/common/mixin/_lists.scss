@@ -1,0 +1,88 @@
+//-固定宽度三列列表
+@mixin fixed-col3-list($row-margin-bottom, $class-name, $title-width, $title-align, $content-width, $content-padleft) {
+    margin-bottom: $row-margin-bottom;
+    .#{$class-name}-title {
+        float: left;
+        width: $title-width;
+        text-align: $title-align;
+    }
+    .#{$class-name}-content {
+        float: left;
+        width: $content-width;
+        padding-left: $content-padleft;
+    }
+    .#{$class-name}-operate {
+        float: right;
+    }
+}
+
+//-流动布局列表
+@mixin flow-layout-list($width-percent, $space-top, $space-bot, $row-height) {
+    padding-top: $space-top;
+    li {
+        float: left;
+        width: $width-percent;
+        margin-bottom: $space-bot;
+        line-height: $row-height;
+    }
+}
+
+//-产品块布局
+@mixin block-list($margin-right, $width-percent, $height-value, $pad-value) {
+    margin-right: -$margin-right;
+    li {
+        float: left;
+        width: $width-percent;
+        height: $height-value;
+        margin-right: $margin-right;
+        padding: $pad-value;
+        box-sizing: border-box;
+    }
+}
+
+@mixin list-shadow($shadow-size, $shadow-color) {
+    box-shadow: 0 0 $shadow-size $shadow-color;
+}
+
+@mixin list-border($border-size, $border-color) {
+    border: $border-size solid $border-color;
+}
+
+//-news list
+@mixin nodate-news-list($space-bottom) {
+    li {
+        padding-bottom: $space-bottom;
+        width: 100%;
+    }
+}
+
+@mixin havedate-news-list($space-vertical, $date-width, $title-width) {
+    li {
+        padding: $space-vertical 0;
+        position: relative;
+        padding-right: $date-width;
+        .list-title {
+            width: $title-width;
+            box-sizing: border-box;
+        }
+        .list-date {
+            position: absolute;
+            color: $gray-light;
+            right: 0;
+            top: $space-vertical;
+        }
+    }
+}
+
+@mixin news-list-line($line-type, $line-color) {
+    li {
+        border-bottom: 1px $line-type $line-color;
+    }
+}
+
+@mixin news-list-haveicon($list-imgicon, $space-left) {
+    li {
+        background: $list-imgicon;
+        padding-left: $space-left;
+    }
+}

@@ -1,0 +1,35 @@
+{% if not isAgentNews %}
+<!-- 导航 -->
+<ul class="level2-tab clearfix">
+    {% if channelId === 'index' %}
+    <li class="selected">
+        <a href="/news">资讯中心</a>
+    </li>
+    {% else %}
+    <li>
+        <a href="/news">资讯中心</a>
+    </li>
+    {% endif %} {% for contentItem in contentItems %} {% if channelId === contentItem.channelId %}
+    <li class="selected">
+        <a href="/news/c{{contentItem.channelId}}">{{contentItem.channelName}}</a>
+    </li>
+    {% else %}
+    <li>
+        <a href="/news/c{{contentItem.channelId}}">{{contentItem.channelName}}</a>
+    </li>
+    {% endif %} {% endfor %}
+</ul>
+{% else %}
+<!-- 导航 -->
+<ul class="level2-tab clearfix">
+    {% for contentItem in contentItems %} {% if channelId === contentItem.channelId %}
+    <li class="selected">
+        <a href="/agentNews/c{{contentItem.channelId}}">{{contentItem.channelName}}</a>
+    </li>
+    {% else %}
+    <li>
+        <a href="/agentNews/c{{contentItem.channelId}}">{{contentItem.channelName}}</a>
+    </li>
+    {% endif %} {% endfor %}
+</ul>
+{% endif %}

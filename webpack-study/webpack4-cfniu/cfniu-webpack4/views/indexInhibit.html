@@ -1,0 +1,12 @@
+{% extends 'layout/index.html' %} {% block content %}
+<div class="ui-view-container">
+    <!-- header -->
+    {% include './components/common/_headerInhibit.html' %}
+    <div>
+        <img id="JS-banner1" src="{{IMAGE_PUBLIC_URL}}/images/index/inhibit.jpg" alt="封闭" style="width:100%;height: 819.6px;">
+    </div>
+    <!-- foot -->
+    <div class="inhibit-footer">版权所有 ©
+        <a href="http://www.miibeian.gov.cn" target="_blank" rel="nofollow" class="footer-nav">{{NIU_CN}} 桂ICP备17010483号</a>
+    </div>
+</div>{% endblock %}

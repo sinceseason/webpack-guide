@@ -1,0 +1,10 @@
+<div class="trade-btn-group ">
+    {@each list as item} {@if (item.isAble)}
+    <button class="JS-applyAmount btn-trade-normal" data-pzAmount='${item.pzAmount}'>${item.text}</button>
+    {@else}
+    <button class="JS-applyAmount btn-trade-normal" data-pzAmount='${item.pzAmount}'>${item.text}</button>
+    {@/if} {@/each}
+</div>
+<input class="JS-otherApplyAmount input-normal center" name="pzamount" type="text" placeholder="最少${product.pzAmountMin/10000}万，最多${product.pzAmountMax/10000}万，千的整数倍">
+<!-- 错误提示 -->
+<div class="errortip-word none JS-input-error ">最少${product.pzAmountMin/10000}万，最多${product.pzAmountMax/10000}万，千的整数倍</div>

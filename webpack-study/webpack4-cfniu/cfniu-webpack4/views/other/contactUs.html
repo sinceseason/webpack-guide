@@ -1,0 +1,43 @@
+{% extends 'layout/other/other.html' %} {% block content %}
+<div class="ui-view-container">
+    <!-- header -->
+    {% include '../components/common/_header.html' %}
+    <!-- main -->
+    <div class="main-content">
+        <div class="other-wrap clearfix">
+            <!--左侧菜单 -->
+            {% include '../components/other/_leftMenu.html' %}
+            <div class="other-content">
+                <div class="other-title1">联系我们</div>
+                <div class="contact-cont">
+                    <div class="other-title2">客户服务</div>
+                    <p class="other-cont2">如果您在使用{{NIU_CN}}操盘的过程中有任何疑问请与我们的客服人员联系。</p>
+                    <div class="other-title2">客户电话</div>
+                    <ul class="other-cont2">
+                        <li>
+                            <span class="fb">{{TEL_NUM}}</span>
+                            <span class="gray-light">（周一至周五 8:30-17:30）</span>
+                        </li>
+                        <li>如果您对我们的产品有任何反馈意见或建议，请发送邮件至：
+                            <a href="mailto:caifuniu@aliyun.com" class="link-blue">caifuniu@aliyun.com </a>
+                        </li>
+                        <li>如果您反馈的意见或建议被我们采纳，我们将赠送
+                            <span class="color-red fb">200元</span> 抵用券。
+                        </li>
+                    </ul>
+                    <div class="other-title2">媒体采访</div>
+                    <p class="other-cont2">如果您有采访需求，请将您的媒体名称、采访提纲与联系方式发至：
+                        <a href="mailto:caifuniu@aliyun.com" class="link-blue">caifuniu@aliyun.com </a>，我们会尽快与您联系。</p>
+                    <div class="other-title2">商务合作</div>
+                    <p class="other-cont2">如果您有合作意向，请将您的公司名称、合作意向简要描述发至：
+                        <a href="mailto:caifuniu@aliyun.com" class="link-blue">caifuniu@aliyun.com </a>，我们会尽快与您联系。</p>
+                    <div class="other-title2">微信微博</div>
+                    <img class="img-wx" src="../images/img-wx.png" />
+                    <div class="gray-dark">关注“{{NIU_CN}}官网”微信公众号，注册、充值、配资、资讯一网打尽。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    {% include '../components/common/_footer.html' %}
+</div>{% endblock %}

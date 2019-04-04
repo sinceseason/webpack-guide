@@ -1,0 +1,11 @@
+ {% extends '../layout/news/tagList.html' %} {% block content %}
+<div class="m-ui-container container-bottom">
+    <!-- main -->
+    {% include '../components/common/_header.html' %}
+    <!-- menu -->
+    {% include '../components/news/_menu.html' %}
+    <!-- 列表 -->
+    {% include '../components/news/_tagList.html' %}
+</div>
+<!-- 底部 -->
+{% include '../components/common/_footer.html' %} {% endblock %}

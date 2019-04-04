@@ -1,0 +1,34 @@
+@import "./../components/_common.scss";
+@import "usercenter.scss";
+.message-cont {
+    .message-list {
+        border-bottom: 1px solid $border-default-color;
+        padding: 20px 0;
+        .message-title {
+            color: $gray-dark;
+            padding-left: 35px;
+            background: url("../../images/user/icon-message.png") no-repeat;
+            height: 24px;
+            line-height: 24px;
+            width: 750px;
+            float: left;
+            cursor: pointer;
+            font-weight: $font-weight-default;
+        }
+        .message-title.notice {
+            background-position: 0 0;
+        }
+        .message-title.system {
+            background-position: 0 -24px;
+        }
+        .message-title.activity {
+            background-position: 0 -48px;
+        }
+        .message-detail {
+            color: $gray-base;
+            padding-left: 35px;
+            line-height: $line-height-default;
+            padding: 10px 0 0 35px;
+        }
+    }
+}

@@ -1,0 +1,35 @@
+// base style
+@import "./common/_reset";
+@import "./common/_fonts";
+@import "./common/_animate.scss";
+@import "./common/_variables.scss";
+@import "./common/_mixin.scss";
+// public style
+@import "./common/_wordColor.scss";
+@import "./common/_wordSize.scss";
+@import "./common/_links.scss";
+@import "./common/_clearfix.scss";
+@import "./common/_inputBox.scss";
+@import "./common/_errorTips.scss";
+@import "./common/_prompt.scss";
+@import "./common/_buttons.scss";
+@import "./common/_headSize.scss";
+@import "./common/_upload.scss";
+@import "./common/_tables.scss";
+@import "./common/_tabs.scss";
+@import "./common/_nodata.scss";
+@import "./common/_inputFocus.scss";
+@import "./common/_titles.scss";
+@import "./common/_lists.scss";
+@import "./common/_verification.scss";
+@import "./common/_extend.scss";
+@import "./common/_page.scss";
+@import "./common/_navs.scss";
+// public modal
+@import "./common/_public.scss";
+@import "./common/_header.scss";
+@import "./common/_footer.scss";
+@import "./common/_modal.scss";
+@import "./common/_bannerIndex.scss";
+@import "./common/_agent.scss";
+@import "./common/_service.scss";

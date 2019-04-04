@@ -1,0 +1,18 @@
+<div id="JS-pagination" class="clearfix">
+    <ul class="news-list-wrap tag clearfix JuicerAnchor-list">
+        {% for jcContentDto in tagList.jcContentDtos %}
+        <li>
+            <a href="{{MOBILE_PROXY_URL}}/news/d{{jcContentDto.contentId}}.html">
+                <div class="title">{{jcContentDto.title}}</div>
+                <div class="desc clearfix">
+                    <div class="type">{{jcContentDto.channelName}}</div>
+                    <div class="time">{{jcContentDto.releaseDate|timeUnixFormat}}</div>
+                    <div class="views">{{jcContentDto.views}}</div>
+                </div>
+            </a>
+        </li>
+
+        {% endfor %}
+    </ul>
+    <div class="loading" class="JS-pagination-loading">正在加载数据</div>
+</div>

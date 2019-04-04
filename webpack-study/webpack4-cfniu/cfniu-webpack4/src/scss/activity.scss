@@ -1,0 +1,246 @@
+@import "components/_common.scss";
+.activity-content {
+    margin-top: 106px;
+}
+
+.bg-banner {
+    background: url("../images/activity/banner-feeder.jpg") no-repeat center top $activity-yellow;
+    height: 536px;
+}
+
+.bg01 {
+    background: url("../images/activity/bg-01.jpg") no-repeat center top $activity-yellow;
+    height: 351px;
+    text-align: center;
+    min-width: 1180px;
+    ul {
+        padding-top: 70px;
+        font-size: 30px;
+        color: #54411c;
+        font-weight: $font-weight-default;
+        width: 568px;
+        margin: 0 auto;
+        li {
+            margin-top: 20px;
+            height: 72px;
+            line-height: 72px;
+            font-size: 20px;
+            .word1 {
+                float: left;
+                width: 170px;
+                text-align: right;
+                padding-right: 19px;
+            }
+            .wordred {
+                float: left;
+                width: 238px;
+                color: #e11010;
+                text-align: right;
+                font-size: 48px;
+                letter-spacing: 18px;
+            }
+            .word3 {
+                float: left;
+            }
+        }
+    }
+}
+
+.bg02 {
+    background: url("../images/activity/bg-02.jpg") no-repeat center top $activity-yellow;
+    height: 201px;
+    text-align: center;
+    padding-top: 130px;
+    min-width: 1180px;
+    a {
+        margin: 0 auto;
+    }
+}
+
+.menu-receive {
+    display: block;
+    width: 500px;
+    height: 80px;
+    text-align: center;
+    line-height: 80px;
+    font-size: 30px;
+    color: #ec4300;
+    background: #fff88e;
+    border-radius: 8px;
+    font-weight: $font-weight-default;
+    box-shadow: 0 7px 1px #d9a536;
+}
+
+.bg03 {
+    background: url("../images/activity/bg-03.jpg") no-repeat center top $activity-yellow;
+    height: 360px;
+    text-align: center;
+    min-width: 1180px;
+    h1 {
+        font-weight: $font-weight-default;
+        font-size: 20px;
+        padding-top: 35px;
+        color: #402e0c;
+    }
+    ul {
+        width: 702px;
+        margin: 0 auto;
+        text-align: left;
+        padding: 45px 10px 0 10px;
+        li {
+            line-height: 35px;
+            font-size: 14px;
+            color: #402e0c;
+        }
+    }
+}
+
+.bg04 {
+    background: url("../images/activity/bg-04.jpg") no-repeat center top $activity-yellow;
+    height: 473px;
+    min-width: 1180px;
+    .bg4-cont {
+        width: 725px;
+        margin: 0 auto;
+        .right {
+            text-align: right;
+            color: #402e0c;
+            font-size: 14px;
+            padding-top: 10px;
+        }
+        .gifts {
+            color: #ea2011;
+            font-size: 20px;
+            padding-top: 45px;
+            text-align: center;
+        }
+        a {
+            margin: 0 auto;
+            margin-top: 150px;
+        }
+    }
+}
+
+.bg05 {
+    background: url("../images/activity/bg-05.jpg") no-repeat center top $activity-yellow;
+    height: 560px;
+    min-width: 1180px;
+    h1 {
+        font-size: 20px;
+        color: #4e380e;
+        padding-top: 115px;
+        text-align: center;
+    }
+    .sin {
+        width: 852px;
+        margin: 0 auto;
+        text-align: left;
+        color: #4e380e;
+        font-size: 16px;
+        ul {
+            width: 235px;
+            li {
+                margin-bottom: 5px;
+                line-height: 25px;
+                &.word-blue {
+                    color: #24a8ea;
+                    font-size: 20px;
+                    font-weight: $font-weight-default;
+                    padding-bottom: 5px;
+                }
+            }
+            &.sin1 {
+                margin-left: 510px;
+                margin-top: 50px;
+            }
+            &.sin2 {
+                float: left;
+                margin-left: 20px;
+                margin-top: 80px;
+            }
+            &.sin3 {
+                float: left;
+                margin-left: 430px;
+                margin-top: 80px;
+                width: auto;
+            }
+        }
+    }
+}
+
+.bg06 {
+    background: url("../images/activity/bg-06.jpg") no-repeat center top $activity-yellow;
+    height: 271px;
+    min-width: 1180px;
+}
+
+.bg07 {
+    background: url("../images/activity/bg-07.jpg") no-repeat center top $activity-yellow;
+    height: 455px;
+    min-width: 1180px;
+    .bg07-cont {
+        width: 1000px;
+        margin: 0 auto;
+        text-align: left;
+        .left-cont {
+            float: left;
+            width: 410px;
+            text-align: right;
+            padding-right: 40px;
+            li {
+                line-height: 65px;
+                font-weight: $font-weight-default;
+                font-size: 16px;
+                color: #352400;
+            }
+        }
+        .right-cont {
+            float: left;
+            text-align: left;
+            padding-left: 150px;
+            li {
+                line-height: 65px;
+                font-weight: $font-weight-default;
+                font-size: 16px;
+                color: #352400;
+            }
+        }
+        .bg07-word {
+            clear: both;
+            font-size: 24px;
+            font-weight: $font-weight-default;
+            padding-top: 40px;
+            text-align: center;
+            color: #009fef;
+            text-shadow: 0 2px 2px #999;
+        }
+    }
+}
+
+.company-intro {
+    background: #ffe4a4;
+    padding: 50px 0 30px 0;
+    min-width: 1180px;
+    .company-box {
+        width: 1000px;
+        margin: 0 auto;
+        li {
+            width: 270px;
+            float: left;
+            margin: 0 30px;
+            .item-line {
+                padding-bottom: 20px;
+                color: #352400;
+                font-size: 24px;
+                font-weight: $font-weight-default;
+                text-align: center;
+                &.last-line {
+                    font-weight: normal;
+                    font-size: 14px;
+                    line-height: 22px;
+                    text-align: left;
+                }
+            }
+        }
+    }
+}

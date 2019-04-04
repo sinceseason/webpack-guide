@@ -1,0 +1,84 @@
+//-底部浮动
+.wrap-service {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    z-index: 99;
+    li {
+        margin-top: 10px;
+        a {
+            display: block;
+            width: 58px;
+            height: 58px;
+            background: $white;
+            border: 1px solid $border-default-color;
+            font-size: 12px;
+            text-align: center;
+            color: $gray-base;
+            i {
+                display: block;
+                font-size: 20px;
+                margin-top: 9px;
+                margin-bottom: 6px;
+                color: $red;
+            }
+            &:hover {
+                background: $red;
+                color: $white;
+                border: 1px solid $red;
+                i {
+                    color: $white;
+                }
+            }
+            &.backtop {
+                i {
+                    font-size: 36px;
+                    margin-top: 9px;
+                }
+                &:hover {
+                    background: $white;
+                    i {
+                        color: $red;
+                    }
+                }
+            }
+        }
+        .agent-code {
+            width: 250px;
+            height: 300px;
+            box-shadow: 0 0 8px #666;
+            left: -260px;
+            top: -286px;
+            position: relative;
+            display: none;
+        }
+        .agent-code-animate {
+            -webkit-animation-name: fadeInUp;
+            animation-name: fadeInUp;
+            -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+            display: block;
+        }
+    }
+}
+
+.ewm-content {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    display: block;
+}
+
+.ewm-content-hide {
+    -webkit-animation-name: fadeOutUp;
+    animation-name: fadeOutUp;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}

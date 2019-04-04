@@ -1,0 +1,13 @@
+@import "../components/_common.scss";
+.detail-cont {
+    margin-top: 20px;
+    background: #fdf8e7;
+    border: 1px solid #f1e4b8;
+    padding: 18px 20px;
+    font-size: 14px;
+    color: $gray-dark;
+    .title-cont {
+        display: inline-block;
+        margin-right: 50px;
+    }
+}

@@ -1,0 +1,12 @@
+{@each list as item,index}
+<a href="d${item.contentId}.html">
+    <li>
+        <div class="title">${item.title}</div>
+        <div class="desc clearfix">
+            <div class="type">${item.channelName}</div>
+            <div class="time">${item.releaseDate}</div>
+            <div class="views">${item.views}</div>
+        </div>
+    </li>
+</a>
+{@/each}

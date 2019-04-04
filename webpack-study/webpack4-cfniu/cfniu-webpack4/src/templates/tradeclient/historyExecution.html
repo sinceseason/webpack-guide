@@ -1,0 +1,50 @@
+<table width="100%" cellpadding="0" cellspacing="0" class="common-table">
+    <thead>
+        <tr>
+            <th width="18%">股票名称</th>
+            <th width="12%">买卖方向</th>
+            <th width="12%">成交股数</th>
+            <th width="12%">成交价格</th>
+            <th width="12%">成交市值</th>
+            <th width="12%">成交状态</th>
+            <th width="22%">成交时间</th>
+        </tr>
+    </thead>
+    <tbody>
+        {@each list as item,index}
+        <tr>
+            <td>
+                <span class="fb">${item.stockName}</span>
+                <span class="gray-base">（${item.stockCode}）</span>
+            </td>
+            {@if(item.orderSideName!='卖出')}
+            <td>
+                <span class="color-red">${item.orderSideName}</span>
+            </td>
+            <td>${item.qty}</td>
+            <td>
+                <span class="fb color-red">${item.price}</span>
+            </td>
+            {@else}
+            <td>
+                <span class="color-green">${item.orderSideName}</span>
+            </td>
+            <td>${item.qty}</td>
+            <td>
+                <span class="fb color-green">${item.price}</span>
+            </td>
+            {@/if}
+            <td>
+                <span class="fb">${item.amount}</span>
+            </td>
+            <td>已成交</td>
+            <td>${item.TurnoverTime}</td>
+        </tr>
+        {@/each}
+    </tbody>
+</table>
+{@if(!list||list.length==0)}
+<div class="nodata">
+    <div class="word">没有相关数据！</div>
+</div>
+{@else} {@/if}

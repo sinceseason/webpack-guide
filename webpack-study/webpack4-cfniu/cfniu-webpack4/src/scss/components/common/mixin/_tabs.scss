@@ -1,0 +1,26 @@
+@mixin wrap-tab($border-color, $background-color) {
+    border-bottom: 1px solid $border-color;
+    background: $background-color;
+    >li {
+        float: left;
+    }
+}
+
+@mixin default-tab($tab-width, $tab-height, $word-size, $word-color, $word-weight) {
+    display: block;
+    text-align: center;
+    min-width: $tab-width;
+    height: $tab-height;
+    line-height: $tab-height;
+    font-size: $word-size;
+    color: $word-color;
+    font-weight: $word-weight;
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+
+@mixin selected-tab($word-color, $background-color, $border-size, $border-color) {
+    color: $word-color;
+    background: $background-color;
+    border-bottom: $border-size solid $border-color;
+}

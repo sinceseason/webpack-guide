@@ -1,0 +1,41 @@
+@import "./../components/_common.scss";
+.recharge-step {
+    width: 720px;
+    margin: 30px auto;
+    .step {
+        float: left;
+        margin: 0 15px;
+        .no {
+            display: inline-block;
+            width: 31px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            color: $white;
+            font-weight: $font-weight-default;
+            font-size: 16px;
+            margin-right: 10px;
+            background: url("../../images/user/icon-step.png") no-repeat 0 0;
+        }
+        .title {
+            width: 160px;
+            padding-bottom: 5px;
+            display: inline-block;
+            text-align: center;
+            font-size: 14px;
+            color: $gray-light;
+            border-bottom: 1px dashed $border-default-color;
+        }
+    }
+}
+
+.record-fund-key {
+    li {
+        margin-bottom: 20px;
+        span,
+        a {
+            margin-right: 15px;
+            display: inline-block;
+        }
+    }
+}

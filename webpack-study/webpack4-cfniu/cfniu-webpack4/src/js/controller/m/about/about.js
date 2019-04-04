@@ -1,0 +1,1 @@
+require('../../../../scss/m/about/about.scss');

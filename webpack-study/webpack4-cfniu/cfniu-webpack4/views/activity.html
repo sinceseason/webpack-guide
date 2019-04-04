@@ -1,0 +1,120 @@
+{% extends 'layout/activity.html' %} {% block content %}
+<div class="ui-view-container">
+    <!-- header -->
+    {% include './components/common/_header.html' %}
+    <!-- main -->
+    <div class="activity-content JS-activity-form">
+        <div class="bg-banner"></div>
+        <div class="bg01">
+            <ul>
+                <li>
+                    <span class="word1">总计已有</span>
+                    <span class="wordred">{{activity.actualNum}}</span>
+                    <span class="word3">人参与</span>
+                </li>
+                <li>今日&nbsp;
+                    <span class="color-rede1">2000&nbsp;</span>元免费操盘资金
+                </li>
+                <li>
+                    <span class="word1">还剩余</span>
+                    <span class="wordred">{{activity.joinNum - activity.actualNum}}</span>
+                    <span class="word3">人份</span>
+                </li>
+            </ul>
+        </div>
+        <div class="bg02">
+            <a class="menu-receive JS-free-money">立即领取2000元</a>
+        </div>
+        <div class="bg03">
+            <h1>活动规则</h1>
+            <ul>
+                <li>1. 赠送2000元实盘资金（完全免费）;</li>
+                <li>2. 您交100元保证金（
+                    <span class="color-red">结束时不论是否亏损，100元全额返还，盈利全归您！</span>）；</li>
+                <li>3. 总共2100元实盘资金（由您操盘，盈利全归您）</li>
+                <li>4. 免费操盘资金仅限使用2个交易日，第2个交易日只能卖出不能买入，如第2个交易日未卖出股票，系统将在14:00后执行自动卖出指令，不保证卖出价格。</li>
+            </ul>
+        </div>
+        <div class="bg04">
+            <div class="bg4-cont">
+                <div class="right">* {{NIU_CN}}网拥有本次活动最终解释权</div>
+                <div class="gifts">完成免费炒股 更有豪礼相送</div>
+                <a class="menu-receive JS-free-money">立即领取2000元</a>
+            </div>
+        </div>
+        <div class="bg05">
+            <h1>细数券商三宗罪</h1>
+            <div class="sin">
+                <ul class="sin1">
+                    <li>宗罪2：</li>
+                    <li class="word-blue">风险控制差</li>
+                    <li>
+                        <span class="size14">一不小心就被套</span>
+                    </li>
+                </ul>
+                <ul class="sin2">
+                    <li>宗罪1：</li>
+                    <li class="word-blue">开户速度慢</li>
+                    <li>
+                        <span class="size14">开户流程繁琐</span>
+                        <br/>线下排队挤破头
+                    </li>
+                </ul>
+                <ul class="sin3">
+                    <li>宗罪3：</li>
+                    <li class="word-blue">客服不尽心</li>
+                    <li>
+                        <span class="size14">客服电话难接通</span>
+                        <br/>处理问题效率低下
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="bg06"></div>
+        <div class="bg07">
+            <div class="bg07-cont">
+                <ul class="left-cont">
+                    <li>30秒</li>
+                    <li>股票上涨10% 利润可达90%</li>
+                    <li>分级止损预警</li>
+                    <li>人工止损预警</li>
+                </ul>
+                <ul class="right-cont">
+                    <li>24小时</li>
+                    <li>股票上涨10% 利润可达10%</li>
+                    <li>无</li>
+                    <li>无</li>
+                </ul>
+                <div class="bg07-word">财富牛速度快 利润高 风险控制更权威！</div>
+            </div>
+        </div>
+        <div class="company-intro">
+            <ul class="company-box clearfix">
+                <li>
+                    <div class="item-line">
+                        <img src="../images/activity/icon-zj.png" />
+                    </div>
+                    <div class="item-line">资金保障</div>
+                    <div class="item-line last-line">第三方支付机构为平台提供资金委托服务，严格把控，确保用户资金安全。</div>
+                </li>
+                <li>
+                    <div class="item-line">
+                        <img src="../images/activity/icon-xx.png" />
+                    </div>
+                    <div class="item-line">信息保障</div>
+                    <div class="item-line last-line">国际领先的系统加密保护技术，保障用户的交易信息和资金信息不泄露。</div>
+                </li>
+                <li>
+                    <div class="item-line">
+                        <img src="../images/activity/icon-xm.png" />
+                    </div>
+                    <div class="item-line">项目保险</div>
+                    <div class="item-line last-line">设立严格的风控制度，从而实现全过程资金严控，保证资金安全。</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    {% include './components/dialog/_activityFree.html' %}
+    <!-- footer -->
+    {% include './components/common/_footer.html' %} {% include './components/dialog/_tipDialog.html' %}
+</div>{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'layout/error.html' %} {% block content %}
+<div class="ui-view-container">
+    <!-- header -->
+    {% include '../components/common/_header.html' %}
+    <div class="main-content">
+        <div class="wrap clearfix">
+            <div class="error-left"> </div>
+            <div class="error-right">
+                <div class="title">出错啦！
+                    <div class="error none">
+                        <p>{{err.message}}</p>
+                        <p>{{err.stack}}</p>
+                    </div>
+                </div>程序猿们在加急处理中
+                <br/>我们正在鞭打他 ...
+                <div class="cont">您可以通过以下方式继续访问</div>
+                <a href="/" class="btn-fixed-140 btn-red">返回首页</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- footer -->
+{% include '../components/common/_footer.html' %}
+</div>{% endblock %}

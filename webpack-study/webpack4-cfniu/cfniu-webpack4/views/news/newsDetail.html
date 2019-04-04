@@ -1,0 +1,58 @@
+{% extends 'layout/news/index.html' %} {% block content %}
+<div class="ui-view-container">
+    <!-- header -->
+    {% include '../components/common/_header.html' %}
+    <!-- main -->
+    <div class="main-content">
+        <div class="wrap clearfix">
+            <!--面包屑-->
+            {% include '../components/news/_newsCrumbs.html' %}
+            <!--导航tabs-->
+            <div class="news-main">
+                <div class="news-article">
+                    <h1 class="news-detail-title">{{content.title}}</h1>
+                    <div class="news-info-title clearfix">
+                        <div class="title-name gray-light">{{content.releaseDate | timeUnixFormat}}</div>
+                        <div class="title-info">{{content.origin}}</div>
+                        <div class="title-info">{{content.author}}</div>
+                    </div>
+                    <div class="news-detail-cont">
+                        <p>{{content.txt | safe}}</p>
+                    </div>
+                    <div class="news-detail-other">
+                        <div class="news-tag-list">
+                            {% for tag in content.contentTags %}
+                            <a href="tag{{tag.tagId}}" class="btn-auto btn-blue">{{tag.tagName}}</a> {% endfor %}
+                        </div>
+                        {% if content.lastContentId and content.lasrTitle %}
+                        <div class="next-article">
+                            <span>上一篇：</span>
+                            <a href="d{{content.lastContentId}}.html">{{content.lasrTitle}}</a>
+                        </div>
+                        {% endif %} {% if content.nextContentId and content.nextTitle %}
+                        <div class="next-article">
+                            <span>下一篇：</span>
+                            <a href="d{{content.nextContentId}}.html">{{content.nextTitle}}</a>
+                        </div>
+                        {% endif %} {% include '../components/news/_newsBottomImg.html' %}
+                    </div>
+                </div>
+            </div>
+            <div class="news-sidebar">
+                {% include '../components/news/_adSide.html' %}
+                <div class="news-sidebar-cont">
+                    <!-- 最新专题 -->
+                    {% include '../components/news/_newsSpecialRecent.html' %}
+                    <!-- 最热专题 -->
+                    {% include '../components/news/_newsSpecialHot.html' %}
+                    <!--最新资讯-->
+                    {% include '../components/news/_newsRecent.html' %}
+                    <!--最热资讯-->
+                    {% include '../components/news/_newsHot.html' %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    {% include '../components/common/_footer.html' %}
+</div>{% endblock %}

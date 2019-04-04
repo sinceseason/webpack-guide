@@ -1,0 +1,31 @@
+.left-nav {
+    float: left;
+    width: 180px;
+    box-sizing: border-box;
+    li {
+        a {
+            display: block;
+            width: 180px;
+            height: 54px;
+            line-height: 54px;
+            position: relative;
+            font-size: 14px;
+            border-bottom: 1px solid $white;
+            color: $gray-dark;
+            text-align: center;
+            box-sizing: border-box;
+            padding-top: 1px;
+        }
+        &.selected a,
+        &:hover a {
+            padding-top: 0;
+            color: $red;
+            background: $white;
+            border-left: 4px solid $red;
+            border-top: 1px solid $border-default-color;
+            border-bottom: 1px solid $border-default-color;
+            width: 181px;
+            padding-right: 5px;
+        }
+    }
+}

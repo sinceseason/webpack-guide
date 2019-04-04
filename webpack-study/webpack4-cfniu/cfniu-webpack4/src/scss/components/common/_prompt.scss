@@ -1,0 +1,33 @@
+//==说明文字样式
+//-左右结构
+.sides-both-prompt {
+    margin-left: 400px;
+    line-height: $line-height-prompt;
+    .sides-both-title {
+        float: left;
+        width: 75px;
+        font-weight: $font-weight-default;
+    }
+    .sides-both-cont {
+        padding-left: 95px;
+        ol,
+        li {
+            list-style-type: decimal;
+        }
+    }
+}
+
+.up-down-prompt {
+    padding-top: 15px;
+    line-height: $line-height-prompt;
+    .up-down-title {
+        font-weight: $font-weight-default;
+    }
+    .up-down-cont {
+        padding-left: 15px;
+        ol,
+        li {
+            list-style-type: decimal;
+        }
+    }
+}

@@ -1,0 +1,42 @@
+{% extends '../layout/about/about.html' %} {% block content %}
+<div class="m-wrap">
+    <div class="about-head"></div>
+    <ul class="about-list">
+        <li class="clearfix">
+            <a href="/m/about/company">
+                <i class="about-icon icon-gongsijianjie"></i>
+                <div class="about-title">公司简介</div>
+                <div class="about-value">
+                    <i class="icon-more1 right-arrow"></i>
+                </div>
+            </a>
+        </li>
+        <li class="clearfix">
+            <a href="{{MOBILE_URL}}/#/user/about/media" target="_parent">
+                <i class="about-icon icon-meitibaodao"></i>
+                <div class="about-title">媒体报道</div>
+                <div class="about-value">
+                    <i class="icon-more1 right-arrow"></i>
+                </div>
+            </a>
+        </li>
+        <li class="clearfix">
+            <a href="/m/about/safe">
+                <i class="about-icon icon-anquanbaozhang"></i>
+                <div class="about-title">安全保障</div>
+                <div class="about-value">
+                    <i class="icon-more1 right-arrow"></i>
+                </div>
+            </a>
+        </li>
+        <!-- <li class="clearfix">
+            <i class="about-icon icon-banben"></i>
+            <div class="about-title">当前版本</div>
+            <div class="about-value">
+                <span class="gray-base">V1.0</span>
+                <i class="icon-more1 right-arrow"></i>
+            </div>
+        </li> -->
+    </ul>
+</div>
+{% endblock %}

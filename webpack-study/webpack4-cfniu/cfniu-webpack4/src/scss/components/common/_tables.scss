@@ -1,0 +1,59 @@
+//-常用table
+.wrap-table {
+    border: 1px solid $border-default-color;
+    padding: 0 20px;
+}
+
+.common-table {
+    th {
+        @include table-row($bg-default-color, center, 50px, $gray-base, $table-padding-horizontal, 14px, normal);
+        border-right: 1px solid $white;
+        &.head-col {
+            border-right: none;
+        }
+    }
+    td {
+        @include table-row($white, center, 50px, $gray-dark, $table-padding-horizontal, 14px, normal);
+    }
+    th,
+    td {
+        border-bottom: 1px solid $border-default-color;
+        font-size: 14px;
+    }
+    tr:last-child td {
+        border-bottom: none;
+    }
+}
+
+.small-table {
+    th {
+        @include table-row($bg-default-color, center, 32px, $gray-base, $table-padding-horizontal, 14px, normal);
+        border-right: 1px solid $white;
+    }
+    td {
+        @include table-row($white, center, 32px, $gray-dark, $table-padding-horizontal, 14px, normal);
+    }
+    th,
+    td {
+        border-bottom: 1px solid $border-default-color;
+        font-size: 14px;
+    }
+}
+
+.agent-table {
+    th {
+        @include table-row($bg-default-color, center, 50px, $gray-base, $table-padding-horizontal, 14px, normal);
+        border-right: 1px solid $white;
+        &.head-col {
+            border-right: none;
+        }
+    }
+    td {
+        @include table-row($white, center, 50px, $gray-dark, $table-padding-horizontal, 14px, normal);
+    }
+    th,
+    td {
+        border-bottom: 1px solid $border-default-color;
+        font-size: 14px;
+    }
+}

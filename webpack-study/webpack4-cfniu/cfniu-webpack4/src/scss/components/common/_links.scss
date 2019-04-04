@@ -1,0 +1,43 @@
+a {
+    cursor: pointer;
+    color: $link-default-color;
+    text-decoration: $link-default-decoration;
+    &:hover {
+        color: $red;
+        text-decoration: $link-hover-decoration;
+    }
+}
+
+a.link-red {
+    color: $link-color-red;
+    text-decoration: underline;
+}
+
+a.link-blue {
+    color: $link-color-blue;
+    text-decoration: underline;
+}
+
+a.link-blue-noline {
+    color: $link-color-blue;
+}
+
+a.link-gray-light {
+    color: $gray-light;
+    &:hover {
+        color: $red;
+        text-decoration: $link-hover-decoration;
+    }
+}
+
+a.link-gray-dark {
+    color: $gray-dark;
+    &:hover {
+        color: $red;
+        text-decoration: $link-hover-decoration;
+    }
+}
+
+a.link-white {
+    color: $white;
+}

@@ -1,0 +1,96 @@
+@import "_variables.scss";
+// @import "_mixin.scss";
+body {
+    color: $gray-base;
+    font-size: 14px;
+}
+
+//-结构样式
+.ui-view-container {
+    min-width: 1180px;
+}
+
+.wrap {
+    width: 1180px;
+    margin: 0 auto;
+}
+
+.main-content {
+    margin-top: 106px;
+    padding: 20px 0 60px 0;
+}
+
+//-常用样式
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.cl {
+    clear: both;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+.left {
+    text-align: left;
+}
+
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
+.fb {
+    font-weight: $font-weight-default;
+}
+
+.fn {
+    font-weight: normal;
+}
+
+.block {
+    display: block;
+}
+
+.in-block {
+    display: inline-block;
+}
+
+.none {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.hand {
+    cursor: pointer;
+}
+
+.mr10 {
+    margin-right: 10px;
+}
+
+.relative {
+    position: relative;
+}
+
+.mark-word-red {
+    background: $red;
+    padding: 2px 5px;
+    font-size: 12px;
+    color: $white;
+    display: inline-block;
+    border-radius: 3px;
+    line-height: 1;
+}

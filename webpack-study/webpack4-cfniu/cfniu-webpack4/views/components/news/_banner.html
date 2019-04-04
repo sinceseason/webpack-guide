@@ -1,0 +1,12 @@
+<div class="news-banner">
+    <div class="banner-jcarousel JS-banner-jcarousel">
+        <ul>
+            {% for banner in banners %}
+            <li data-href="{{banner.target}}" class="JS-banner-news">
+                <img src="{{banner.attrValue}}" alt="{{banner.title}}" width="{{banner.width}}" />
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="banner-pagination JS-banner-pagination"></div>
+</div>

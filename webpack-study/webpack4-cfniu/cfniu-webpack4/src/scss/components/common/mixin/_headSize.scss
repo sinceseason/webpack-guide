@@ -1,0 +1,8 @@
+@mixin head-size($head-name, $head-size) {
+    .head#{$head-name} {
+        width: $head-size;
+        height: $head-size;
+        border-radius: $head-size;
+        background: $bg-default-color;
+    }
+}

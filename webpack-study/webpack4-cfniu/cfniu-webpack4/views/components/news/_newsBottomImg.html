@@ -1,0 +1,7 @@
+{% for bottomAd in bottomAdList %}
+<div>
+    <a href="{{bottomAd.target}}">
+        <img src="{{bottomAd.attrValue}}" alt="{{bottomAd.title or ''}}" width="100%">
+    </a>
+</div>
+{% endfor %}

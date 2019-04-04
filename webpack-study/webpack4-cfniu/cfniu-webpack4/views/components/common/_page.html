@@ -1,0 +1,66 @@
+<ul class="pagination-sm pagination">
+    <ul class="pagination">
+        {% if pp.currentPage === 1 %}
+        <li class="first disabled">
+            <a>首页</a>
+        </li>
+        <li class="prev disabled">
+            <a>上一页</a>
+        </li>
+        {% else %} 
+        {% if pp.news %}
+        <li class="first">
+            <a href="{{pageChannel}}">首页</a>
+        </li>
+        <li class="prev">
+            {% if pp.currentPage === 2 %}
+            <a href="{{pageChannel}}">上一页</a>
+            {% else %}
+            <a href="{{pp.unit}}{{pp.currentPage-1}}">上一页</a>
+            {% endif %}
+        </li>
+        {% else %}
+        <li class="first">
+            <a href="{{pp.unit}}{{1}}">首页</a>
+        </li>
+        <li class="prev">
+            <a href='{{pp.unit}}{{pp.currentPage-1}}'>上一页</a>
+        </li>
+        {% endif %}
+        {% endif %} 
+        {% for page in pp.pageList%} 
+        {% if page === pp.currentPage %}
+        <li class="page active">
+            {% if pp.news and page === 1 %}
+            <a href="{{pageChannel}}">{{page}}</a>
+            {% else %}
+            <a href="{{pp.unit}}{{page}}">{{page}}</a>
+            {% endif %}
+        </li>
+        {% else %}
+        <li class="page">
+            {% if pp.news and page===1 %}
+            <a href="{{pageChannel}}">{{page}}</a>
+            {% else %}
+            <a href="{{pp.unit}}{{page}}">{{page}}</a>
+            {% endif %}
+        </li>
+        {% endif %}
+        {% endfor %}
+        {% if pp.totalPage == 0 or pp.currentPage === pp.totalPage %}
+        <li class="next disabled">
+            <a>下一页</a>
+        </li>
+        <li class="last disabled">
+            <a>尾页</a>
+        </li>
+        {% else %}
+        <li class="next">
+            <a href="{{pp.unit}}{{pp.currentPage+1}}">下一页</a>
+        </li>
+        <li class="last">
+            <a href="{{pp.unit}}{{pp.totalPage}}">尾页</a>
+        </li>
+        {% endif %}
+    </ul>
+</ul>

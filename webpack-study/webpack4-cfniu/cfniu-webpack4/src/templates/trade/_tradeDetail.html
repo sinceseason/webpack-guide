@@ -1,0 +1,138 @@
+<div class="type1-title clearfix">
+    <div class="title-name size18 gray-dark fb">${trade.product.productName}</div>
+    <div class="title-info">（合约编号：${trade.id}）</div>
+    <!-- 欠费 -->
+    {@if trade.ArrearsCost}
+    <div class="title-info">
+        <span class="mark-word-red">已欠费</span>
+        <span class="gray-dark">欠费 </span>
+        <span class="color-red fb">${trade.ArrearsCost|money}</span>
+        <span class="gray-dark">天 </span>
+        <a class="link-blue" href="/user/recharge?diff=${trade.ArrearsCost}">立即充值</a>
+    </div>
+    {@else if trade.product.canPaidRenew && trade.paidRenewTime && trade.paidRenewTime>0}
+    <div class="title-info">
+        <span class="mark-word-red">已延期</span>
+        <span class="gray-dark">延期 </span>
+        <span class="color-red fb"> ${trade.paidRenewTime}</span>
+        <span class="gray-dark">天 </span>
+    </div>
+    {@/if}
+
+    <div class="title-date size12">${trade.firstTradeDate|timeFormat} - ${trade.endTradeDate|timeFormat}</div>
+    <div class="detail-btn-group">
+        <a href="/tradeclient?tradeId=${trade.id}&type=B" class="btn-fixed-100 btn-red">
+            交易委托
+        </a>
+        {@if trade.product.canFetchProfit}
+        <a data-index=1 class="btn-fixed-100 btn-gray-border JS-profit">提取利润</a>
+        {@/if} {@if trade.product.canAddFx}
+        <a data-index=2 class="btn-fixed-100 btn-gray-border JS-addCapital">追加本金</a>
+        {@/if} {@if trade.product.canPaidRenew}
+        <a data-index=3 class="btn-fixed-100 btn-gray-border JS-delaySale">延期卖出</a>
+        {@/if} {@if trade.product.canSuspensionConvert}
+        <a data-index=4 class="btn-fixed-100 btn-gray-border JS-stopTrade">停牌转合约</a>
+        {@/if} {@if trade.product.canCancel}
+        <a data-index=5 class="btn-fixed-100 btn-gray-border JS-tradeCancel">申请结算</a>
+        {@/if}
+        <!-- <a data-index=3 class="btn-fixed-100 btn-gray-border JS-delaySale">延期卖出</a> -->
+    </div>
+</div>
+<ul class="flow-layout-3col clearfix">
+    <li>
+        <div>合约资产
+            <i class="icon-shuaxin1 hand color-blue" onclick="location.reload()"></i>
+        </div>
+        <div class="size18 fb gray-dark">${account.assets|money}</div>
+    </li>
+    <li>
+        <div>当前盈亏
+            <span class="mark-word-red">${trade.profitRate}%盈利分配</span>
+        </div>
+        <div class="fb color-red">
+            {@if account.assets - trade.wfPercent >= 0}
+            <span class="size18">${account.assets - trade.wfPercent|money}</span>
+            <span class="size14">（${((account.assets - trade.wfPercent)/trade.wfPercent*100).toFixed(2)}%）</span>
+            {@else}
+            <span class="size18 color-green">${account.assets - trade.wfPercent|money}</span>
+            <span class="size14 color-green">（${((account.assets - trade.wfPercent)/trade.wfPercent*100).toFixed(2)}%）</span>
+            {@/if}
+        </div>
+    </li>
+</ul>
+<ul class="flow-layout-3col clearfix">
+    <li>
+        <div>持仓市值</div>
+        <div class="size18 fb gray-dark">${account.marketValue|money}</div>
+    </li>
+    <li>
+        <div>可用现金</div>
+        <div class="size18 fb gray-dark">${account.available|money}</div>
+    </li>
+    <li>
+        <div>持仓比例</div>
+        {@if account.assets == 0}
+        <div class="size18 fb gray-dark">0.00%</div>
+        {@else}
+        <div class="size18 fb gray-dark">${(account.marketValue/account.assets*100)|round,2}%</div>
+        {@/if}
+    </li>
+</ul>
+<div class="detail-ratio-line">
+    {@if trade.tradeTotal>trade.wfAlertPercent}
+    <div style="margin-left:800px;" class="arrow-ratio"></div>
+    {@else}
+    <div style="margin-left:430px;" class="arrow-ratio"></div>{@/if}
+    <span class="line-blue"></span>
+    <span class="line-green"></span>
+    <span class="line-red"></span>
+</div>
+<div class="trade-detail-info">
+    <div class="type3-title clearfix">
+        <div class="title-name">
+            <span class="fb">合约信息</span>
+            <!-- <a href="#" class="link-blue-noline">
+                <i class="icon-fenxiang color-blue"></i>分享战绩
+            </a> -->
+        </div>
+        <div class="title-date">
+            <a class="link-blue JS-tradeFlowList">查看合约流水</a>
+        </div>
+    </div>
+    <ul class="flow-layout-4col clearfix">
+        <li>
+            <span>操盘资金：</span>
+            <span class="gray-dark fb">${trade.wfPercent|money}</span>
+        </li>
+        <li>
+            <span>投资本金：</span>
+            <span class="color-red fb">${trade.capitalAmount|money}</span>
+        </li>
+        <li>
+            <span>触发警戒：</span>
+            <span class="color-orange fb">${trade.wfAlertPercent|money}</span>
+        </li>
+        <li>
+            <span>已操盘天数：</span>
+            <span class="gray-dark">
+                <b>${usedDay}</b> 个交易日</span>
+        </li>
+        <li>
+            <span>申请金额：</span>
+            <span class="gray-dark fb">${trade.wfPercent - trade.capitalAmount|money}</span>
+        </li>
+        <li>
+            <span>盈利分配：</span>
+            <span class="gray-dark fb">${trade.profitRate}%</span>
+        </li>
+        <li>
+            <span>触发止损：</span>
+            <span class="color-green fb">${trade.wfOpenLine|money}</span>
+        </li>
+        <li>
+            <span>账户管理费：</span>
+            <span class="gray-dark">
+                <b>${trade.accountMgAmt|money}</b> 元 / ${trade.cycleType|cycleType}</span>
+        </li>
+    </ul>
+</div>

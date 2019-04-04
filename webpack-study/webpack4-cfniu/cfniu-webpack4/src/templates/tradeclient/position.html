@@ -1,0 +1,45 @@
+<table class="common-table" width="100%" cellpadding="0" cellspacing="0">
+    <thead>
+        <tr>
+            <th width="19%">股票名称</th>
+            <th width="13%">持有股数</th>
+            <th width="13%">可卖股数</th>
+            <th width="13%">成本价</th>
+            <th width="13%">当前价</th>
+            <th width="16%">当前市值（占比）</th>
+            <th width="13%">浮动收益</th>
+        </tr>
+    </thead>
+    <tbody>
+        {@each list as item,index}
+        <tr class="JS-order-showstock">
+            <td>
+                <span class="fb">${item.stockName}</span>
+                <span class="gray-base">（
+                    <span class="JS-position-stockCode">${item.stockCode}</span>
+                    ）</span>
+            </td>
+            <td>${item.qty}</td>
+            <td>${item.availableQty}</td>
+            <td>${item.costValue|money}</td>
+            <td>
+                <span class="fb color-red">${item.price|money}</span>
+            </td>
+            <td>
+                <span class="fb">${item.stockBalance|money}</span>
+                {@if(item.lossRatio
+                <0)} <span class="color-green">（${item.stockBalance/account.assets*100|round}%）</span>
+                    {@else}
+                    <span class="color-red">（${item.stockBalance/account.assets*100|round}%）</span>
+                    {@/if}
+            </td>
+            <td>
+                {@if(item.lossRatio
+                <0)} <span class="fb color-green">${item.loss|money}</span>
+                    {@else}
+                    <span class="fb color-red">${item.loss|money}</span>
+                    {@/if}
+            </td>
+        </tr>{@/each}
+    </tbody>
+</table>

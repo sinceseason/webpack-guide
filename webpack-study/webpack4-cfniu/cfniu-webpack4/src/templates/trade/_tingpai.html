@@ -1,0 +1,54 @@
+<li class="clearfix">
+    <div class="col2-list-title">总操盘资金：</div>
+    <div class="col2-list-content">
+        <span class="fb gray-dark">${order.wfPercent|money}</span>
+        <span class="fb gray-dark">元</span>
+    </div>
+</li>
+<li class="clearfix">
+    <div class="col2-list-title">合约到期日：</div>
+    <div class="col2-list-content">
+        <span class="fb gray-dark">${order.endTradeDate|timeFormat}</span>
+        {@if(order.product.autoExtension==0)}
+        <span class="gray-light">（自动续约）</span>{@/if}
+    </div>
+</li>
+<li class="clearfix">
+    <div class="col2-list-title">选择杠杆：</div>
+    <div class="col2-list-content">
+        <select>
+            {@each multiple as item,index} {@if(index==chooseMultiple)}
+            <option value=${item} selected>${item} 倍</option>
+            {@else}
+            <option value=${item}>${item} 倍</option>
+            {@/if} {@/each}
+        </select>
+    </div>
+</li>
+<li class="clearfix">
+    <div class="col2-list-title">投资本金：</div>
+    <div class="col2-list-content">
+        <span class="fb gray-dark">${order.capitalAmount|money}</span>
+        <span class="fb gray-dark">元</span>
+    </div>
+</li>
+<li class="clearfix">
+    <div class="col2-list-title">预存管理费：</div>
+    <div class="col2-list-content">
+        <span class="fb gray-dark">${order.accountMgAmt|money}</span>
+        <span class="fb gray-dark">元</span>
+    </div>
+</li>
+<li class="clearfix have-topline">
+    <div class="col2-list-title">共计应支付：</div>
+    <div class="col2-list-content">
+        <div class="item-inner">
+            <span class="fb color-red">${amount|money}</span>
+            <span class="fb gray-dark">元</span>
+        </div>
+        <div class="item-inner">
+            预期还将获得
+            <span class="color-red">${order.accountMgAmt * order.wfDuration|round}</span> 积分
+        </div>
+    </div>
+</li>

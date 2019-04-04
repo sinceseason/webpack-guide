@@ -1,0 +1,31 @@
+{@if list.length == 0}
+<div class='nodata'>暂无数据</div>
+{@else} {@each list as stock}
+<tr>
+    <td>
+        <span class="gray-dark fb">${stock.stockName}</span>
+        <span class="gray-base">（${stock.stockCode}）</span>
+    </td>
+    <td>
+        {@if stock.orderSideName == '卖出'}
+        <span class="color-green">${stock.orderSideName}</span>
+        {@else}
+        <span class="color-red">${stock.orderSideName}</span> {@/if}
+    </td>
+    <td>${stock.qty}</td>
+    <td>{@if stock.orderSideName == '卖出'}
+        <span class="color-green">${stock.price|money}</span>
+        {@else}
+        <span class="color-red">${stock.price|money}</span> {@/if}
+    </td>
+    <td>
+        <span class="gray-dark fb">已成交</span>
+    </td>
+    <td>
+        <span class="gray-dark fb">${stock.amount|money}</span>
+    </td>
+    <td>
+        <span class="gray-base">${stock.TurnoverTime}</span>
+    </td>
+</tr>
+{@/each} {@/if}

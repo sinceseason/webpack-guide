@@ -1,0 +1,72 @@
+{% extends 'layout/trade/applyTrade.html' %} {% block content %}
+<div class="ui-view-container">
+    <!-- header -->
+    {% include '../components/common/_header.html' %}
+    <!-- main -->
+    <div class="main-content">
+        <div class="wrap">
+            <!-- 一级tab -->
+            {% include '../components/trade/_tabLevel1.html' %}
+            <!-- 二级tab -->
+            {% include '../components/trade/_tabProduct.html' %}
+            <div class="trade-content clearfix">
+                {% include '../components/trade/_flashsaleTime.html' %}
+                <ul class="trade-left">
+                    <div class="icon-arrow"></div>
+                    <!-- 特惠抢购 -->
+                    <li class="JS-isQuota">
+                        <span class="trade-title">抢购额度</span>
+                        <span class="size16 color-red fb JS-limit"></span>
+                        <span>元</span>
+                        <span class="size12 gray-light">（不可交易创业板）</span>
+                    </li>
+                    <li>
+                        {% if pzType == 9 or pzType == 5 %}
+                        <span class="trade-title">操盘类型</span>
+                        <span class="size12 gray-light">T日未交易股票，收盘后平台有权终止合约</span>
+                        <div class="trade-btn-group">
+                            <a href='/trade/9'>
+                                <button data-nav="9" class="btn-trade-normal JS-freeProduct">T+1</button>
+                            </a>
+                            <a href='/trade/5'>
+                                <button data-nav="5" class="btn-trade-normal JS-freeProduct">T+4</button>
+                            </a>
+                        </div>
+                        {% endif %}
+                        <span class="trade-title">申请资金</span>
+                        <div class="JuicerAnchor-ApplyAmountList JS-ApplyAmountList relative"></div>
+                    </li>
+                    <li class="invest-fund">
+                        <span class="trade-title">投入资金</span>
+                        <div class="trade-btn-group JS-investAmountList JuicerAnchor-InvestAmountList"></div>
+                    </li>
+                </ul>
+                <div class="trade-right">
+                    <ul class="trade-data-list JuicerAnchor-tradeResult">
+
+                    </ul>
+                    <div class="trade-protocol">
+                        申请即表示已阅读并同意
+                        <a target="_blank" class="JS-tradeProtocol link-blue">《{{NIU_CN}}操盘协议》</a>
+                    </div>
+                    <div class="trade-operate">
+                        <button class="btn-fixed-260 btn-red JS-deal">立即申请</button>
+                    </div>
+                </div>
+            </div>
+            {% include '../components/trade/_tradeNotice.html' %}
+        </div>
+    </div>
+    <!-- footer -->
+    {% include '../components/common/_footer.html' %}
+    <!-- 风险 -->
+    {% include '../components/dialog/trade/_riskTip.html' %}
+    <!-- 申请操盘 -->
+    {% include '../components/dialog/trade/_applayTrade.html' %}
+    <!-- 余额 -->
+    {% include '../components/dialog/trade/_noBalance.html' %}
+    <!-- 限买 -->
+    {% include '../components/dialog/trade/_todayLimit.html' %}
+    <!--优惠券弹框-->
+    {% include '../components/dialog/trade/_noBalance.html' %}
+</div>{% endblock %}

@@ -1,0 +1,35 @@
+@import "../../components/_mcommon.scss";
+
+html {
+    background: $white;
+}
+
+.safe-main {
+    padding: 1.3rem;
+
+    .safe-title {
+        font-weight: 600;
+        color: #333;
+        border-bottom: 1px solid #F0F0F0;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        font-size: 1.4rem;
+    }
+
+    .safe-type {
+        background: #C52F3A;
+        display: inline-block;
+        padding: .2rem .5rem;
+        color: $white;
+        font-size: 1.2rem;
+        margin-bottom: .5rem;
+    }
+
+    .safe-intro {
+        font-size: 1.2rem;
+        color: #666;
+        line-height: 1.5;
+        padding-right: 1.3rem;
+        margin-bottom: 2rem;
+    }
+}

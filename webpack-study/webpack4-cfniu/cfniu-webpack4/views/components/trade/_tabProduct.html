@@ -1,0 +1,29 @@
+ {% if flashsale %}
+<ul class="level2-tab tab-public-level2 clearfix">
+    {% for item in promotions %} {% if item.enabled %}
+    <li class='JS-product-tab JS-sale-tab' data-pzType="{{item.product.pzType}}" data-id="{{item.id}}" data-nav={{loop.index}}>
+        <a>{{item.promotionName}}</a>
+        {% if item.discount %}
+        <span class="mark-word-red tab2-mark">{{item.discount}}</span>
+        {% endif %}
+    </li>
+    {% endif %} {% endfor %}
+    <li class="align-right">
+        <a class="link-blue JS-dayLimitDialog">今日限买股</a>
+    </li>
+</ul>
+{% else %}
+<ul class="level2-tab tab-public-level2 clearfix">
+    {% for item in product %}
+    <li class='JS-product-tab' data-nav={{item.product.pzType}}>
+        <a href="/trade/{{item.product.pzType}}">{{item.name}}</a>
+        {% if item.discount %}
+        <span class="mark-word-red tab2-mark">{{item.discount}}</span>
+        {% endif %}
+    </li>
+    {% endfor %}
+    <li class="align-right">
+        <a class="link-blue JS-dayLimitDialog">今日限买股</a>
+    </li>
+</ul>
+{% endif %}

@@ -1,0 +1,106 @@
+.left-logo {
+    float: left;
+    padding-top: 15px;
+    width: 300px;
+    .logo-main {
+        width: 156px;
+        height: 50px;
+        background: url("../../../images/agent/logo.png") no-repeat left top;
+        cursor: pointer;
+    }
+    .logo-second {
+        color: $white;
+        font-size: 24px;
+        float: left;
+        font-weight: 600;
+        border-left: 2px solid $white;
+        margin: 8px 0 0 20px;
+        padding-left: 15px;
+    }
+}
+
+.right-user {
+    float: right;
+    padding-top: 25px;
+    line-height: 30px;
+    color: $white;
+    .user-name {
+        color: $white;
+        font-weight: $font-weight-default;
+        margin: 0 15px 0 5px;
+        text-decoration: underline;
+    }
+    .uesr-level {
+        display: inline-block;
+        background: $red;
+        font-weight: 600;
+        font-size: 12px;
+        padding: 0 8px;
+        border-radius: 3px;
+        margin-right: 20px;
+        line-height: $line-height-default;
+    }
+}
+
+.partner-cont {
+    margin-top: 20px;
+}
+
+.agent-head {
+    background: $agent-head-bg;
+    height: 80px;
+}
+
+.agent-nav {
+    float: left;
+    margin-left: 380px;
+    margin-top: 30px;
+    li {
+        float: left;
+        margin-right: 35px;
+        a {
+            color: $white;
+            font-size: 16px;
+        }
+    }
+}
+
+.agent-wrap {
+    width: 1180px;
+    margin: 40px auto 60px auto;
+}
+
+.partner-tab {
+    border-bottom: 1px solid $gray-more-light;
+    height: 42px;
+    line-height: 42px;
+    li {
+        float: left;
+        margin-right: 10px;
+        border: 1px solid $gray-more-light;
+        border-bottom: none;
+        font-size: 14px;
+        color: $gray-dark;
+        width: 100px;
+        text-align: center;
+        cursor: pointer;
+        &.selected {
+            color: #66799F;
+            position: relative;
+            &:before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 41px;
+                z-index: 10;
+                height: 1px;
+                background: $white;
+                width: 100px;
+            }
+        }
+    }
+}
+
+.table-min-hegiht {
+    min-height: 480px;
+}

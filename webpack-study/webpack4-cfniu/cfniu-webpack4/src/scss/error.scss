@@ -1,0 +1,26 @@
+@import "components/_common.scss";
+.error-left {
+    float: left;
+    background: url("../images/error/error-img.png") no-repeat bottom right;
+    width: 485px;
+    height: 365px;
+}
+
+.error-right {
+    float: right;
+    width: 550px;
+    margin: 110px 0 50px 0;
+    color: #333;
+    font-size: 16px;
+    line-height: 25px;
+    height: 350px;
+    .title {
+        font-size: 32px;
+        padding-bottom: 20px;
+    }
+    .cont {
+        font-size: 14px;
+        margin-top: 55px;
+        padding-bottom: 20px;
+    }
+}

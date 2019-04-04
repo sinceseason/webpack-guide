@@ -1,0 +1,13 @@
+.focus-err {
+    border: 1px solid $focus-error-color !important;
+    i {
+        color: $focus-error-color;
+    }
+}
+
+.focus {
+    border: 1px solid $focus-color !important;
+    i {
+        color: $focus-color;
+    }
+}

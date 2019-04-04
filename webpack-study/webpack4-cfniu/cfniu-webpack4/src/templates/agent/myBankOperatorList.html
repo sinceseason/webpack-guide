@@ -1,0 +1,8 @@
+{@each banks as item}
+<div class="bankcard-detail  clearfix">
+    <img src="/image.cfniu.com/${item.bank.bankIcon}" class="bank-img" />
+    <span class="bank-name">${item.bankName}</span>
+    <span class="bank-number" data-bankId="${item.id}" data-bankCard="${item.cardNo}">${item.cardNo.substr(0,4 )+"****"+item.cardNo.substr(item.cardNo.length-4,item.cardNo.length ) }</span>
+    <span class="bank-close JS-removebank" data-bankId="${item.id}" data-bankCard="${item.cardNo}"></span>
+</div>
+{@/each}

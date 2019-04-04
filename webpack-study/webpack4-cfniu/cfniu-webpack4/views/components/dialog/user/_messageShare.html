@@ -1,0 +1,30 @@
+<div class="modal-wrap modal-size-normal none" id="JS-url-phone-Dialog">
+    <div class="modal-title clearfix">
+        <span class="head-title-left">短信分享</span>
+        <span class="head-close title-close"></span>
+    </div>
+    <div class="modal-content JS-phone-form">
+        <ul class="modal-list">
+            <li class="center">
+                <span class="gray-dark">短信将发送至您在平台绑定的手机号码中</span>
+            </li>
+        </ul>
+        <ul class="modal-list have-topline">
+            <li>
+                <textarea readonly="readonly" class="send-link">送你100元炒股红包，点击即可领取！{{shareUrl}}</textarea>
+            </li>
+            <li class="input-login">
+                <img src='/verifyCode.api' onclick="this.src='/verifyCode.api?' + new Date().getTime();" class="right-yzm">
+                <input type="text" placeholder="图形验证码" name="ivc">
+                <input type="text" value="{{member.telephone}}" name="key" class="none">
+            </li>
+        </ul>
+        <div class="errortip-default JS-errorWrap none">
+            <i class="icon-tishi"></i>
+            <span class="JS-errorMsg">这里是提示内容</span>
+        </div>
+    </div>
+    <div class="modal-operate">
+        <a class="btn-full btn-red JS-url-phone-btn">确 认</a>
+    </div>
+</div>

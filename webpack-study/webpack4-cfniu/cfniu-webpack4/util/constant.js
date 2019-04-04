@@ -1,0 +1,93 @@
+const utilService = require('../services/utilService')
+module.exports = {
+    API: {
+        novice_experience: '/novice/experience',
+        cms_findByAdspaceId: '/cmsmanager/cms/advertising/findByAdspaceId',
+        cms_findFriendLinks: '/cmsmanager/cms/advertising/findFriendLinks',
+        cms_findAllTag: '/cmsmanager/cms/content/findAllTag',
+        cms_findAllChannel: '/cmsmanager/cms/content/findAllChannel',
+        cms_findRecentContent: '/cmsmanager/cms/content/findRecentContent',
+        cms_findByChannelIdAndContentId: '/cmsmanager/cms/content/findByChannelIdAndContentId',
+        cms_findByChannelId: '/cmsmanager/cms/content/findByChannelId',
+        cms_findByTagId: '/cmsmanager/cms/content/findByTagId',
+        cms_fingByContentId: '/cmsmanager/cms/content/fingByContentId',
+        cms_findHotArticle: '/cmsmanager/cms/content/findHotArticle',
+        cms_findRelInfoByTag: '/cmsmanager/cms/content/findRelInfoByTag',
+        //居间商
+        getmypartner: "/agent/getmypartner",
+        // 用户
+        user_login: '/user/login',
+        user_regsave: '/user/regsave',
+        user_getmybank: '/user/getmybank',
+        user_getbalance: '/user/getbalance',
+        user_getverifycode: '/user/getverifycode',
+        user_checkverifycode: '/user/checkverifycode',
+        user_weixinBind: '/user/weixinBind',
+        user_wxlogin: '/user/wxlogin',
+        user_zone_limit: '/user/zone/limit',
+        user_modifypwd: '/user/modifypwd',
+        user_modifypwd2: '/user/modifypwd2',
+        user_modifyrealname: '/user/modifyrealname',
+        user_modifytel: '/user/modifytel',
+        user_iolist: '/user/iolist',
+        user_getdelta: '/user/getdelta',
+        user_getdraw: '/user/getdraw',
+        user_getcity: '/user/getcity',
+        user_savebank: '/user/savebank',
+        user_removebank: '/user/removebank',
+        user_getbank: '/user/getbank',
+        user_getCouponModel: '/user/getCouponModel',
+        user_exchange: '/user/exchange',
+        user_uploadHeader: '/user/uploadHeader',
+        user_upload: '/upload',
+        user_getverify: '/user/getverify',
+        user_savemsg: '/user/savemsg',
+        user_getaccountrpt: '/user/getaccountrpt',
+        user_gettrackinfo: '/user/gettrackinfo',
+        user_getextendinfo: '/extension/info',
+        user_gethistrasbill: '/user/gethistrasbill',
+        user_getmytrack: '/user/getmytrack',
+        user_sharemsg: '/user/sharemsg',
+        user_getappverifycode: '/user/getappverifycode',
+        user_getnotice: '/user/getnotice',
+        user_setnotice: '/user/setnotice',
+        user_favors: '/user/favors',
+        user_subscribe: '/user/subscribe',
+        user_cancel: '/user/cancel',
+        user_status: '/user/status',
+        user_shareContract: '/user/shareContract',
+        user_outlets: "/user/bank/outlets",
+        user_coupon: "/coupon/member",
+        user_newsList: "/news/list",
+        coupon_model: "/coupon/model",
+        // news
+        user_noticeList: "/news/board/notice",
+        // 活动签到
+        promote_signIn: '/promote/signIn',
+        promote_tradeCash: '/promote/tradeCash',
+        promote_invite: '/promote/invite',
+        // 世界杯
+        wxpromote_list: '/wxpromote/list',
+        wxpromote_worldCup: '/wxpromote/worldCup',
+        wxpromote_rank: '/wxpromote/rank',
+        wxpromote_get_record: '/wxpromote/get',
+        wxpromote_action_create: '/wxpromote/action',
+        wxpromote_action_join: '/wxpromote/action',
+        // 体验活动
+        match_getstep: '/match/getmatchstep',
+    },
+    HEADERS: {
+        JSON: {
+            'content-type': 'application/json'
+        },
+        DEFAULT: {
+            'X-Requested-With': 'XMLHttpRequest',
+            'Client-Agent': utilService.getUserAgent()
+        }
+    },
+    cycleTradeDay: '交易日',
+    cycleTradeMonth: '月',
+    cycleTradeWeek: '周',
+    tradeFormulaDay: '准备资金 = 投资本金 + 日管理费 x 天数',
+    tradeFormulaMonth: '准备资金 = 投资本金 + 月管理费 x 月数'
+}

@@ -1,0 +1,8 @@
+<div class="news-title-name">最热专题</div>
+<div class="news-foot-tab clearfix">
+    {% for news in hotSpecials %}
+    <a href="{{MOBILE_PROXY_URL}}/news/special{{news.channelId}}" class="tab-item">
+        <span>{{news.channelName}}</span>
+    </a>
+    {% endfor %}
+</div>

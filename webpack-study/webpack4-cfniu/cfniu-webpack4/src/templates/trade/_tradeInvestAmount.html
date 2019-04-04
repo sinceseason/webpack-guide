@@ -1,0 +1,7 @@
+{@each list as item}
+<div class="btn-trade-big JS-investAmount" data-mutiple='${item.mutiple}'>
+    <div class="btn-trade-item1" data-mutiple='${item.mutiple}'>${item.mutiple} 倍</div>
+    <div class="btn-trade-item2 none">月利率 0.00%</div>
+    <div class="btn-trade-item3" data-investAmount='${item.value}'>${item.value}元</div>
+</div>
+{@/each}

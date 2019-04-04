@@ -1,0 +1,29 @@
+<div class="modal-wrap modal-size-normal none" id="JS-modify-tel-Dialog">
+    <div class="modal-title clearfix">
+        <span class="head-title-left">修改绑定手机</span>
+        <span class="head-close title-close"></span>
+    </div>
+    <div class="modal-content JS-tel-from">
+        <ul class="modal-list">
+            <li>绑定手机：
+                <span class="gray-dark fb">{{member.telephone | isTelephone}}</span>
+                <input type="text" value="{{member.telephone}}" name="telephone" class="none JS-telephone" data-telephone='{{member.telephone}}'>
+            </li>
+            <li class="focus-err input-login">
+                <img name="verifyImg" src='/verifyCode.api' onclick="this.src='/verifyCode.api?' + new Date().getTime()" class="right-yzm" />
+                <input type="text" placeholder="图片验证码" name="ivc"/>
+            </li>
+            <li class="input-login">
+                <button class="right-btn JS-getverifyCode">发送验证码</button>
+                <input type="text" placeholder="短信验证码" name="verifyCode"/>
+            </li>
+        </ul>
+        <div class="errortip-default none JS-errorWrap">
+            <i class="icon-tishi"></i>
+            <span class="JS-errorMsg">这里是提示内容</span>
+        </div>
+    </div>
+    <div class="modal-operate">
+        <a class="btn-full btn-red JS-next-step">下一步</a>
+    </div>
+</div>

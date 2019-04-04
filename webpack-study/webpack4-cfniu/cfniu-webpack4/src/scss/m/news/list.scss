@@ -1,0 +1,51 @@
+@import "../../components/_mcommon.scss";
+
+html {
+    padding-bottom: 57px;
+}
+
+.news-list-wrap {
+    margin-top: 88px;
+    padding-left: 15px;
+    color: $gray-base;
+    background: $white;
+    border-bottom: 1px solid #e5e5e5;
+
+    li {
+        border-bottom: 1px solid #eee;
+        padding: 15px 15px 15px 0;
+        text-align: left;
+
+        .title {
+            font-size: 14px;
+            color: $gray-dark;
+            padding-bottom: 5px;
+        }
+
+        .desc {
+            color: $gray-light;
+            font-size: 12px;
+
+            .type {
+                float: left;
+                margin-right: 10px;
+            }
+
+            .time {
+                float: left;
+            }
+
+            .views {
+                float: right;
+            }
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+}
+
+.news-list-wrap.tag {
+    margin-top: 77px;
+}

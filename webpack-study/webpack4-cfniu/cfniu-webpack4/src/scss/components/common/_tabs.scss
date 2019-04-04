@@ -1,0 +1,98 @@
+//-tab
+.level1-tab {
+    @include wrap-tab($border-default-color, $bg-default-color);
+    margin-bottom: 20px;
+    li {
+        a {
+            @include default-tab(220px, 48px, 18px, $gray-dark, $font-weight-default);
+        }
+        &.selected a {
+            @include selected-tab($red, $white, 1px, $white);
+            border-left: 1px solid $border-default-color;
+            border-right: 1px solid $border-default-color;
+            border-top: 1px solid $border-default-color;
+            height: 49px;
+            margin-bottom: -1px;
+        }
+    }
+}
+
+.level2-tab {
+    @include wrap-tab($border-default-color, $white);
+    margin: 10px 0 20px 0;
+    li {
+        position: relative;
+        a {
+            @include default-tab(140px, 35px, 16px, $gray-base, normal);
+        }
+        &.selected a {
+            @include selected-tab($gray-dark, $white, 2px, $red);
+        }
+        &.align-right {
+            float: right;
+            a {
+                text-align: right;
+                font-size: 14px;
+                color: $link-color-blue;
+                padding-right: 0;
+            }
+        }
+        .tab2-mark {
+            position: absolute;
+            right: 0;
+            top: 11px
+        }
+    }
+}
+
+.level3-tab {
+    @include wrap-tab($border-default-color, $bg-light-color);
+    margin-bottom: 20px;
+    li {
+        a {
+            @include default-tab(120px, 36px, 14px, $gray-base, $font-weight-default);
+        }
+        &.selected a {
+            @include selected-tab($red, $white, 2px, $white);
+            margin-bottom: -1px;
+            border-left: 1px solid $border-default-color;
+            border-right: 1px solid $border-default-color;
+            border-top: 1px solid $border-default-color;
+            height: 37px;
+        }
+    }
+}
+
+//-居间商注册tab
+.agent-reg-tab {
+    @include wrap-tab($border-default-color, $white);
+    padding-top: 20px;
+    margin: 0 20px 10px 20px;
+    li {
+        position: relative;
+        a {
+            @include default-tab(120px, 35px, 18px, $gray-base, normal);
+        }
+        &.selected a {
+            @include selected-tab($gray-dark, $white, 2px, $red);
+        }
+    }
+}
+
+//-居间商用户中心tab
+.agent-user-tab {
+    @include wrap-tab($border-default-color, $bg-light-color);
+    li {
+        a {
+            @include default-tab(120px, 40px, 14px, $gray-base, $font-weight-default);
+        }
+        &.selected a {
+            @include selected-tab($red, $white, 2px, $white);
+            margin-bottom: -1px;
+            border-left: 1px solid $border-default-color;
+            border-right: 1px solid $border-default-color;
+            border-top: 1px solid $border-default-color;
+            height: 41px;
+        }
+    }
+}

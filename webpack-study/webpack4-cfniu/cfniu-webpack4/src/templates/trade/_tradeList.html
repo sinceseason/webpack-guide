@@ -1,0 +1,122 @@
+{@if list.length===0}
+<div class='nodata'>
+    {@if userLevel!=2}
+    <a class='link-blue' href='/trade/0'>申请操盘&gt;&gt;</a> {@else}
+    <a class='word'>暂无数据</a> {@/if}
+</div>
+{@else} {@each list as trade}
+<li class="clearfix">
+    <div class="type2-title clearfix">
+        <div class="title-name size16 fb">${trade.product.productName} </div>
+        <!-- 延期 -->
+        {@if trade.product.canPaidRenew && trade.paidRenewTime && trade.paidRenewTime>0}
+        <div class="title-info">
+            <span class="mark-word-red">延期
+                <span>${trade.paidRenewTime} 天</span>
+            </span>
+        </div>
+        {@/if}
+        <!-- 欠费 -->
+        {@if trade && trade.ArrearsCost}
+        <div class="title-info">
+            <span class="gray-dark">欠费</span>
+            <span class="color-red">${trade.ArrearsCost}</span>
+            <span class="gray-dark">元，</span>
+            <a class="link-blue" href="/user/recharge?diff=${trade.ArrearsCost>trade.balance?trade.ArrearsCost-trade.balance:trade.ArrearsCost}">立即充值</a>
+        </div>
+        {@/if}
+        <div class="title-date size12">${trade.firstTradeDate|timeFormat} - ${trade.endTradeDate|timeFormat}</div>
+    </div>
+    <div class="type3-title clearfix">
+        <div class="title-name fb">当前资产状态</div>
+        <div class="title-date JS-wxShare-bind">
+            <a data-share="${(trade.tradeTotal-trade.wfPercent)/trade.wfPercent*100|money}" class="link-blue JS-wxShare">分享战绩</a>
+        </div>
+    </div>
+    <div class="mytrade-left">
+        <ul class="mytrade-assets">
+            <!-- 盈利 -->
+            {@if trade.tradeTotal > trade.wfAlertPercent}
+            <li class="assets-line1 selected-red">资产健康</li>
+            <li>
+                <span>触发预警</span>
+                <span>${trade.wfAlertPercent|money}</span>
+            </li>
+            <li>
+                <span>触发止损</span>
+                <span>${trade.wfOpenLine|money}</span>
+            </li>
+            <!-- 止损 -->
+            {@else if trade.tradeTotal
+            <=trade.wfAlertPercent && trade.tradeTotal> trade.wfOpenLine}
+                <li class="assets-line1">资产健康</li>
+                <li class="selected-orange">
+                    <span>触发预警</span>
+                    <span>${trade.wfAlertPercent|money}</span>
+                </li>
+                <li>
+                    <span>触发止损</span>
+                    <span>${trade.wfOpenLine|money}</span>
+                </li>
+                {@else}
+                <li class="assets-line1">资产健康</li>
+                <li>
+                    <span>触发预警</span>
+                    <span>${trade.wfAlertPercent|money}</span>
+                </li>
+                <li class="selected-green">
+                    <span>触发止损</span>
+                    <span>${trade.wfOpenLine|money}</span>
+                </li>
+                {@/if}
+        </ul>
+        <div class="mytrade-total ${trade.tradeTotal > trade.wfAlertPercent?'red':trade.tradeTotal<=trade.wfAlertPercent && trade.tradeTotal> trade.wfOpenLine?'orange':'green'}">
+            <div class="size14">合约总资产</div>
+            <div class="yujing-value">${trade.tradeTotal|money}</div>
+            {@if trade.tradeTotal >= trade.wfPercent}
+            <div class="size16">+${trade.tradeTotal-trade.wfPercent|money}</div>
+            <div class="size16">+${((trade.tradeTotal-trade.wfPercent)/trade.wfPercent*100)|money}%↑</div>
+            {@else}
+            <div class="size16">${trade.tradeTotal-trade.wfPercent|money}</div>
+            <div class="size16">${((trade.tradeTotal-trade.wfPercent)/trade.wfPercent*100)|money}%↓</div>
+            {@/if}
+        </div>
+    </div>
+    <div class="mytrade-right">
+        <ul class="flow-layout-2col clearfix">
+            <li>
+                <span>申请资金：</span>
+                <span class="fb gray-dark">${trade.wfPercent-trade.capitalAmount|money}</span>
+            </li>
+            <li>
+                <span>浮动盈亏：</span>
+                <span class="fb ${trade.tradeTotal >= trade.wfPercent?'color-red':'color-green'}">${(trade.tradeTotal-trade.wfPercent)|money}（${((trade.tradeTotal-trade.wfPercent)/trade.wfPercent*100)|money}%）</span>
+            </li>
+            <li>
+                <span>触发警戒：</span>
+                <span class="fb color-orange">${trade.wfAlertPercent|money}</span>
+            </li>
+            <li>
+                <span>触发止损：</span>
+                <span class="fb color-green">${trade.wfOpenLine|money}</span>
+            </li>
+            <li>
+                <span>冻结资金：</span>
+                <span class="fb gray-dark">${trade.capitalAmount|money}</span>
+            </li>
+        </ul>
+        <div class="mytrade-databtn">
+            {@if trade.status == 4}
+            <a class="btn-fixed-120 btn-disabled">结算中</a>
+            {@else if !trade.transAccount.accountInit}
+            <a class="btn-fixed-120 btn-disabled">生成中</a>
+            {@else}
+            <a href="/tradeclient?tradeId=${trade.id}&type=B" class="btn-fixed-120 btn-red">快速买入</a>
+            <a href="/tradeclient?tradeId=${trade.id}&type=S" class="btn-fixed-120 btn-green">快速卖出</a>
+            <a data-addcapital=${trade.wfPercent * 0.01|round} data-tradeId=${trade.id} class="btn-fixed-120 btn-gray-border JS-addCapital">追加保证金</a>
+            <a href="/trade/detail?tradeId=${trade.id}" class="btn-fixed-120 btn-gray-border">更多操作</a>
+            {@/if}
+        </div>
+    </div>
+</li>
+{@/each} {@/if}

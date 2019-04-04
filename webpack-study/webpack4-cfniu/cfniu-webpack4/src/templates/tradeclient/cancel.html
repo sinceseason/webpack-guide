@@ -1,0 +1,43 @@
+<table class="common-table" width="100%" cellpadding="0" cellspacing="0">
+    <thead>
+        <tr>
+            <th width="19%">股票名称</th>
+            <th width="13%">买卖方向</th>
+            <th width="13%">委托股数</th>
+            <th width="13%">委托价格</th>
+            <th width="13%">成交状态</th>
+            <th width="16%">委托时间</th>
+            <th width="13%">操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        {@each list as item,index}
+        <tr>
+            <td>
+                <span class="fb">${item.stockName}</span>
+                <span class="gray-base">（${item.stockCode}）</span>
+            </td>
+            <td>
+                {@if(item.OrderSide=='BUY')}
+                <span class="color-red">买入</span>
+                {@else}
+                <span class="color-green">卖出</span>
+                {@/if}
+            </td>
+            <td>${item.entrustQty}</td>
+            <td>
+                <span class="fb">${item.entrustPrice}</span>
+            </td>
+            <td>${item.entrustStateNm}</td>
+            <td>${item.entrustTime}</td>
+            <td>
+                <button class="btn-fixed-55 btn-red JS-cancelOrder" data-pcId="${item.pcId}">撤单</button>
+            </td>
+        </tr>{@/each}
+    </tbody>
+</table>
+{@if(!list||list.length==0)}
+<div class="nodata">
+    <div class="word">没有相关数据！</div>
+</div>
+{@else} {@/if}

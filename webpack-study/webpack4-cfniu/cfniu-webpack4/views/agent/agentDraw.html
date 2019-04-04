@@ -1,0 +1,198 @@
+{% extends 'layout/agent/agentDraw.html' %}
+<!-- content -->
+{% block content %}
+<div class="ui-view-container">
+    <!-- header -->
+    {% include "../components/agent/_agentHead.html" %}
+    <!-- main -->
+    <div class="agent-wrap">
+        <div class="agent-draw">
+            <span class="draw-list">当前奖励：
+                <span class="size16 fb">100元</span>
+            </span>
+            <span class="draw-list">可提现奖励：
+                <span class="size16 fb">200元</span>
+            </span>
+        </div>
+        <div class="agent-line clearfix">
+            <span class="line-blue"></span>
+            <span class="line-orange"></span>
+            <span class="line-red"></span>
+        </div>
+        <ul class="agent-user-tab clearfix">
+            <li class="JS-tab" data-nav="0">
+                <a>我要提款</a>
+            </li>
+            <li class="JS-tab" data-nav="1">
+                <a>银行卡管理</a>
+            </li>
+            <li class="JS-tab" data-nav="2">
+                <a>提款记录</a>
+            </li>
+        </ul>
+        <!--我要提款-->
+        <div class="agent-drawing JS-content" data-content="0">
+            <ul class="addbank-list">
+                <li>
+                    <div class="addbank-title">可提现金额：</div>
+                    <div class="addbank-content">
+                        <span class="size16 gray-dark" data-balance="{{agent.account.balance}}">{{agent.account.balance|money}} 元</span>
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="addbank-title">提款金额：</div>
+                    <div class="addbank-content">
+                        <input type="text" placeholder="请输入提款金额" class="input-normal" name='drawAmount' />&nbsp;元
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="addbank-title">银行卡号：</div>
+                    <div class="addbank-content">
+                        <select class="input-normal JS-drawBankCard JuicerAnchor-myBankList">
+                            <option value=''>请选择</option>
+                        </select>&nbsp;&nbsp;
+                        <script type="text/template" class='JuicerTemplate-myBankList'>
+                            {@each banks as item}
+                            <option value=''>请选择银行卡</option>
+                            <option value="${item.cardNo}" class="bankName">${item.cardNo.substr(0,4 )+"****"+item.cardNo.substr(item.cardNo.length-4,item.cardNo.length)
+                                }
+                            </option>
+                            {@/each}
+                        </script>
+                        <!-- <a class="link-blue">管理银行卡</a> -->
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="addbank-title">手机验证码：</div>
+                    <div class="addbank-content relative">
+                        <button class="right-btn JS-getdrawcode JS-countDown">发送验证码</button>
+                        <input type="text" name='drawPwd' placeholder="请输入手机验证码" class="input-normal" />
+                    </div>
+                </li>
+                <li>
+                    <div class="operate-line">
+                        <button class="btn-fixed-140 btn-red JS-draw">提交</button>
+                    </div>
+                </li>
+            </ul>
+            <div class="reminder">
+                <b>温馨提示：</b>禁止洗钱、信用卡套现、虚假交易等行为，一经发现并确认，将终止该账户的使用</div>
+            <div class="draw-arrive clearfix">
+                <div class="arrive-list">
+                    <p class="info-title">最迟
+                        <span class="color-red">4小时</span>到账</p>
+                    <p>工作日10:00-15:00提款当日结算</p>
+                    <p>15:00以后提款第2日结算</p>
+                    <p>具体到账时间以银行为准</p>
+                </div>
+                <div class="arrive-list">
+                    <p class="info-title">提款
+                        <span class="color-red">0</span>手续费</p>
+                    <p>提款产生的银行手续费全免</p>
+                </div>
+                <div class="arrive-list">
+                    <p class="info-title">支持
+                        <span class="color-red">10多</span>家银行</p>
+                    <p>推荐您使用</p>
+                    <p>工商银行 农业银行 建设银行 交通银行</p>
+                    <p>提款到账最快</p>
+                </div>
+            </div>
+        </div>
+        <!--银行卡管理-->
+        <div class="agent-drawing JS-content" data-content="1">
+            <div class="add-bankcard">添加银行卡 </div>
+            <ul class="addbank-list">
+                <li>
+                    <div class="addbank-title">开户名：</div>
+                    <div class="addbank-content">
+                        <span class="size16 gray-dark">{{agent.companyContacts}}</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="addbank-title">开户银行：</div>
+                    <div class="addbank-content">
+                        <select class="input-normal JuicerAnchor-bankList">
+                            <option value=''>请选择银行卡</option>
+                        </select>
+                        <script type="text/template" class='JuicerTemplate-bankList'>
+                            {@each banks as item} {@if item.recommended}
+                            <option value="${item.id}" class="bankName">${item.bankName}（推荐）</option>
+                            {@else}
+                            <option value="${item.id}" class="bankName">${item.bankName}</option>
+                            {@/if} {@/each}
+                        </script>
+                    </div>
+                </li>
+                <li>
+                    <div class="addbank-title">开户所在地：</div>
+                    <div class="addbank-content">
+                        <select class="input-normal JuicerAnchor-provinceList">
+                            <option value=''>---省---</option>
+                        </select>
+                        <script type="text/template" class='JuicerTemplate-provinceList'>
+                            <option value=''>---省---</option>
+                            {@each city as item}
+                            <option value=${item.id}>${item.nodeName}</option>
+                            {@/each}
+                        </script>
+                        <select class="input-normal JuicerAnchor-cityList">
+                            <option value=''>---市---</option>
+                        </select>
+                        <script type="text/template" class='JuicerTemplate-cityList'>
+                            {@each city as item}
+                            <option value=${item.id}>${item.nodeName}</option>
+                            {@/each}
+                        </script>
+                        <input type="text" placeholder="请输入开户行名称" class="input-normal" name='outletsName' />
+                    </div>
+                </li>
+                <li>
+                    <div class="addbank-title">银行卡号：</div>
+                    <div class="addbank-content">
+                        <input type="text" name='cardNo' placeholder="请输入银行卡号" class="input-normal" />
+                    </div>
+                </li>
+                <li>
+                    <div class="addbank-title">确认卡号：</div>
+                    <div class="addbank-content">
+                        <input type="text" name='cardNo2' placeholder="请再次输入银行卡号" class="input-normal" />
+                    </div>
+                </li>
+                <li>
+                    <div class="operate-line">
+                        <button class="btn-fixed-140 btn-red JS-confirm">提交</button>
+                    </div>
+                </li>
+            </ul>
+            <div class="agent-banklist">
+                <div class="size16">银行卡列表</div>
+                <div class='JuicerAnchor-myBankOperatorList'></div>
+            </div>
+        </div>
+        <!--提款记录-->
+        <div class="agent-drawing JS-content" data-content="2">
+            <div class="partner-cont table-min-hegiht">
+                <table width="100%" cellpadding="0" cellspacing="0" class="agent-table">
+                    <thead>
+                        <tr>
+                            <th width="25%">时间</th>
+                            <th width="25%">提款银行卡</th>
+                            <th width="25%">金额</th>
+                            <th width="25%">状态</th>
+                        </tr>
+                    </thead>
+                    <tbody class="JuicerAnchor-drawingRecord">
+
+                    </tbody>
+                </table>
+                <div class="turn-page JS-page"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- footer -->
+{% include '../components/common/_footer.html' %}
+<!-- content end -->
+{% endblock %}

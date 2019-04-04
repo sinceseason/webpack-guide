@@ -1,0 +1,23 @@
+@import "./../components/_common.scss";
+@import "login.scss";
+.forget-wrap {
+    margin: 30px auto;
+    width: 400px;
+}
+
+.forget-cont {
+    padding-bottom: 36px;
+}
+
+.forget-title {
+    font-size: 16px;
+    color: $gray-dark;
+    padding: 15px 0;
+    border-bottom: 1px solid $border-default-color;
+}
+
+.forget-info {
+    text-align: center;
+    color: $gray-light;
+    margin-top: 20px;
+}

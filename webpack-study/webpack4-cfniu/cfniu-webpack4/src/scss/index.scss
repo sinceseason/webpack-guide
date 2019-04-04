@@ -1,0 +1,284 @@
+@import "components/_common.scss";
+.index-banner {
+    margin-top: 106px;
+}
+
+.index-wrap {
+    padding-bottom: 60px;
+}
+
+.index-info {
+    margin: 20px 0 40px 0;
+    li {
+        @include left-marginal(img-info, 0, 0, 60px, 60px, 20px);
+        float: left;
+        width: 215px;
+        .img-info {
+            background: url("../images/index/icon.png") no-repeat;
+        }
+        .img-info.img-icon1 {
+            background-position: 0 0;
+        }
+        .img-info.img-icon2 {
+            background-position: 0 -60px;
+        }
+        .img-info.img-icon3 {
+            background-position: 0 -120px;
+        }
+        .img-info.img-icon4 {
+            background-position: 0 -180px;
+        }
+        .info-title {
+            padding-top: 5px;
+            color: $red-light;
+            font-weight: $font-weight-default;
+        }
+        .info-word {
+            padding-top: 5px;
+            color: $gray-dark;
+            font-size: 16px;
+            font-weight: $font-weight-default;
+        }
+    }
+}
+
+.index-path {
+    padding: 40px 20px;
+    height: 120px;
+    background: $index-pathbg;
+    margin-bottom: 30px;
+    .path-title {
+        float: left;
+        font-size: 20px;
+        font-weight: bold;
+        color: $gray-dark;
+        line-height: 110px;
+    }
+    .path-step {
+        float: left;
+        margin-left: 35px;
+        cursor: default;
+        .step-no {
+            color: $index-pathword;
+            font-size: 48px;
+            font-style: italic;
+            font-weight: bold;
+            float: left;
+            line-height: 110px;
+            margin-right: 20px;
+        }
+        .step-main {
+            float: left;
+            width: 120px;
+            height: 120px;
+            border-radius: 120px;
+            color: $white;
+            text-align: center;
+            box-sizing: border-box;
+            background: $index-pathword;
+            .word {
+                display: block;
+                font-size: 16px;
+                font-weight: $font-weight-default;
+                padding-bottom: 3px;
+            }
+            .word1 {
+                display: block;
+                font-size: 16px;
+                font-weight: $font-weight-default;
+                padding-bottom: 3px;
+                padding-top: 8px;
+            }
+        }
+        .step {
+            background: url("../images/index/icon-pzflow.png") no-repeat 0 18px;
+            width: 100px;
+            height: 60px;
+            margin-bottom: 5px;
+        }
+        .step.step2 {
+            background-position: -120px 18px;
+        }
+        .step.step3 {
+            background-position: -240px 18px;
+        }
+        .step.step4 {
+            background-position: -360px 18px;
+        }
+        .step-arrow {
+            float: left;
+            width: 40px;
+            height: 40px;
+            background: url("../images/index/icon-pzflow.png") no-repeat -480px 0;
+            margin: 40px 0 0 40px;
+        }
+        &:hover {
+            .step-no {
+                color: $index-path-hover;
+            }
+            .step-main {
+                @extend .gradient-red;
+            }
+            .step-arrow {
+                background-position: -520px 0;
+            }
+        }
+    }
+}
+
+//-产品列表内容
+.product-icon {
+    font-size: 70px;
+    color: $index-red-color;
+}
+
+.product-pztype {
+    font-size: 18px;
+    color: $gray-dark;
+    padding: 5px 0 15px;
+    font-weight: $font-weight-default;
+}
+
+.product-describe {
+    font-size: 15px;
+    color: $gray-base;
+    display: block;
+    font-weight: $font-weight-default;
+    padding-bottom: 30px;
+}
+
+.product-feature {
+    margin-bottom: 15px;
+    .main-word {
+        font-weight: $font-weight-default;
+        color: $index-red-color;
+        margin: 0 5px;
+    }
+}
+
+.product-label {
+    height: 90px;
+    background: $index-product-bg;
+    padding: 10px;
+    box-sizing: border-box;
+    display: none;
+    span {
+        display: inline-block;
+        border: 1px solid $index-red-color;
+        border-radius: 22px;
+        padding: 3px 10px;
+        font-size: 12px;
+        color: $index-red-color;
+        background: $white;
+        margin: 5px;
+    }
+}
+
+.product-operate {
+    height: 56px;
+    line-height: 56px;
+    color: $index-red-color;
+    font-size: 16px;
+    font-weight: $font-weight-default;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-decoration: none;
+}
+
+.product-list {
+    li {
+        cursor: pointer;
+        &:hover {
+            .product-icon {
+                display: none;
+            }
+            .product-label {
+                display: block;
+            }
+            .product-operate {
+                @extend .gradient-red;
+                color: $white;
+            }
+        }
+    }
+}
+
+.index-news {
+    .index-news-left {
+        float: left;
+        width: 880px;
+    }
+    .index-news-right {
+        float: right;
+        width: 280px;
+    }
+}
+
+.index-news-cont {
+    border: 1px solid $border-default-color;
+    padding: 20px;
+    margin-top: 20px;
+    height: 406px;
+}
+
+.index-news-main {
+    float: left;
+    width: 618px;
+    margin-left: 20px;
+}
+
+.index-news-friends {
+    float: left;
+    padding-left: 22px;
+    padding-top: 15px;
+    a {
+        display: block;
+        margin-bottom: 5px;
+    }
+}
+
+.news-headlines {
+    height: 80px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $border-default-color;
+    line-height: $line-height-default;
+    @include left-marginal(news-img,
+    0,
+    0,
+    120px,
+    80px,
+    20px);
+}
+
+.index-news-tab {
+    float: left;
+    width: 56px;
+    margin: -20px 0 -20px -20px;
+    li {
+        background: $bg-light-color;
+        font-size: 16px;
+        font-weight: $font-weight-default;
+        height: 223px;
+        letter-spacing: 15px;
+        text-align: center;
+        line-height: 1.2;
+        padding-left: 12px;
+        padding-top: 70px;
+        box-sizing: border-box;
+        cursor: pointer;
+        border-right: 1px solid $border-default-color;
+        &.selected {
+            background: $white;
+            border: none;
+            color: $red;
+            &:first-child {
+                border-bottom: 1px solid $border-default-color;
+            }
+            &:last-child {
+                border-top: 1px solid $border-default-color;
+            }
+        }
+    }
+}

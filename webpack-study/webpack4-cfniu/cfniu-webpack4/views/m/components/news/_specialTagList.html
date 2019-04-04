@@ -1,0 +1,14 @@
+<div class="news-title-name">相关资讯</div>
+<div id="JS-pagination" class="clearfix">
+    <ul class="news-list-wrap clearfix JuicerAnchor-list">
+        {% for jcContentDto in tagList.jcContentDtos %}
+        <li>
+            <a href="{{MOBILE_PROXY_URL}}/news/d{{jcContentDto.contentId}}.html">
+                <div class="title">{{jcContentDto.title}}</div>
+            </a>
+        </li>
+
+        {% endfor %}
+    </ul>
+    <div class="loading" class="JS-pagination-loading">正在加载数据</div>
+</div>

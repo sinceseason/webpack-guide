@@ -1,0 +1,65 @@
+@import "./../components/_common.scss";
+@import "usercenter.scss";
+.extend-head {
+    height: 86px;
+    background: url("../../images/user/extend-head.jpg") no-repeat;
+    margin-top: 20px;
+    color: $white;
+    .e-h-list {
+        float: left;
+        width: 280px;
+        margin-left: 175px;
+        padding-top: 10px;
+        line-height: 30px;
+    }
+}
+
+.share-way {
+    padding-bottom: 20px;
+    border-bottom: 1px solid $border-default-color;
+    margin-top: 40px;
+    li {
+        @include left-marginal(icon,
+        0,
+        0,
+        60px,
+        60px,
+        20px);
+        float: left;
+        width: 220px;
+        .icon {
+            background: url("../../images/user/icon-extend.png") no-repeat;
+            cursor: pointer;
+        }
+        .icon.icon1 {
+            background-position: 0 0;
+        }
+        .icon.icon2 {
+            background-position: 0 -60px;
+        }
+        .icon.icon3 {
+            background-position: 0 -120px;
+        }
+        .line2 {
+            line-height: 1.8;
+        }
+    }
+}
+
+.extend-rule {
+    font-size: 14px;
+    color: $gray-base;
+    padding-top: 20px;
+    .rule-title {
+        font-weight: 600;
+        margin-bottom: 25px;
+    }
+    .rule-title2 {
+        font-weight: 600;
+        line-height: 1.5;
+    }
+    .rule-content {
+        margin-bottom: 25px;
+        line-height: $line-height-default;
+    }
+}

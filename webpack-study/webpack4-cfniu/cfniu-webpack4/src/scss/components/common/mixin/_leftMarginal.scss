@@ -1,0 +1,12 @@
+//-左侧旁注
+@mixin left-marginal($left-name, $left-coordinate, $top-coordinate, $left-item-width, $left-item-height, $left-padding) {
+    .#{$left-name} {
+        position: absolute;
+        left: $left-coordinate;
+        top: $top-coordinate;
+        width: $left-item-width;
+        height: $left-item-height;
+    }
+    position: relative;
+    padding-left:$left-item-width+$left-padding;
+}

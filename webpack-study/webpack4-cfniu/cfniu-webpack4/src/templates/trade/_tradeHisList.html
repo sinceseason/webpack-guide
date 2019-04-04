@@ -1,0 +1,51 @@
+{@if list.length == 0}
+<div class="nodata">当前没有数据！</div>
+{@else} {@each list as trade}
+<li class="clearfix JS-hisDetail" data-tradeId="${trade.id}" style="cursor:pointer;">
+    <div class="type2-title clearfix">
+        <div class="title-name size16 fb">${trade.product.productName}</div>
+        <div class="title-info">
+            <span class="mark-word-red">已结算</span>
+        </div>
+        <div class="title-date size12">${trade.firstTradeDate|timeFormat} - ${trade.realEndDate|timeFormat}</div>
+    </div>
+    <ul class="flow-layout-4col">
+        <li>
+            <span>操盘资金：</span>
+            <span class="fb gray-dark">${trade.wfPercent|money}</span>
+        </li>
+        <li>
+            <span>交易盈亏：</span>
+            <span class="fb ${trade.tradeTotal<trade.wfPercent?'color-green':'color-red'}">${(trade.tradeTotal-trade.wfPercent)|money}</span>
+        </li>
+        <li>
+            <span>冻结资金：</span>
+            <span class="fb color-red">${trade.capitalAmount|money}</span>
+        </li>
+        <!-- <li>
+            <span>已操盘天数：</span>
+            <span class="gray-dark">1 个交易日</span>
+        </li> -->
+        <li>
+            <span>投资本金：</span>
+            <span class="fb gray-dark">${trade.capitalAmount|money}</span>
+        </li>
+        <li>
+            <span>盈利分配：</span>
+            <span class="fb gray-dark">${trade.profitRate}%</span>
+        </li>
+        <li>
+            <span>解冻资金：</span>
+            {@if trade.product.bcsr==1}
+            <span class="fb gray-dark">${trade.capitalAmount|money}</span>
+            {@else}
+            <span class="fb gray-dark">${trade.capitalAmount-trade.wfPercent+trade.tradeTotal|money}</span>
+            {@/if}
+        </li>
+        <li>
+            <span>实收管理费：</span>
+            <span class="fb gray-dark">${trade.accountMgAmt|money}</span>
+        </li>
+    </ul>
+</li>
+{@/each} {@/if}

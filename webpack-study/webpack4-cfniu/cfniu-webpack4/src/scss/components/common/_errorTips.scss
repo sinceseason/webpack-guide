@@ -1,0 +1,27 @@
+//显示在上方的带框错误提示
+.errortip-default {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 10px;
+    height: 30px;
+    box-sizing: border-box;
+    background: $errortip-bg-color;
+    border: 1px solid $errortip-border-color;
+    font-size: 14px;
+    color: $errortip-border-word;
+    line-height: 30px;
+    padding-left: 8px;
+    i {
+        margin-right: 8px;
+    }
+}
+
+//显示在下方的纯文字错误提示
+.errortip-word {
+    position: absolute;
+    bottom: -17px;
+    left: 0;
+    font-size: 12px;
+    color: $errortip-word-color;
+}

@@ -1,0 +1,201 @@
+//-充值提现
+.recharge-list {
+    margin: 40px 0 50px 400px;
+    width: 520px;
+    font-size: 14px;
+    li {
+        @include fixed-col3-list(20px, recharge, 75px, left, 310px, 15px);
+        clear: both;
+        height: 44px;
+        line-height: 44px;
+        &.operate-btn {
+            padding: 25px 125px 0 85px;
+        }
+    }
+}
+
+//-添加银行
+.addbank-list {
+    margin: 40px 0 50px 140px;
+    font-size: 14px;
+    li {
+        @include fixed-col3-list(20px, addbank, 95px, right, 800px, 20px);
+        clear: both;
+        height: 44px;
+        line-height: 44px;
+        &.operate-btn {
+            padding: 25px 0 0 115px;
+        }
+        .input-normal {
+            width: 250px;
+        }
+        .operate-line {
+            padding-left: 115px;
+        }
+        .right-btn {
+            left: 254px;
+            top: 1px;
+            right: auto;
+        }
+    }
+}
+
+//-产品列表
+.product-list {
+    padding: 20px 0 40px 0;
+    @include block-list(20px, 280px, 300px, 0);
+    li {
+        @include list-border(1px, $border-default-color);
+        text-align: center;
+        padding-top: 30px;
+        position: relative;
+        &:hover {
+            @include list-border(1px, $white);
+            @include list-shadow(8px, $gray-more-light);
+        }
+    }
+}
+
+//-流动布局2列
+.flow-layout-2col {
+    @include flow-layout-list(50%, 20px, 17px, 1);
+}
+
+//-流动布局3列
+.flow-layout-3col {
+    @include flow-layout-list(33.3%, 15px, 15px, $line-height-default);
+}
+
+//-流动布局4列
+.flow-layout-4col {
+    @include flow-layout-list(25%, 20px, 17px, 1);
+}
+
+//-有日期 news列表
+.havedate-news-list {
+    @include havedate-news-list(15px, 90px, 100%);
+    li {
+        .list-title {
+            @include text-overflow();
+        }
+    }
+}
+
+//-有日期 紧凑列表
+.havedate-tight-list {
+    @include havedate-news-list(4px, 90px, 100%);
+    padding-top: 12px;
+    li {
+        .list-title {
+            @include text-overflow();
+        }
+    }
+}
+
+//-news 3列列表
+.news-col3-list {
+    @include flow-layout-list(33.3%, 0, 10px, 25px);
+    li {
+        @include text-overflow();
+    }
+}
+
+//-没有日期 news列表
+.nodate-news-list {
+    @include nodate-news-list(15px);
+    li {
+        @include text-overflow();
+    }
+}
+
+.solid-line-bottom {
+    @include news-list-line(solid, $border-default-color);
+}
+
+.dashed-line-bottom {
+    @include news-list-line(dashed, $border-default-color);
+}
+
+.news-list-havedot {
+    @include news-list-haveicon(url("../../../images/index/icon-news-list.png") no-repeat left center,
+    15px);
+}
+
+//- 弹框2列列表
+.modal-col2-list {
+    padding-bottom: 10px;
+    >li {
+        position: relative;
+        @include fixed-col3-list(15px,
+        col2-list,
+        95px,
+        right,
+        255px,
+        10px);
+        &.have-topline {
+            border-top: 1px solid $border-default-color;
+            padding-top: 15px;
+        }
+        .item-inner {
+            margin-bottom: 5px;
+        }
+        .col2-list-operate {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        .have-input-row {
+            line-height: 42px;
+        }
+        .word-prompt {
+            padding: 5px 0 0 104px;
+            clear: both;
+        }
+    }
+}
+
+//-弹框优惠券列表
+.modal-coupon-list {
+    // height: 250px;
+    max-height: 124px;
+    overflow-y: scroll;
+    margin-right: -18px;
+    li {
+        cursor: pointer;
+        @include coupon-card(0,
+        0,
+        manage,
+        0,
+        $coupon-card-red,
+        $gray-dark);
+        @include coupon-card(0,
+        0,
+        manage-selected,
+        -504px,
+        $coupon-card-red,
+        $gray-dark);
+        @include coupon-card(0,
+        0,
+        capital,
+        -252px,
+        $coupon-card-brown,
+        $gray-dark);
+        @include coupon-card(0,
+        0,
+        capital-selected,
+        -756px,
+        $coupon-card-brown,
+        $gray-dark);
+        @include coupon-card(0,
+        0,
+        fail-standard,
+        -1008px,
+        $gray-light,
+        $gray-light);
+        &:hover {
+            .change-coupon {
+                display: block;
+            }
+        }
+    }
+}

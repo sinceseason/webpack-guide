@@ -1,0 +1,298 @@
+@import "../components/_common.scss";
+.agent-bg1 {
+    background: url("../../images/agent/bg1.jpg") no-repeat top center;
+    min-width: 1180px;
+    height: 147px;
+}
+
+.agent-btn-login {
+    @include button-size(64px,
+    30px,
+    14px,
+    30px,
+    0);
+    @include button-variant($white,
+    none,
+    $white,
+    $white);
+    display: inline-block;
+    margin-left: 10px;
+    border-radius: 0;
+    text-align: center;
+}
+
+.agent-bg2 {
+    background: url("../../images/agent/bg2.jpg") no-repeat top center;
+    min-width: 1180px;
+    height: 348px;
+}
+
+.agent-top {
+    padding-left: 60px;
+    width: 565px;
+    .agent-main {
+        font-size: 56px;
+        color: $agent-yellow;
+        font-weight: 600;
+    }
+    .agent-intro {
+        font-size: 20px;
+        line-height: 44px;
+        color: $white;
+        margin: 30px 0;
+    }
+    .agent-btn-add {
+        @include button-size(250px,
+        76px,
+        28px,
+        76px,
+        76px);
+        @include button-variant($agent-dark-blue,
+        $agent-yellow,
+        $agent-dark-blue,
+        $agent-dark-blue);
+        display: block;
+        text-align: center;
+        font-weight: $font-weight-default;
+    }
+}
+
+.agent-title {
+    background: url("../../images/agent/title-line.png") center no-repeat;
+    text-align: center;
+    line-height: 40px;
+    color: #3F4B65;
+    font-size: 28px;
+    font-weight: 600;
+    height: 40px;
+    margin: 40px 0;
+}
+
+.agent-about {
+    margin: 50px 0 80px 0;
+    li {
+        float: left;
+        width: 128px;
+        margin: 0 80px;
+        text-align: center;
+        line-height: 1.8;
+        .icon {
+            width: 128px;
+            height: 128px;
+            background: url("../../images/agent/icon-grounp.png") no-repeat;
+            margin-bottom: 8px;
+        }
+        .icon.icon1 {
+            background-position: 0 0;
+        }
+        .icon.icon2 {
+            background-position: -128px 0;
+        }
+        .icon.icon3 {
+            background-position: -256px 0;
+        }
+        .icon.icon4 {
+            background-position: -384px 0;
+        }
+        .title1 {
+            font-size: 18px;
+            color: #30394C;
+            font-weight: 600;
+        }
+        .title2 {
+            font-size: 14px;
+            color: $gray-dark;
+        }
+    }
+}
+
+.contact-left {
+    float: left;
+    margin-left: 80px;
+    padding: 10px 0 50px 0;
+    width: 530px;
+    li {
+        margin-bottom: 25px;
+    }
+    .icon {
+        float: left;
+        width: 27px;
+        height: 27px;
+        background: url("../../images/agent/icon.png") no-repeat;
+        margin-top: 5px;
+    }
+    .icon.icon1 {
+        background-position: 0 0;
+    }
+    .icon.icon2 {
+        background-position: -27px 0;
+    }
+    .icon.icon3 {
+        background-position: -54px 0;
+    }
+    .contact-title {
+        float: left;
+        color: $gray-dark;
+        font-weight: 600;
+        font-size: 18px;
+        margin-left: 30px;
+        width: 120px;
+        margin-top: 6px;
+    }
+    .contact-value {
+        float: left;
+        color: #FF5452;
+        font-size: 26px;
+        font-weight: 700;
+        width: 350px;
+    }
+}
+
+.contact-right {
+    float: right;
+    width: 240px;
+    height: 155px;
+    background: url("../../images/agent/img-join.jpg") no-repeat;
+    margin-top: 10px;
+}
+
+.agent-contact {
+    margin-bottom: 60px;
+}
+
+.agent-login-title {
+    padding: 20px 20px 10px 20px;
+    .login-name {
+        float: left;
+        border-bottom: 2px solid $red;
+        padding-bottom: 9px;
+        font-size: 18px;
+        color: $gray-dark;
+        width: 33%;
+        text-align: center;
+        cursor: pointer;
+    }
+    .welback {
+        float: right;
+        border-bottom: 1px solid $gray-more-light;
+        width: 67%;
+        padding-top: 5px;
+        padding-bottom: 10px;
+        font-size: 14px;
+        color: $red;
+        text-align: right;
+    }
+}
+
+.agent-reg-content {
+    position: relative;
+    padding-bottom: 20px;
+    ul {
+        margin: 0 20px;
+    }
+    .agent-reg-btn {
+        padding: 0 20px;
+    }
+    .agent-reg-main {
+        height: 360px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding-right: 10px;
+    }
+    .prompt-cont {
+        bottom: 65px;
+    }
+    .person-intro {
+        width: 100%;
+        height: 80px;
+        border: 1px solid $border-default-color;
+        font-size: 14px;
+        padding: 10px;
+        box-sizing: border-box;
+        line-height: 16px;
+    }
+    li {
+        margin-bottom: 15px;
+        position: relative;
+        &.input-short {
+            width: 222px;
+            input {
+                width: 155px;
+            }
+        }
+    }
+}
+
+.agent-cont-login {
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+
+.agent-cont-reg {
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    ul {
+        height: 400px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        margin-right: 7px;
+    }
+}
+
+.agent-forget-title {
+    margin-top: 40px;
+    color: $gray-dark;
+    font-size: 16px;
+    font-weight: 600;
+    border-bottom: 1px solid $gray-more-light;
+    padding-bottom: 15px;
+    margin-bottom: 50px;
+}
+
+.agent-forget-cont {
+    width: 400px;
+    margin: 0 auto;
+    position: relative;
+    .agent-reg-main {
+        padding-bottom: 20px;
+        padding-right: 2px;
+    }
+    .prompt-cont {
+        bottom: 75px;
+    }
+    li {
+        margin-bottom: 15px;
+        position: relative;
+        &.input-short {
+            width: 290px;
+            input {
+                width: 220px;
+            }
+        }
+    }
+}
+
+.agent-login-info {
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: center;
+    color: $gray-light;
+}
+
+.agent-news {
+    box-shadow: 0 0 10px $gray-light;
+    padding: 20px 0 20px 30px;
+    .agent-news-title {
+        margin-bottom: 15px;
+        color: $gray-dark;
+        font-size: 22px;
+        font-weight: $font-weight-default;
+    }
+    .agent-news-cont {
+        float: left;
+        width: 352px;
+        margin-right: 30px;
+    }
+}

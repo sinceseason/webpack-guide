@@ -1,0 +1,59 @@
+{% extends 'layout/trade/tradeDetail.html' %} {% block content %}
+<div class="ui-view-container">
+    <!-- header -->
+    {% include '../components/common/_header.html' %}
+    <!-- main -->
+    <div class="main-content">
+        <div class="wrap">
+            <!-- 一级tab -->
+            {% include '../components/trade/_tabLevel1.html' %}
+            <div class="JuicerAnchor-tradeDetail"></div>
+            <div class="trade-detail-position">
+                <div class="type3-title clearfix">
+                    <div class="title-name fb">合约持仓</div>
+                </div>
+                <div class="wrap-table">
+                    <table class="common-table" width="100%" cellpadding="0" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th width="15%">股票名称</th>
+                                <th width="11%">持有股数</th>
+                                <th width="11%">可卖股数</th>
+                                <th width="11%">成本价</th>
+                                <th width="11%">当前价</th>
+                                <th width="14%">当前市值（占比）</th>
+                                <th width="12%">浮动收益</th>
+                                <th width="15%">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody class="JuicerAnchor-positionList">
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="turn-page JS-page"></div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    {% include '../components/common/_footer.html' %}
+    <!-- 合约流水 -->
+    {% include '../components/dialog/trade/_flowList.html' %}
+    <!-- 提取利润 -->
+    {% include '../components/dialog/trade/_tradeProfit.html' %}
+    <!-- 追加本金 -->
+    {% include '../components/dialog/trade/_addCapital.html' %}
+    <!-- 停牌股 -->
+    {% include '../components/dialog/trade/_stopTrade.html' %}
+    <!-- 结算 -->
+    {% include '../components/dialog/trade/_tradeCancel.html' %}
+    <!-- 延期 -->
+    {% include '../components/dialog/trade/_delaySale.html' %}
+    <!-- 余额不足-保证金 -->
+    {% include '../components/dialog/trade/_noBalance-addCapital.html' %}
+    <!-- 余额不足-延期 -->
+    {% include '../components/dialog/trade/_noBalance-delaySale.html' %}
+    <!-- 余额不足 -->
+    {% include '../components/dialog/trade/_noBalance.html' %}
+</div>
+{% endblock %}

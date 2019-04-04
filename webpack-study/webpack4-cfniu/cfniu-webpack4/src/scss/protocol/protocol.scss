@@ -1,0 +1,31 @@
+@import "../components/_common.scss";
+.protocol-cont {
+    padding: 30px 20px;
+    color: $gray-dark;
+    line-height: 2;
+    min-height: 400px;
+    h1 {
+        text-align: center;
+        padding-bottom: 30px;
+        font-size: 24px;
+    }
+    h2 {
+        margin: 15px 0;
+        font-size: 16px;
+    }
+    ul {
+        text-indent: 20px;
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+    .para-blank {
+        text-indent: 20px;
+        margin-bottom: 10px;
+    }
+    p {
+        margin-bottom: 10px;
+    }
+    .underline {
+        text-decoration: underline;
+    }
+}

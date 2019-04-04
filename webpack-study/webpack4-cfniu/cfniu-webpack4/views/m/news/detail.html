@@ -1,0 +1,40 @@
+{% extends '../layout/news/detail.html' %} {% block content %}
+<div class="m-ui-container container-bottom">
+    <!-- main -->
+    {% include '../components/common/_header.html' %}
+    <!-- menu -->
+    {% include '../components/news/_menu.html' %}
+    <!-- 正文 -->
+    <div class="news-content-wrap">
+        <!-- 标题 -->
+        <div class="title">{{content.title}}</div>
+        <div class="clearfix">
+            <div class="author">作者：{{content.author}}</div>
+            <div class="date">{{content.releaseDate | timeUnixFormat}}</div>
+        </div>
+        <!-- 内容 -->
+        <div class="content">
+            <p>{{content.txt | safe}}</p>
+        </div>
+        <!-- 上下页 -->
+        {% if content.nextContentId and content.nextTitle %}
+        <div class="news-page-link">
+            <span>下一篇：</span>
+            <a class="link-red" href="{{MOBILE_PROXY_URL}}/news/d{{content.nextContentId}}.html">{{content.nextTitle}}</a>
+        </div>
+        {% endif %} {% if content.lastContentId and content.lasrTitle %}
+        <div class="news-page-link">
+            <span>上一篇：</span>
+            <a class="link-red" href="{{MOBILE_PROXY_URL}}/news/d{{content.lastContentId}}.html">{{content.lasrTitle}}</a>
+        </div>
+        {% endif %}
+    </div>
+    <!-- tag标签 -->
+    {% include '../components/news/_tabTag.html' %}
+    <!-- 最热专题 -->
+    {% include '../components/news/_tabSpecial.html' %}
+    <!-- 最新资讯 -->
+    {% include '../components/news/_tabRecent.html' %}
+</div>
+<!-- 底部 -->
+{% include '../components/common/_footer.html' %} {% endblock %}

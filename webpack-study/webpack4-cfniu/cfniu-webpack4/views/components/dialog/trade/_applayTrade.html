@@ -1,0 +1,73 @@
+<div class="modal-wrap modal-size-middle none" id="JS-tradeDialog">
+    <div class="modal-title clearfix">
+        <span class="head-title-left">申请合约</span>
+        <span class="head-close title-close"></span>
+    </div>
+    <div class="modal-content">
+        <ul class="modal-col2-list JuicerAnchor-tradeDialog">
+
+        </ul>
+        <div class="errortip-default none JS-errorWrap">
+            <i class="icon-tishi"></i>
+            <span class="JS-errorMsg">这里是提示内容</span>
+        </div>
+    </div>
+    <div class="modal-operate ">
+        <a class="btn-full btn-red JS-submit">确认申请</a>
+    </div>
+</div>
+
+<script type='text/template' class="JuicerTemplate-tradeDialog">
+    <li class="clearfix">
+        <div class="col2-list-title">申请产品：</div>
+        <div class="col2-list-content">
+            <span class="fb gray-dark">${product.productName}</span>
+        </div>
+    </li>
+    <li class="clearfix">
+        <div class="col2-list-title">总操盘资金：</div>
+        <div class="col2-list-content">
+            <span class="fb gray-dark">${trade.wfPercent|money}</span>
+            <span class="fb gray-dark">元</span>
+        </div>
+    </li>
+    <li class="clearfix">
+        <div class="col2-list-title">合约到期日：</div>
+        <div class="col2-list-content">
+            <span class="fb gray-dark">${trade.endTradeDate} </span>
+            <!-- 自动续约 -->
+            {@if(product.autoExtension==0)}
+            <span class="gray-light">（自动续约）</span>
+            {@/if}
+        </div>
+    </li>
+    <li class="clearfix">
+        <div class="col2-list-title">投资本金：</div>
+        <div class="col2-list-content">
+            <span class="fb gray-dark">${trade.investAmount}</span>
+            <span class="fb gray-dark">元</span>
+        </div>
+    </li>
+    <li class="clearfix">
+        <div class="col2-list-title">预存管理费：</div>
+        <div class="col2-list-content">
+            <span class="fb gray-dark">${trade.accountMgAmt*trade.wfDuration|money}</span>
+            <span class="fb gray-dark">元/${trade.cycleType|cycleType}</span>
+        </div>
+        <div class="col2-list-operate relative JuicerAnchor-tradeCoupon">
+        </div>
+    </li>
+    <li class="clearfix">
+        <div class="col2-list-title">共计应支付：</div>
+        <div class="col2-list-content">
+            <div class="item-inner">
+                <span class="fb color-red JS-totalAmount">0.00 </span>
+                <span class="fb gray-dark ">元</span>
+            </div>
+            <div class="item-inner">
+                预期还将获得
+                <span class="color-red JS-score">0</span> 积分
+            </div>
+        </div>
+    </li>
+</script>

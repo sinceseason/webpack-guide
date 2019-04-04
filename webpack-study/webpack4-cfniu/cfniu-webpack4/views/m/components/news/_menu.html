@@ -1,0 +1,12 @@
+<div class="news-menus">
+    {% if special %}
+    <a class="link" href="{{MOBILE_PROXY_URL}}/news/special{{content.channelId}}">{{content.channelName}}</a>
+    <span class="title">&gt;{{content.title}}</span>
+    {% elif tagName %}
+    <a class="link" href="/">首页</a>
+    <span class="title">&gt;{{tagName}}</span>
+    {% else %}
+    <a class="link" href="{{MOBILE_PROXY_URL}}/news/c{{content.channelId}}">{{content.channelName}}</a>
+    <span class="title">&gt;{{content.title}}</span>
+    {% endif %}
+</div>

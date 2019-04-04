@@ -1,0 +1,8 @@
+@import "../components/_common.scss";
+.history-trade-list {
+    >li {
+        border: 1px solid $border-default-color;
+        margin-bottom: 20px;
+        padding: 20px 20px 0 20px;
+    }
+}

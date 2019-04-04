@@ -1,0 +1,21 @@
+@import "./../components/_common.scss";
+@import "usercenter.scss";
+.flowing-cont {
+    margin-top: 25px;
+    border-top: 1px solid $border-default-color;
+    font-size: 14px;
+    .fund-key {
+        li {
+            margin-top: 20px;
+            span,
+            a {
+                margin-right: 15px;
+                display: inline-block;
+            }
+        }
+    }
+}
+
+.flowing-list {
+    margin-top: 20px;
+}

@@ -1,0 +1,138 @@
+{% extends 'layout/user/drawing.html' %} {% block content %}
+<div class="ui-view-container">
+    <!-- header -->
+    {% include '../components/common/_header.html' %}
+    <!-- main -->
+    <div class="main-content">
+        <div class="wrap">
+            <ul class="level2-tab clearfix">
+                <li class="JS-tab-draw" data-nav="0">
+                    <a>我要提现</a>
+                </li>
+                <li class="JS-tab-draw" data-nav="1">
+                    <a>提现记录</a>
+                </li>
+            </ul>
+            <!--我要提现-->
+            <div class="JS-cotent-draw want-drawing JS-draw-form" data-content="0">
+                <ul class="recharge-list">
+                    <li class="clearfix">
+                        <div class="recharge-title fb">账户余额</div>
+                        <div class="recharge-content">
+                            <span class="fb color-red size16">{{member.account.balance}}</span>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="recharge-title fb">提现银行</div>
+                        <div class="recharge-content">
+                            {% if banks and banks.length > 0 %}
+                            <img class="head30 mr10" src="{{IMAGE_INNER_URL}}/{{banks[0].bank.bankIcon}}">
+                            <span class="fb gray-dark">{{banks[0].bank.bankName}}（{{banks[0].cardNo | convertCardNo}}）</span>
+                            {% else %}
+                            <a class="link-blue" href="/user/addBank">请先前往绑定银行卡</a>
+                            {% endif %}
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="recharge-title fb">提现金额</div>
+                        <div class="recharge-content">
+                            <input class="input-normal" type="text" name="drawAmount" placeholder="请输入提现金额">
+                            <input class="none" type="text" name="balance" value="{{member.account.balance}}">
+                            <input class="none" type="text" name="drawBankCard" value="{{banks[0].cardNo}}">
+                            <input class="none" type="text" name="outletsName" value="{{banks[0].outletsName}}">
+                            <input class="none" type="text" name="bankId" value="{{banks[0].id}}">
+                        </div>
+
+                    </li>
+                    <li class="clearfix">
+                        <div class="recharge-title fb">提现密码</div>
+                        <div class="recharge-content">
+                            <input class="input-normal" type="password" name="drawPwd" placeholder="请输入提现密码">
+                        </div>
+                        <div class="recharge-operate">
+                            <a class="link-blue JS-forget-draw-pwd">忘记提现密码</a>
+                        </div>
+                    </li>
+                    <li class="operate-btn">
+                        <button class="btn-full btn-red JS-confirm-draw-btn">确认提现</button>
+                    </li>
+                </ul>
+                <ul class="drawings-info clearfix">
+                    <li>
+                        <div class="drawinfo-title">小额提现结算</div>
+                        <p>提现金额 ＜10万</p>
+                        <p>工作日 15:00 前申请当日结算</p>
+                        <p>工作日 15:00 后申请次日结算</p>
+                        <p>单日累计提现 ≥5万，分多笔到账</p>
+                        <p>具体到账时间以银行为准</p>
+                    </li>
+                    <li>
+                        <div class="drawinfo-title">大额提现结算</div>
+                        <p>提现金额 10-50万，2 个工作日内结算</p>
+                        <p>提现金额 51-200万， 3 个工作日内结算</p>
+                        <p>提现金额 200万以上，5 个工作日内结算</p>
+                        <p>单日累计提现 ≥5万，分多笔到账</p>
+                        <p>具体到账时间以银行为准</p>
+                    </li>
+                    <li class="last-child">
+                        <div class="drawinfo-title">支持10多家银行</div>
+                        <p>{{NIU_CN}}补偿手续费</p>
+                        <p>同时推荐您使用</p>
+                        <p>工商银行&nbsp;&nbsp;农业银行</p>
+                        <p>建设银行&nbsp;&nbsp;交通银行</p>
+                        <p>提现到账更快</p>
+                    </li>
+                </ul>
+            </div>
+            <!--提现记录-->
+            <div class="JS-cotent-draw drawing-record none" data-content="1">
+                {#
+                <ul class="record-fund-key">
+                    <li>
+                        <span>时间：</span>
+                        <a class="btn-fixed-100 btn-red">全部</a>
+                        <a class="btn-fixed-100 btn-gray-border">近一周</a>
+                        <a class="btn-fixed-100 btn-gray-border">近一个月</a>
+                        <a class="btn-fixed-100 btn-gray-border">近三个月</a>
+                        <a class="btn-fixed-100 btn-gray-border">近一年</a>
+                    </li>
+                </ul> #}
+                <div class="JuicerAnchor-drawList"></div>
+                {#
+                <div class="wrap-table">
+                    <table class="common-table" width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <th width="20%">提现银行</th>
+                            <th width="20%">流水单号</th>
+                            <th width="20%">发生金额</th>
+                            <th width="20%">处理状态</th>
+                            <th width="20%">流水时间</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="fb">中国银行（**** **** **** 8836）</span>
+                            </td>
+                            <td>50053271455109</td>
+                            <td>
+                                <span class="fb color-red">2.98</span>
+                            </td>
+                            <td>
+                                <span class="mr10">处理中...</span>
+                                <a href="#" class="link-red">申请撤回</a>
+                            </td>
+                            <td>2017-07-11 13:18:41</td>
+                        </tr>
+
+                    </table>
+                </div>
+                <div class="turn-page">分页</div> #}
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    {% include '../components/common/_footer.html' %}
+    <!-- 开户行确认 -->
+    {% include '../components/dialog/user/_openBank.html' %}
+    <!-- 忘记提现密码 -->
+    {% include '../components/dialog/user/_forgetDrawPwd.html' %}
+</div>{% endblock %}

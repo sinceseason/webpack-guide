@@ -1,0 +1,11 @@
+<ul class="news-tab clearfix">
+    {% for menu in contentItems %}
+    <a href="{{MOBILE_PROXY_URL}}/news/c{{menu.channelId}}">
+        {% if menu.channelId == channelId %}
+        <li class="selected">{{menu.channelName}}</li>
+        {% else %}
+        <li>{{menu.channelName}}</li>
+        {% endif %}
+    </a>
+    {% endfor %}
+</ul>

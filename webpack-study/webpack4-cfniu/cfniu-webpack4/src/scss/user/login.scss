@@ -1,0 +1,66 @@
+@import "./../components/_common.scss";
+@import "register";
+.login-content {
+    @extend .main-content;
+    padding: 0;
+    background: $login-bg-color;
+    .login-left {
+        float: left;
+        margin-top: 10px;
+    }
+    .login-right {
+        float: right;
+        background: $white;
+        width: 400px;
+        margin-top: 40px;
+        .login-title {
+            padding: 15px 20px;
+            color: $red;
+            font-size: 18px;
+            font-weight: $font-weight-default;
+            border-bottom: 1px solid $border-light-color;
+        }
+        .login-submit {
+            margin: 0 15px 15px 15px;
+        }
+        .reg-other {
+            height: 64px;
+            border-top: 1px solid $border-light-color;
+            background: $bg-light-color;
+            padding: 20px;
+            box-sizing: border-box;
+            .left-wx {
+                float: left;
+                background: url("/images/user/icon-wx.png") no-repeat left top;
+                height: 24px;
+                padding-left: 34px;
+                font-size: 14px;
+                color: $gray-dark;
+                line-height: 24px;
+            }
+            .right-reg {
+                float: right;
+                color: $red;
+                font-size: 16px;
+                i {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
+
+.login-cont {
+    padding: 20px 20px 25px 20px;
+    position: relative;
+    li {
+        margin-bottom: 15px;
+        position: relative;
+        &.forget-paswd {
+            font-size: 14px;
+            text-align: right;
+            padding-bottom: 35px;
+            margin-bottom: 0;
+        }
+    }
+}

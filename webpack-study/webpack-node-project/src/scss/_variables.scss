@@ -1,0 +1,111 @@
+//-color
+$white:#fff !default;
+$gray-base:#666 !default;
+$gray-dark:#333 !default;
+$gray-light:#999 !default;
+$gray-more-light:#ddd !default;
+$red:#C52F3A !default;
+$red-light:#D75B65 !default;
+$green:#1AAC52 !default;
+$orange:#FF8000 !default;
+$blue:#3583E9 !default;
+//-header
+$head-bg:$white !default;
+//-footer
+$footer-bg:#5E5E5E;
+$footer-line:#6B6B6B;
+$footer-color:#AAA;
+//-link
+$link-default-color:$gray-base !default;
+$link-default-decoration:none !default;
+$link-hover-color:$gray-base !default;
+$link-hover-decoration:none !default;
+$link-color-red:$red !default;
+$link-color-blue:$blue !default;
+//-common
+$font-weight-default:600 !default;
+$border-default-color:#e1e1e1 !default;
+$border-light-color:#eee !default;
+$border-radius-default:5px !default;
+$bg-default-color:#f1f1f1 !default;
+$bg-light-color:#fbfbfb !default;
+$table-padding-horizontal:5px !default;
+$line-height-default:1.5 !default;
+$line-height-prompt:1.8 !default;
+//-input focus
+$focus-error-color:$red !default;
+$focus-color:#92A3CB !default;
+//-error tips
+$errortip-bg-color:#FFEBEB !default;
+$errortip-border-color:#FACCC6 !default;
+$errortip-border-word:$red;
+$errortip-word-color:#E5001F;
+//-disabled
+$disabled-bg-color:#f1f1f1 !default;
+$disabled-word-color:$gray-light !default;
+//-login
+$login-bg-color:#365f9d !default;
+//-buttons
+$btn-font-weight: normal !default;
+$btn-border-radius-base: $border-radius-default !default;
+$btn-full-width:100%;
+//-default btn
+$btn-default-color: $white !default;
+$btn-default-bg: #313140 !default;
+$btn-default-border: #313140 !default;
+//-red btn
+$btn-red-color: $white !default;
+$btn-red-bg: $red !default;
+$btn-red-border: $red !default;
+//-green btn
+$btn-green-color: $white !default;
+$btn-green-bg: $green !default;
+$btn-green-border: $green !default;
+//-blue btn
+$btn-blue-color: $white !default;
+$btn-blue-bg: #0287FE !default;
+$btn-blue-border: #0287FE !default;
+//-gray border btn
+$btn-gray-border-color: $gray-dark !default;
+$btn-gray-border-bg: $white !default;
+$btn-gray-border: #e1e1e1 !default;
+//-disabled btn
+$btn-disabled-color: $gray-light !default;
+$btn-disabled-bg: #E1E1E1 !default;
+$btn-disabled-border: #E1E1E1 !default;
+//-prompt box
+$prompt-bg-color:#FFEBEB !default;
+$prompt-border-color:#FACCC6 !default;
+$prompt-woed-color:$red;
+//-modal
+$modal-size-default:400px !default;
+$modal-size-big:800px !default;
+$modal-title-bg:#FDFDFD !default;
+$modal-border-bottom:#EEE !default;
+//-mytrade list
+$mytrade-list-redbg:#db6b74 !default;
+$mytrade-list-orangebg:#ffac5a !default;
+$mytrade-list-greenbg:#5bc483 !default;
+//-tradedetail line
+$line-blue:#86B5F2 !default;
+$line-green:#77CE97 !default;
+$line-red:#DC8289 !default;
+//-coupon card color
+$coupon-card-red:$red !default;
+$coupon-card-brown:#d06a30 !default;
+//-index path
+$index-pathbg:#F5F5FD !default;
+$index-pathword:#DBDBEA !default;
+$index-path-hover:#f9828b !default;
+$index-red-color:#F52F3E !default;
+$index-product-bg:#FFF4F0 !default;
+//-gradient button
+$gradient-left:#FF5C26 !default;
+$gradient-right:#F52F3E !default;
+//-activity color
+$activity-yellow:#ffd45b !default;
+//-agent
+$agent-head-bg:#303849;
+$agent-blue:#566B96;
+$agent-dark-blue:#091633;
+$agent-yellow:#FFCE3C;

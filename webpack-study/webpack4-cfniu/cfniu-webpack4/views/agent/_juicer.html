@@ -1,0 +1,33 @@
+<script type="text/template" id='JuicerTemplate-bankList'>
+    {@each banks as item,}
+        {@if item.recommended}
+        <option value="${item.id}"  class="bankName">${item.bankName}（推荐）</option>
+        {@else}
+        <option value="${item.id}"  class="bankName">${item.bankName}</option>
+        {@/if}
+  {@/each}
+</script>
+
+<script type="text/template" class='JuicerTemplate-provinceList'>
+    <option value=''>---省---</option>
+    {@each city as item}
+        <option value=${item.id}>${item.nodeName}</option>
+    {@/each}
+</script>
+
+<script type="text/template" class='JuicerTemplate-cityList'>
+    {@each city as item}
+        <option value=${item.id}>${item.nodeName}</option>
+    {@/each}
+</script>
+
+<script type="text/template" class='JuicerTemplate-drawingRecord'>
+    {@each result.resultList as item}
+        <tr>
+        <td>${item.drawTime}</td>
+        <td>${item.drawBankCard}</td> 
+        <td>${item.drawAmount}</td>
+        <td>${item.statusText}</td>
+        </tr>
+  {@/each}
+</script>

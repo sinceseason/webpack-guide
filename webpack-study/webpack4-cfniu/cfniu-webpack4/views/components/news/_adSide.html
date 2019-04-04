@@ -1,0 +1,7 @@
+<div class="news-side-advert">
+    {% if adList.length > 0 %}
+    {% for ad in adList %}
+        <img src="{{ad.attrValue}}" width="280" data-href="{{ad.target}}" class="JS-banner" />
+    {% endfor %}
+    {% endif %}  
+</div>

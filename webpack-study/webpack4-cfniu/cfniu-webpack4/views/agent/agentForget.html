@@ -1,0 +1,54 @@
+{% extends 'layout/agent/agentForget.html' %}
+<!-- content -->
+{% block content %}
+<div class="ui-view-container">
+    <!-- header -->
+    {% include "../components/agent/_agentHead.html" %}
+    <!-- main -->
+    <div class="agent-wrap ">
+        <div class="forget-title">找回登录密码</div>
+        <div class="forget-wrap JS-forgetForm">
+            <div class="forget-cont">
+                <ul>
+                    <li class="input-login">
+                        <i class="icon-yonghu1"></i>
+                        <input type="text" name='key' placeholder="请输入11位手机号码" />
+                    </li>
+                    <li class="input-login">
+                        <img src='/verifyCode.api' class="right-yzm" onclick="this.src='/verifyCode.api?' + new Date().getTime()" />
+                        <i class="icon-yanzhengmazhuanhuan"></i>
+                        <input type="text" name="ivc" placeholder="图形验证码" />
+                    </li>
+                    <li class="input-login">
+                        <button class="right-btn JS-countDown">发送验证码</button>
+                        <i class="icon-duanxin"></i>
+                        <input type="text" name='verifyCode' maxlength='6' placeholder="短信验证码" />
+                    </li>
+                    <li class="input-login">
+                        <i class="icon-mima11"></i>
+                        <input type="password" name='pwd' placeholder="输入新密码" />
+                    </li>
+                    <li class="input-login">
+                        <i class="icon-mima11"></i>
+                        <input type="password" name='pwd2' placeholder="确认新密码" />
+                    </li>
+                </ul>
+                <div class="errortip-default none JS-errorWrap">
+                    <i class="icon-tishi"></i>
+                    <span class="JS-errorMsg">密码错误</span>
+                </div>
+            </div>
+            <div class="reg-submit">
+                <button class="btn-full btn-red JS-confirm">确 认</button>
+            </div>
+        </div>
+        <div class="forget-info">如您无法收到短信，请联系客服：
+            <span class="fb gray-base">{{TEL_NUM}}</span>
+        </div>
+    </div>
+</div>
+</div>
+<!-- footer -->
+{% include '../components/common/_footer.html' %}
+<!-- content end -->
+{% endblock %}

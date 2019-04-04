@@ -1,0 +1,22 @@
+<div class="user-head clearfix">
+    {% if member.headerImg %}
+    <img class="head80 fl" src="{{ IMAGE_INNER_URL }}{{member.headerImg}}" />
+    <form class="upload">
+        <input type="file" id="fileUpload" name="picFile"/>
+    </form>
+    {% else %}
+    <img class="head80 fl" src="{{ IMAGE_PUBLIC_URL }}/images/header/head-default.png" />
+    <form class="upload">
+        <input type="file" id="fileUpload" name="picFile"/>
+    </form>
+    {% endif %}
+    
+    <div class="user-info">
+        <div class="user-phone">{{member.userName | isTelephone}}</div>
+        <img class="user-level" src="../images/user/userLevel/user_level{{grade.gradeWeight}}.png" />
+    </div>
+    <div class="user-recharge">
+        <a class="btn-fixed-140 btn-red" href="/user/recharge">充值</a>
+        <a class="btn-fixed-140 btn-gray-border" href="/user/drawing">提现</a>
+    </div>
+</div>
